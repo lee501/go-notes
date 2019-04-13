@@ -1,3 +1,4 @@
+/*
 new和make都在堆上分配内存
 
 new 函数分配内存，make 函数初始化
@@ -5,6 +6,7 @@ new 函数分配内存，make 函数初始化
 new(T): 适用于值类型和结构体struct， 返回一个指针 &T{}
 
 make(T): 只用于内建的引用类型slice、map、channal
+*/
 
 // 代码示例
 package main 
