@@ -1,7 +1,11 @@
 //使用结构体实现链表
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net"
+	"net/http"
+)
 
 type Node struct {
 	data int
@@ -38,5 +42,7 @@ func main() {
 		tail = node
 	}
 	showNode(tail)
+
+	http.Transport.Proxy()
 }
 

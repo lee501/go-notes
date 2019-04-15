@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"strings"
 )
 
 type Person struct {
@@ -12,15 +11,19 @@ type Person struct {
 	Name func(first, last string) string
 }
 
+func Name(first, last string) string{
+	return first + last
+}
 func main() {
 	person := &Person{
 		FirstName: "lee",
 		LastName: "andy",
 		//结构体中包括匿名方法字段的初始化
-		Name: func(first, last string) string {
-			contactName := []string{first, last}
-			return strings.Join(contactName, " ")
-		},
+		//Name: func(first, last string) string {
+		//	contactName := []string{first, last}
+		//	return strings.Join(contactName, " ")
+		//},
+		Name: Name,
 	}
 	fmt.Println(person.Name(person.FirstName, person.LastName))
 }
