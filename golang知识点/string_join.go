@@ -18,7 +18,7 @@ func AddStringWithOperator() string{
 func ConnectStringWithNum(first string, last int) string{
 	first = first
 	last = last
-	result := first + fmt.Sprintf("d%", last)
+	result := fmt.Sprintf("%s d%", first, last)
 	return result
 }
 
