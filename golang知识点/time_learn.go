@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"testing"
 	"time"
 )
 
@@ -43,4 +44,30 @@ func main() {
 	}
 	// 时间字符串转时间戳
 	fmt.Println(formatTime.Unix())
+
+	end := time.Now()
+	year, month, day := end.Date()
+	begin := time.Date(year, month, day, 0, 0, 0, 0, end.Location())
+	fmt.Println(begin)
+
+	test := map[string]string{"name": "lee", "age": "30"}
+	delete(test, "name")
+	fmt.Println(test["name"])
+
+
+}
+
+//删除元素
+func BenchmarkReuse(t *testing.B) {
+	t.ResetTimer()
+
+	origin := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	for i := 0; i < t.N; i++ {
+		target := origin[:0]
+		for _, item := range origin {
+			if item != 6 {
+				target = append(target, item)
+			}
+		}
+	}
 }
