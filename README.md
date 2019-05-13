@@ -30,3 +30,9 @@ fmt.Printf("%+v\n", p) // {x:1 y:2}
 //%#v 形式则输出这个值的 Go 语法表示。例如，值的运行源代码片段。
 fmt.Printf("%#v\n", p) // main.point{x:1, y:2}
 ```
+*golang工程中的文件目录与package*
+```
+1. 习惯上文件目录的名字与package名字保持一致，
+2. 一个文件目录下只能有一个package
+3. 如若不一致，import的时候要写目录名，引用的时候要写包名
+```
