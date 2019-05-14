@@ -16,11 +16,11 @@ package main
   // 创建类型为*os.File的变量，将其赋值给接口变量
     testfile, err := os.OpenFile("dev/test", os.O_RDWR, 0)
   // 将其赋值给接口变量
-    var r = io.Reader
+    var r io.Reader
     r = testfile
     此时接口变量r的pair为(testfile, *os.File), 这个pair在接口变量连续赋值的过程中是不变的
   // 将r赋值给另一接口变量w
-    var w = io.Writer
+    var w io.Writer
     // 通过接口类型断言来赋值
     w = r.(io.Writer) //接口变量w的pair与r的pair相同，都是:(tty, *os.File
 
