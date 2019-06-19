@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 //
 //import "fmt"
@@ -163,12 +166,16 @@ type B struct {
 	A
 }
 func main() {
-	println(Int)
-	a := &A{2}
-	b := &B{*a}
-	println(b.int)
-	b.int = 3
-	println(a.int)
+	//println(Int)
+	//a := &A{2}
+	//b := &B{*a}
+	//println(b.int)
+	//b.int = 3
+	//println(a.int)
+	str := "abcd"
+	if strings.Contains(str, "abcd") {
+		fmt.Println(111)
+	}
 }
 func a() int {
 	var i = 2
