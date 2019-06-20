@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a37b229f-f50b-4940-8436-258b668fa81f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/golang知识点/add-string-method-for-enum.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/golang知识点/for-select-skill.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/golang知识点/with-context-pack-func.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/golang知识点/set.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dup.go" beforeDir="false" afterPath="$PROJECT_DIR$/dup.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/golang知识点/with-context-pack-func.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="247">
+              <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -49,7 +46,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/golang知识点/for-select-skill.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
+            <state relative-caret-position="361">
               <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding>
                 <element signature="e#14#39#0" expanded="true" />
@@ -71,7 +68,16 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="6" selection-start-column="6" selection-end-column="6" />
+              <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/golang知识点/set.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -102,15 +108,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
               <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/golang知识点/anonymous_struct.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -165,6 +162,7 @@
         <option value="$PROJECT_DIR$/golang知识点/add-string-method-for-enum.go" />
         <option value="$PROJECT_DIR$/dup.go" />
         <option value="$PROJECT_DIR$/golang知识点/with-context-pack-func.go" />
+        <option value="$PROJECT_DIR$/golang知识点/set.go" />
       </list>
     </option>
   </component>
@@ -222,7 +220,7 @@
     </option>
   </component>
   <component name="ToolWindowManager">
-    <frame x="52" y="23" width="1386" height="877" extended-state="6" />
+    <frame x="52" y="23" width="1386" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21875" />
@@ -257,8 +255,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/Cellar/go/1.10.3/libexec/src/net/dial.go" />
-    <entry file="file:///usr/local/Cellar/go/1.10.3/libexec/src/encoding/json/encode.go" />
     <entry file="file:///usr/local/Cellar/go/1.10.3/libexec/src/testing/benchmark.go" />
     <entry file="file:///usr/local/Cellar/go/1.10.3/libexec/src/fmt/print.go" />
     <entry file="file://$PROJECT_DIR$/go.mod">
@@ -544,7 +540,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -598,7 +594,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/golang知识点/for-select-skill.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="361">
           <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
             <element signature="e#14#39#0" expanded="true" />
@@ -608,8 +604,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/golang知识点/with-context-pack-func.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="247">
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golang知识点/channel.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#14#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golang知识点/set.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
