@@ -1,3 +1,1 @@
-module go_libraries
-
-go 1.12
+module github.com/sevenelevenlee/go_libraries
