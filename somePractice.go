@@ -2,7 +2,9 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"net"
+	"reflect"
 )
 
 type Advert struct {
@@ -10,23 +12,24 @@ type Advert struct {
 	Name 		string
 }
 
+type IpRange struct {
+	Start string `json: "start"`
+	End	  string `json: "end"`
+	Source  string `json: "source"`
+}
+
 func main() {
-	//who := "lee"
-	//if len(os.Args) > 1 {
-	//	who += strings.Join(os.Args[1:], " ")
-	//}
-	//who := GenerateImageAdvert("/api/image/1562207823.png")
-	//fmt.Println(who)
-	//s := make([]*Advert, 0)
-	//s = append(s, &Advert{Name: "lee"})
-	//for _, item := range s {
-	//	println(item.Name)
-	//}
-	e := "59.255.255.255"
-	s := "59.192.0.0"
-	re,_ := IPString2Long(e)
-	rs,_ := IPString2Long(s)
-	println(re, rs)
+	//ip := new(IpRange)
+	//m := []byte(`{"start": "60.200.0.0", "end": "60.203.255.255", "source": "\u5e7f\u7535"}`)
+	//fmt.Println(string(m))
+	//json.Unmarshal(m, &ip)
+	//fmt.Println(ip)
+	//arr := []int{1,2,3,4}
+	//TestArgs(1, arr...)
+	var a int8 = 3  //0000 0011 -> 0000 0011 -0000 0011
+	fmt.Printf("%b\n", a)
+	var b int8 = -3  //0000 0011 -> 1111 1100 -> 1111 1101
+	fmt.Printf("%b\n", b)
 }
 
 func createString(img string) string {
@@ -45,4 +48,9 @@ func IPString2Long(ip string) (uint, error) {
 	}
 
 	return uint(b[3]) | uint(b[2])<<8 | uint(b[1])<<16 | uint(b[0])<<24, nil
+}
+
+func TestArgs(first int, arg ...interface{}) {
+	fmt.Println(reflect.TypeOf(arg))
+	fmt.Println(first, arg)
 }
