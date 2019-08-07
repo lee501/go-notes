@@ -7,13 +7,13 @@ import (
 )
 
 func GetAllFile(filepath string, s []string) ([]string, error){
-	file, err := ioutil.ReadDir(filepath)
+	fileInfo, err := ioutil.ReadDir(filepath)
 	if err != nil {
 		log.Println("read dir failed: ", err)
 		return s, nil
 	}
 
-	for _, child := range file {
+	for _, child := range fileInfo {
 		if child.IsDir() {
 			fullpath := filepath + "/" + child.Name()
 			s, err = GetAllFile(fullpath, s)
