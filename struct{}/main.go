@@ -2,7 +2,12 @@ package main
 
 import "fmt"
 
-func main() {
-	s := struct {}{A: 1, B: 2}
+type Man struct {
 
+}
+func main() {
+	var a *Man
+	if a == nil {
+		fmt.Printf("777: ", 1)
+	}
 }
