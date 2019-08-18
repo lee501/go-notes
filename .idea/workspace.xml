@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a37b229f-f50b-4940-8436-258b668fa81f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/defer/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/list/list_struct.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panic-and-recover/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,15 +41,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/go/1.12.4/libexec/src/time/time.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16302">
-              <caret line="861" column="28" selection-start-line="861" selection-start-column="20" selection-end-line="861" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/golang-knowledge-point/struct-inherit.go">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -76,11 +66,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/defer/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="56" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+            <state relative-caret-position="685">
+              <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/panic-and-recover/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -126,7 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/golang知识点/new和make的区别.go" />
         <option value="$PROJECT_DIR$/golang知识点/linked_list.go" />
         <option value="$PROJECT_DIR$/golang知识点/struct_details.go" />
         <option value="$PROJECT_DIR$/golang知识点/string_join.go" />
@@ -177,6 +175,7 @@
         <option value="$PROJECT_DIR$/bit-operation/main.go" />
         <option value="$PROJECT_DIR$/list/list_struct.go" />
         <option value="$PROJECT_DIR$/defer/main.go" />
+        <option value="$PROJECT_DIR$/panic-and-recover/main.go" />
       </list>
     </option>
   </component>
@@ -195,22 +194,6 @@
             <path>
               <item name="go_libraries" type="b2602c69:ProjectViewProjectNode" />
               <item name="go_libraries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go_libraries" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go_libraries" type="462c0819:PsiDirectoryNode" />
-              <item name="defer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go_libraries" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go_libraries" type="462c0819:PsiDirectoryNode" />
-              <item name="golang-knowledge-point" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go_libraries" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go_libraries" type="462c0819:PsiDirectoryNode" />
-              <item name="golang-knowledge-point" type="462c0819:PsiDirectoryNode" />
-              <item name="file-process" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="go_libraries" type="b2602c69:ProjectViewProjectNode" />
@@ -290,8 +273,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/golang-knowledge-point/senior/file_read.go" />
-    <entry file="file://$PROJECT_DIR$/golang-knowledge-point/senior/file_write.go" />
     <entry file="file://$PROJECT_DIR$/golang-knowledge-point/senior/copyfile.go" />
     <entry file="file:///usr/local/Cellar/go/1.12.4/libexec/src/image/jpeg/writer.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -627,8 +608,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/defer/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="56" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+        <state relative-caret-position="685">
+          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.12.4/libexec/src/time/time.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16302">
+          <caret line="861" column="28" selection-start-line="861" selection-start-column="20" selection-end-line="861" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panic-and-recover/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
         </state>
       </provider>
     </entry>
