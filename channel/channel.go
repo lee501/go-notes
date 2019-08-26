@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+//主线程中，channel阻塞：产生死锁fatal error : all goroutines are asleep -deadlock!
 func main()  {
 	ch := make(chan int, 10)
 	go func() {
