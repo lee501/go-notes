@@ -72,6 +72,11 @@ var mslice = []string{2: "a", 3: "b"}
 var marray = [5]string{1: "a", 4: "d"}
 
 func main() {
-	fmt.Println(mslice)
-	fmt.Println(marray)
+	s := []int{1,2,3,4}
+	change(s)
+	fmt.Println(s)
+}
+
+func change(s []int)  {
+	s[0] = 0
 }
