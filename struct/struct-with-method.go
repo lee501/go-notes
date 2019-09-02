@@ -19,10 +19,14 @@ func main()  {
 	a := false
 	suffer := NewSuffer(a)
 	suffer.Callback()
+
+	m := NewMystruct(false)
+	m.Split(test)
+	m.split("test")
 }
 
-func NewMystruct(called bool) *Mystruct {
-	return &Mystruct{
+func NewMystruct(called bool) Mystruct {
+	return Mystruct{
 		split: SplitString,
 		Iscalled: called,
 	}
@@ -54,4 +58,10 @@ func NewSuffer(a bool) *Suffer {
 	return &Suffer{
 		check: a,
 	}
+}
+
+func test(s string) ([]string) {
+	var str []string
+	fmt.Println(s)
+	return append(str, s)
 }
