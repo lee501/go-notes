@@ -20,20 +20,10 @@ func main() {
 	}
 
 	test := make(chan int)
-	wg.Add(1)
 	go func() {
-		for {
-			select {
-			case t := <-test:
-				fmt.Println(t)
-				wg.Done()
-			default:
-				fmt.Println("select结束")
-			}
-		}
+		test <- 1
 	}()
 
-	test <- 1
+	<- test
 	fmt.Println("关闭")
-	wg.Wait()
 }
