@@ -17,8 +17,13 @@ func main() {
 		LUTC                          // if Ldate or Ltime is set, use UTC rather than the local time zone
 		LstdFlags     = Ldate | Ltime // initial values for the standard logger
 	)
-	fmt.Println(Ltime, Lshortfile, LUTC, LstdFlags)
-
+	fmt.Println(Ldate, Ltime, Lmicroseconds, Llongfile, Lshortfile, LUTC, LstdFlags)
+	const (
+		a = 1
+		b
+		c
+	)
+	fmt.Println(a,b,c)
 	//log
 	/*
 		log.Println()
@@ -27,7 +32,7 @@ func main() {
 		}
 	*/
 	//打印日志到文件
-	file, _ := os.OpenFile("./logger.log", os.O_APPEND | os.O_CREATE | os.O_RDWR, 0666)
+	file, _ := os.OpenFile("./logger/logger.log", os.O_APPEND | os.O_CREATE | os.O_RDWR, 0666)
 	defer func() {
 		file.Close()
 	}()
