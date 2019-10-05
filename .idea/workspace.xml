@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a37b229f-f50b-4940-8436-258b668fa81f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/leetcode/03-substring-without-duplicate-char/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interview/01-day/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/go_libraries.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/golang-knowledge-point/slice/slice-use-key.go" beforeDir="false" afterPath="$PROJECT_DIR$/golang-knowledge-point/slice/slice-use-key.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/leetcode/02-add-number-in-list/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="646">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -38,12 +45,12 @@
         <entry file="file://$PROJECT_DIR$/leetcode/01-two-sum/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leetcode/03-substring-without-duplicate-char/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
@@ -55,8 +62,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/golang-knowledge-point/string_rune_byte.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-31">
+            <state relative-caret-position="-703">
               <caret line="3" column="17" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interview/01-day/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -80,16 +105,6 @@
               <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/channel/select_with_channel.go">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/channel/synchronize_and_commu.go">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -127,7 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/golang知识点/base64-encode.go" />
         <option value="$PROJECT_DIR$/golang知识点/string_rune_byte.go" />
         <option value="$PROJECT_DIR$/golang知识点/json-stream-rw.go" />
         <option value="$PROJECT_DIR$/practice/helloweb.go" />
@@ -142,7 +156,6 @@
         <option value="$PROJECT_DIR$/main.go" />
         <option value="/usr/local/Cellar/go/1.12.4/libexec/src/bufio/scan.go" />
         <option value="$PROJECT_DIR$/golang知识点/anonymous_struct.go" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/golang知识点/for-select-skill.go" />
         <option value="$PROJECT_DIR$/golang知识点/add-string-method-for-enum.go" />
         <option value="$PROJECT_DIR$/dup.go" />
@@ -178,6 +191,8 @@
         <option value="$PROJECT_DIR$/logger/logger.log" />
         <option value="$PROJECT_DIR$/logger/main.go" />
         <option value="$PROJECT_DIR$/leetcode/03-substring-without-duplicate-char/main.go" />
+        <option value="$PROJECT_DIR$/interview/01-day/main.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -199,33 +214,6 @@
             <path>
               <item name="go-notes" type="b2602c69:ProjectViewProjectNode" />
               <item name="go-notes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-notes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-notes" type="462c0819:PsiDirectoryNode" />
-              <item name="golang-knowledge-point" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-notes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-notes" type="462c0819:PsiDirectoryNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-notes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-notes" type="462c0819:PsiDirectoryNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="01-two-sum" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-notes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-notes" type="462c0819:PsiDirectoryNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="02-add-number-in-list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-notes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-notes" type="462c0819:PsiDirectoryNode" />
-              <item name="ring" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -311,15 +299,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/golang-knowledge-point/image-process/image-process-method.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.4/libexec/src/encoding/json/decode.go" />
-    <entry file="file:///usr/local/Cellar/go/1.12.4/libexec/src/os/file.go" />
     <entry file="file:///usr/local/Cellar/go/1.12.4/libexec/src/os/file_unix.go" />
     <entry file="file:///usr/local/Cellar/go/1.12.4/libexec/src/reflect/type.go" />
     <entry file="file://$PROJECT_DIR$/golang-knowledge-point/string_join.go">
@@ -558,7 +537,7 @@
     <entry file="file://$PROJECT_DIR$/leetcode/02-add-number-in-list/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
@@ -568,7 +547,7 @@
     <entry file="file://$PROJECT_DIR$/leetcode/01-two-sum/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -581,7 +560,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/golang-knowledge-point/string_rune_byte.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
+        <state relative-caret-position="-703">
           <caret line="3" column="17" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
@@ -590,6 +569,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golang-knowledge-point/slice/slice-use-key.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="77" column="23" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interview/01-day/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
