@@ -16,6 +16,7 @@ func LongestPalindrome(s string) string {
 	}
 	start, end := 0, 0
 	for i := 0; i < l; i++ {
+		//i为中心元素的下标
 		len1 := cal(s, i, i) //中间回文为一个"abcbe"
 		len2 := cal(s, i, i+1) //中间回文为两个
 		len := int(math.Max(float64(len1), float64(len2)))
