@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 /*
 	给定一个数组和目标值，找出数组中和为目标值的两个数
 	nums = [2, 7, 11, 15] , target = 9
@@ -16,4 +20,10 @@ func TweSum(nums []int, target int) []int {
 		hash[value] = i
 	}
 	return nil
+}
+
+func main()  {
+	s := "349"
+	//字节转int, -'0'操作
+	fmt.Println(int(s[0]-'0'))
 }
