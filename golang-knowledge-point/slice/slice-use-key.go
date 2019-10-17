@@ -75,7 +75,8 @@ func main() {
 	s := []int{1,2,3,4}
 	change(s)
 	fmt.Println(s)
-	fmt.Println(mslice)
+	fmt.Println(len(mslice))
+	fmt.Println(mslice[0], mslice[1])
 }
 
 func change(s []int)  {
