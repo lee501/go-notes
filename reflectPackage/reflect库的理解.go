@@ -1,13 +1,13 @@
 /*反射就是用来检测存储在接口变量内部(值value；类型concrete type) pair对的一种机制*/
 
-1.reflect基本功能 TypeOf()和 ValueOf(), 从接口中获取目标对象信息
+/*1.reflect基本功能 TypeOf()和 ValueOf(), 从接口中获取目标对象信息
   a. ValueOf()用来获取输入参数接口中的数据的值，如果接口为空则返回0
-  b. TypeOf()用来动态获取输入参数接口中的值的类型，如果接口为空则返回nil
+  b. TypeOf()用来动态获取输入参数接口中的值的类型，如果接口为空则返回nil*/
 
   // 示例代码
-  package main 
+  package main
 
-  import(
+import(
     "fmt"
     "reflect"
   )
