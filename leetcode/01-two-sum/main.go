@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"regexp"
 )
 
 /*
@@ -26,4 +27,8 @@ func main()  {
 	s := "349"
 	//字节转int, -'0'操作
 	fmt.Println(int(s[0]-'0'))
+	m := " "
+	fmt.Println(len(m))
+	re := regexp.MustCompile("")
+	fmt.Println(re.Match([]byte("")))
 }
