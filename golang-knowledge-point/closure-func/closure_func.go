@@ -30,20 +30,22 @@ func Itera(s []string) {
 }
 
 //函数列表处理函数列表
-func processFunc() []func() {
+func ProcessFunc() []func() {
 	var s []func()
 	for i := 0; i < 3; i++ {
-		x := i  // 赋值变量
+		//此处是闭包，i引用的是外部变量，最终i值为3
 		s = append(s, func() {
-			fmt.Println(x)
+			fmt.Println(i)
 		})
 	}
 	return s
 }
 
-func processFunc1() (s []func()) {
+func ProcessFunc1() []func() {
+	var s []func()
 	for i := 0; i < 3; i++ {
-		x := i  // 赋值变量
+		x := i  // 通过赋值变量, 每次传入闭包函数的地址是不同的
+		fmt.Printf("%p\n", &x)
 		s = append(s, func() {
 			fmt.Println(x)
 		})
