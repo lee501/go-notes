@@ -14,6 +14,7 @@ func mapIssue() {
 	p := person{name: "lee"}
 	delete(m, p)
 	fmt.Println(m[p])
+	//m[p] = 1 panic: assignment to entry in nil map
 }
 
 /*
