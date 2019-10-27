@@ -4,7 +4,7 @@ import "fmt"
 
 /*
 	考点：map中不存在key时，返回该元素类型的零值
-		delete map中不存在的键值对时， 不会保存
+		delete map中不存在的键值对时， 不会报错
 */
 type person struct {
 	name string

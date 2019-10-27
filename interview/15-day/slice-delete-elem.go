@@ -20,6 +20,7 @@ func main() {
 	fmt.Println(end.UnixNano() - begin.UnixNano()) //0
 	m := []string{"a", "b", "c", "d"}
 	begin = time.Now()
+	//开辟新的内存存放切片，防止更改问题
 	var s2 []string
 	for _, v := range m {
 		if v != "b" {
