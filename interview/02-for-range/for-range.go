@@ -5,14 +5,15 @@ import "fmt"
 /*
 	考点:
 		for range循环,会创建每个元素的副本，所以v的地址是相同的
+		range 表达式复制一个副本_, v := range slice， 这里的slice是副本引用
 */
 
 func main() {
 	slice := []int{1,2,3,4}
 	//这里的v是循环对象每个元素的副本
 	for _, v := range slice {
+		fmt.Printf("%p\n", slice)
 		fmt.Println(v)
-		fmt.Println(&v)
 	}
 
 	m := make(map[int]*int)
