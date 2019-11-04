@@ -3,10 +3,24 @@ package main
 import "fmt"
 
 func main() {
-	dict := map[string]string{
-		"a": "this is a",
-	}
-	if v, ok := dict["a"]; ok {
-		fmt.Println(v)
-	}
+	i := 1
+	s := []string{"A", "B", "C"}
+	s[i-1], i = "Z", 2
+	fmt.Printf("s: %v \n", s)
 }
+
+type Fragment interface {
+	Exec(transInfo *TransInfo) error
+}
+
+type TransInfo struct {
+
+}
+type GetPodAction struct {
+}
+func (g *GetPodAction) Exec(transInfo *TransInfo) error {
+
+	return nil
+}
+
+var f Fragment = &GetPodAction{}
