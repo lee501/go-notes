@@ -1,4 +1,4 @@
-定义struct,对应数据库中的表结构
+//定义struct,对应数据库中的表结构
 type Account struct{
   Id    int64
   Name  string  `xorm:”unique”`
