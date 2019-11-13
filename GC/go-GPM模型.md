@@ -28,5 +28,26 @@
     work-stealing调度算法
     * 每个P维护一个G的本地队列
     * 当一个G被创建，或变为可执行状态时，把它放到P的可执行队列中
-    * 当一个G在M里执行结束后，P会从队列中把改G取出； 如果P的队列为空，M就随机选择另一个P，从其可执行的G队列中取走一半
+    * 当一个G在M里执行结束后，P会从队列中把G取出； 如果P的队列为空，M就随机选择另一个P，从其可执行的G队列中取走一半
 ![](../img/GPM.png)
+
+----
+    G-P-M模型调度
+    * Go调度器工作时会维护两种任务队列
+        一种是Global任务队列
+        一种是P的Local任务队列 
+    * 通过go关键字创建goroutine时，会优先放入P的本地队列。 为了运行goroutine, M需要持有一个P，接着启动一个OS线程
+      循环从P的本地队列里取出一个goroutine执行。 
+      当M执行完当前P的local队列里所有的G后，P先尝试从Global队列寻找G来执行。如果Global队列为空，就随机挑选另一个P，从它的队列中取出一半的G
+      
+----
+    goroutine被阻塞的情况下运行另外一个goroutin
+    * 用户态阻塞/唤醒
+        当goroutine因为channel操作或网络I/O阻塞时，对应的G会被放置到某个wait队列（如channel的waitq),该G的状态由_Grunning变为_Gwaiting,
+        而M会跳过该G并获取执行下一个G， 如果没有可以执行的G， 则M解绑P，进入sleep状态； 
+        当阻塞的G被另一段G2唤醒(channel的通信)， G被标记为runnable, 并尝试加入G2的run next, 然后再是P的local队列，globle队列
+        
+    * 系统调用阻塞
+         · 当G被阻塞在某个系统调用上时，此时G阻塞在_Gsyscall状态, M也处于block on syscall状态， 此时M可被抢占调度； 执行该G的M与P解绑，
+         P则尝试与其他idle的M绑定，继续执行它队列中的其他G； 如果没有空闲的M，而p的本地队仍然有G需要执行，则创建一个新的M。
+         · 当系统调用完成后， G会尝试获取一个空闲的P，进入它的本地队列恢复执行，如果没有idle的P，则G会标记为runnable加入到Global队列
