@@ -4,8 +4,8 @@ import "fmt"
 
 /*
 	range表达式是副本参与循环
-		注意切片和数组： 表达式为数组，传递值副本
-					   表达式为切片， 传递引用地址
+		注意切片和数组： range会复制对象，而不是不是直接在原对象上操作
+					   使用range迭代遍历引用类型时，底层的数据不会被复制
 */
 func main() {
 	////切片
@@ -14,7 +14,6 @@ func main() {
 	//testArray()
 	////数组地址传递给range
 	//testArray1()
-
 	testSliceAndAppend()
 }
 
@@ -71,17 +70,19 @@ func testArray1() {
 
 func testSliceAndAppend() {
 	var a = []int{1,2,3,4,5}
-	fmt.Printf("%p\n", a)
 	var r = make([]int, 0)
-	//此处a为原切片的引用
+	//引用类型，a的长度不变
 	for i, v := range a {
-		if i == 0 {
-			//此处a重新分配了地址
-			a = append(a, 6, 7)
-			fmt.Printf("%p\n", a)
+		if i == 1 {
+			//注意原切片删除元素的坑
+			a = append(a[:1], a[2:]...)
 		}
 		r = append(r, v)
 	}
-	fmt.Println(r)
 	fmt.Println(a)
+	fmt.Println(r)
+	//[1 3 4 5]
+	//[1 2 4 5 5]
 }
+
+
