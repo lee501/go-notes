@@ -70,6 +70,7 @@ func testArray1() {
 
 func testSliceAndAppend() {
 	var a = []int{1,2,3,4,5}
+	fmt.Printf("%p\n%p\n%p\n", a, &a[2],&a[3])
 	var r = make([]int, 0)
 	//引用类型，a的长度不变
 	for i, v := range a {
@@ -79,8 +80,9 @@ func testSliceAndAppend() {
 		}
 		r = append(r, v)
 	}
-	fmt.Println(a)
-	fmt.Println(r)
+	fmt.Printf("%p\n%p\n%p\n", a, &a[2],&a[3])
+	//fmt.Println(a)
+	//fmt.Println(r)
 	//[1 3 4 5]
 	//[1 2 4 5 5]
 }
