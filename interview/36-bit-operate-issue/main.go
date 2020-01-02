@@ -9,7 +9,7 @@ import "fmt"
 */
 func main() {
 	var a int8 = 3
-	var b int8 = 5
+	var b int8 = 5  //00001001
 	z := a &^ b
 	fmt.Printf("z: %08b\n", z)
 }
