@@ -26,6 +26,7 @@ func TweSum(nums []int, target int) []int {
 func main()  {
 	s := "349"
 	//字节转int, -'0'操作
+	fmt.Println(string(s[0]))
 	fmt.Println(int(s[0]-'0'))
 	m := " "
 	fmt.Println(len(m))
