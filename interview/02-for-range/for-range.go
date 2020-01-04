@@ -12,7 +12,7 @@ func main() {
 	slice := []int{1,2,3,4}
 	//这里的v是循环对象每个元素的副本
 	for _, v := range slice {
-		fmt.Printf("%p\n", slice)
+		fmt.Printf("%p\n", &v)
 		fmt.Println(v)
 	}
 

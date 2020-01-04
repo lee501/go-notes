@@ -15,7 +15,7 @@ type T struct {
 
 func main() {
 	ts := [2]T{}
-	//遍历数组
+	//遍历数组 [0 0]
 	for i, t := range ts {
 		switch i {
 		case 0:
@@ -28,8 +28,8 @@ func main() {
 	fmt.Println(ts) //0 [{0} {9}]
 	fmt.Println("------------------")
 
-	//遍历数组指针
 	tl := [2]T{}
+	//遍历数组指针 [{0} {0}]，地址副本
 	for i, t := range &tl {
 		switch i {
 		case 0:
@@ -42,8 +42,8 @@ func main() {
 	fmt.Println(tl) //9  [{0} {9}]
 	fmt.Println("------------------")
 
-	//遍历切片
 	tm := [2]T{}
+	//遍历切片 [{0} {0}], tm[:]为地址副本
 	for i := range tm[:] {
 		t := &tm[i]
 		switch i {
@@ -54,6 +54,20 @@ func main() {
 			fmt.Print(t.n, "  ")
 		}
 	}
-	fmt.Println(tm)
+	fmt.Println(tm) //9  [{3} {9}]
+	fmt.Println("------------------")
+
+	m := make([]int, 2)
+	for i, t := range m {
+		//t为循环变量的副本, 与原切片地址是不同的
+		switch i {
+		case 0:
+			t = 3
+			m[1] = 9
+		case 1:
+			fmt.Print(t, "  ")
+		}
+	}
+	fmt.Println(m) //9  [{0} {9}]
 	fmt.Println("------------------")
 }
