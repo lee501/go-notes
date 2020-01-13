@@ -22,14 +22,13 @@ import(
     value:  1.2345
   */
 
-2. 反射可以将“反射类型对象”转换为“接口类型变量
+2. 反射可以将"反射类型对象" 转换为"接口类型变量"
   a. reflect.value.Interface().(已知的类型)
   b. 遍历reflect.Type的Field获取其Field
   /* 1，执行 relect.ValueOf(interface) 之后， 得到一个类型为reflect.Value变量
      2，通过自身的interface()方法获得接口变量的真实内容
      3， 通过类型判断进行转换， 转换为原有真实类型
    */ 
-
   1).已知原有类型
      realValue := value.Interface().(已知类型)
 
