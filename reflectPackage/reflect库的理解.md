@@ -103,7 +103,7 @@ import(
         // 通过reflect.Type的Field获取其Field
         field := getType.Field(i)
         // 通过Field的Interface()得到对应的value
-        value := getType.Field(i).Interface()
+        value := reflect.ValueOf(field).Interface()
         fmt.Printf("%s: %v = %v\n", field.Name, field.Type, value)
       }
       // 获取方法

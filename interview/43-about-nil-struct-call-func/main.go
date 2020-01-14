@@ -24,6 +24,12 @@ func main() {
 	a.callmethod()
 
 	findItemInMap()
+
+	//通过函数创建T
+	//GetT().n = 1 无法寻址
+	t := GetT()
+	t.n = 1 //或 p := &(t.n) *p = 1
+	fmt.Println(t)
 }
 
 func findItemInMap() {
@@ -34,4 +40,12 @@ func findItemInMap() {
 	if _, ok := x["once"]; !ok {
 		fmt.Println("no once")
 	}
+}
+
+type T struct {
+	n int
+}
+
+func GetT() T {
+	return T{}
 }
