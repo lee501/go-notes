@@ -13,10 +13,10 @@ func main() {
 	jobs := 10
 	//控制线程数量
 	pool := 3
-	jobchans := make(chan int, pool)
+	jobChans := make(chan int, pool)
 	for i := 0; i < pool; i++ {
 		go func() {
-			for ch := range jobchans {
+			for ch := range jobChans {
 				fmt.Println("hello" + strconv.Itoa(ch))
 				wg.Done()
 			}
@@ -24,7 +24,7 @@ func main() {
 	}
 	for i := 0; i < jobs; i++ {
 		wg.Add(1)
-		jobchans <- i
+		jobChans <- i
 		fmt.Printf("index: %d, goroutine number: %d\n", i, runtime.NumGoroutine())
 	}
 	wg.Wait()
