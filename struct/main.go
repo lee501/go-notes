@@ -6,6 +6,7 @@ import "fmt"
 	声明为变量时，并分配内存空间, 在进行struct中的变量赋值时，可直接使用。
 	声明为指针时，并未进行赋值，也没有分配内存空间
 */
+var c Man
 type Man struct {
 	Name string
 }
@@ -24,4 +25,7 @@ func main() {
 	b.Name = "lee"
 	fmt.Println(a)
 	fmt.Println(b)
+
+	c.Name = "lee"
+	fmt.Println()
 }
