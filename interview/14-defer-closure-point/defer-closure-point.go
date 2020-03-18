@@ -28,4 +28,5 @@ func main() {
 	}()
 
 	p.age = 27
+	fmt.Println(p)
 }

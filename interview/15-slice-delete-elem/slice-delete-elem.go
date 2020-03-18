@@ -15,8 +15,9 @@ a = a[:i+copy(a[i:], a[i+1:])]
 func main() {
 	s := []string{"a", "b", "c", "d"}
 	begin := time.Now()
-	s = append(s[:1], s[2:]...)
+	_ = append(s[:1], s[2:]...)
 	end := time.Now()
+	fmt.Println(s)
 	fmt.Println(end.UnixNano() - begin.UnixNano()) //0
 	m := []string{"a", "b", "c", "d"}
 	begin = time.Now()
