@@ -10,12 +10,12 @@ import "fmt"
 */
 func main() {
 	s1 := struct {
-		age int
+		age  int
 		name string
 	}{age: 11, name: "lee"}
 
 	s2 := struct {
-		age int
+		age  int
 		name string
 	}{age: 11, name: "lee"}
 
