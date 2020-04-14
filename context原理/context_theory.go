@@ -1,4 +1,4 @@
-package context
+package main
 
 import "time"
 
@@ -12,4 +12,28 @@ type Context interface {
 	//让routine共享一些数据，获得数据是协程安全的
 	Value(key interface{}) interface{}
 }
-  
+
+//context.Background函数返回一个空的context,作为树的跟节点，一般由接受请求的第一个routine创建
+func Backgroud() Context {
+  return nil
+}
+
+//上下文数据存储与查询
+type valueCtx struct {
+	Context
+	key, val interface{}
+}
+
+func WithValue(parent Context, key, val interface{}) Context {
+	if key == nil {
+		panic("nil key")
+	}
+	return &valueCtx(parent, key, val)
+}
+
+func (v *valueCtx) Value(key interface{}) interface{} {
+	if v.key == key {
+		return v.val
+	}
+	return v.Context.Value(key)
+}
