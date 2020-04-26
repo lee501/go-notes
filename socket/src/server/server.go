@@ -40,7 +40,7 @@ func main() {
 				//接收用户存在
 				if re, ok := userMap[user.OtherUsername]; ok && re != nil {
 					user.ServerMsg = ""
-					n, err := re.Write([]byte(fmt.Sprintf("%s-%s-%s-%s", user.Username, user.OtherUsername, user.Msg, user.ServerMsg)))
+					n, err := re.Write(b[:count])
 					if n == 0 || err!= nil {
 						delete(userMap, user.OtherUsername)
 						conn.Close()

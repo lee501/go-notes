@@ -1,2 +1,6 @@
+github.com/go-sql-driver/mysql v1.5.0 h1:ozyZYNQW3x3HtqT1jira07DN2PArx2v7/mN66gGcHOs=
+github.com/go-sql-driver/mysql v1.5.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
 github.com/patrickmn/go-cache v2.1.0+incompatible h1:HRMgzkcYKYpi3C8ajMPV8OFXaaRUnok+kx1WdO15EQc=
 github.com/patrickmn/go-cache v2.1.0+incompatible/go.mod h1:3Qf8kWWT7OJRJbdiICTKqZju1ZixQ/KpMGzzAfe6+WQ=
+github.com/sevenelevenlee/ipvsGo v0.0.0-20190718072248-7724ccdf1a60 h1:eXTgbmTdv4OKnEqIQFQme00tDQOFJ8X0Jif0al4o1Yc=
+github.com/sevenelevenlee/ipvsGo v0.0.0-20190718072248-7724ccdf1a60/go.mod h1:EWCzRk61Gk4OYXEJQIhhXmHTMZq9WEe5nvrZDNPwYAM=
