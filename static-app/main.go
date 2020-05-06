@@ -17,6 +17,7 @@ func main() {
 	/*
 	访问url以/static/开头,就会把访问信息映射到指定的目录中
 	 */
+	//http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", welcome)
 	server.ListenAndServe()
