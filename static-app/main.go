@@ -6,9 +6,20 @@ import (
 )
 import "html/template"
 
+type User struct {
+	Name string
+	Age  int
+}
 func welcome(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles("view/index.html")
-	t.Execute(w, nil) //第二个参数表示向模版传递的数据
+	//t.Execute(w, "lee") //第二个参数表示向模版传递的数据
+	//传递结构体
+	//t.Execute(w, User{"lee", 20} )
+	//传递map
+	m := make(map[string]interface{})
+	m["user"] = User{"anne", 21}
+	m["money"] = 100
+	t.Execute(w, m)
 }
 
 func main() {
