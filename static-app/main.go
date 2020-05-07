@@ -23,7 +23,7 @@ func welcome(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	server := http.Server{Addr: ":8090"}
+	server := http.Server{Addr: ":8899"}
 	fmt.Println("服务启动")
 	/*
 	访问url以/static/开头,就会把访问信息映射到指定的目录中
@@ -31,5 +31,8 @@ func main() {
 	//http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", welcome)
-	server.ListenAndServe()
+	err := server.ListenAndServe()
+	if err != nil{
+		fmt.Println(err)
+	}
 }
