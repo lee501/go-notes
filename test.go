@@ -15,3 +15,15 @@ func main() {
 	var p *people
 	fmt.Println(p == nil)
 }
+
+type M interface {
+	N
+}
+
+type N interface {
+	Check()
+}
+
+func (p *people) Check() {
+	fmt.Println("interface")
+}
