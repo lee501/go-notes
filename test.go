@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 type people struct {
 	name string
@@ -14,6 +17,8 @@ func main() {
 	//fmt.Printf("%v", m)
 	var p *people
 	fmt.Println(p == nil)
+	pe := people{"lee"}
+	fmt.Println(reflect.ValueOf(pe).FieldByName("name"))
 }
 
 type M interface {

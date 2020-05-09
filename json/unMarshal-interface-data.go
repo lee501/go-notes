@@ -9,7 +9,7 @@
 	5.JSON对象转换为 map[string]interface{}类型
 	6.null转换为 nil
 */
-package json
+package main
 
 import (
 	"encoding/json"

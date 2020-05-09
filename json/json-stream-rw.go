@@ -2,7 +2,7 @@
 //go内建的encode/json包的Encoder和Decoder类型
 //func NewDecoder(r io.Reader) *Decoder
 //func NewEncoder(w io.Writer) *Encoder
-package json
+package main
 
 import (
 	"encoding/json"

@@ -1,4 +1,4 @@
-package json
+package main
 
 import (
 	"encoding/json"
@@ -21,6 +21,9 @@ func main() {
 	var m map[string]interface{}
 	json.Unmarshal(b, &m)
 	fmt.Printf("%#v\n", m)
+	var res interface{}
+	json.Unmarshal(b, &res)
+	fmt.Printf("%#v\n", res)
 	for k, v := range m{
 		fmt.Printf("key: %#v value: %#v\n", k, v)
 	}
@@ -40,6 +43,7 @@ func ToMap(in interface{}, tagName string) (map[string]interface{}, error){
 	}
 
 	t := v.Type()
+	m := reflect.TypeOf(in)
 	for i:=0; i< v.NumField(); i++ {
 		fi := t.Field(i)
 		if tagValue := fi.Tag.Get(tagName); tagValue != "" {
