@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <script type="application/javascript" src="/static/javascript/jquery.min.js"></script>
+    <script type="application/javascript">
+        $(function () {
+            $("button").click(function () {
+                $.post("getUsers", function (data) {
+                    var result = ""
+                    for(var i = 0; i < data.length; i++){
+                        result += "<tr>"
+                        result += "<td>"
+                        result += data[i].Name
+                        result += "</td>"
+                        result += "<td>"
+                        result += data[i].Age
+                        result += "</td>"
+                        result += "</tr>"
+                    }
+                    $("#userList").html(result)
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>显示用户</button>
+    <table border="1">
+        <thead>
+            <th>名字</th>
+            <th>年纪</th>
+        </thead>
+        <tbody id="userList">
+
+        </tbody>
+    </table>
+</body>
+</html>
