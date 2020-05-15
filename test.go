@@ -19,6 +19,11 @@ func main() {
 	fmt.Println(p == nil)
 	pe := people{"lee"}
 	fmt.Println(reflect.ValueOf(pe).FieldByName("name"))
+	str := "abc"
+	fmt.Println(str[0])
+	for _,v := range str{
+		fmt.Println(v)
+	}
 }
 
 type M interface {
