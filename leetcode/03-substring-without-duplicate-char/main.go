@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 	给定一个字符串，找出不不含有重复字符的最长字串的长度
 
@@ -25,4 +27,9 @@ func SubString(s string) int {
 		curlen++
 	}
 	return  curlen
+}
+
+func main() {
+	s := "pwwkew"
+	fmt.Println(SubString(s))
 }
