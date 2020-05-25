@@ -1,4 +1,4 @@
-package closure_func
+package main
 
 import (
 	"fmt"
@@ -66,3 +66,35 @@ func DeferPrint() {
 	fmt.Println(x, y)
 }
 
+func main() {
+	a := func(m int) func(int)int{
+		return func(n int) int{
+			return m + n
+		}
+	}
+	a5 := a(5)
+	result := a5(6)
+	fmt.Println(result)
+
+	m := [...]int{1,2,3}
+	n := m[:]
+	test(n...)
+
+	t := []int{1,2,3,4,5}
+	fmt.Println(t[:2])
+	fmt.Println(t[3:])
+
+	var r *int
+	var k int = 1
+	r = &k
+	fmt.Println(r)
+}
+
+type M int
+func test(p ...int) int {
+	l := 0
+	for _, v := range p {
+		l = l + v
+	}
+	return l
+}

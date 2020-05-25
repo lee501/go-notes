@@ -44,6 +44,17 @@ func main() {
 	s := make([]int, 10)
 	s[0] = 1
 	fmt.Println(s)
+
+	p := Person{Name: "lee"}
+	fmt.Println(p.GetName())
+	fmt.Println(p.GetName1())
+
+	p1 := &Person{"lee"}
+	fmt.Println(p1.GetName())
+	fmt.Println(p1.GetName1())
+
+	p2 := NewP()
+	fmt.Println(p2.GetName())
 }
 
 type M interface {
@@ -120,4 +131,21 @@ func findNumSumInArray(array []int, sum int) [][]int {
 		m[v] = i
 	}
 	return l
+}
+
+type Person struct {
+	Name string
+}
+
+func (p *Person) GetName() string {
+	return p.Name
+}
+func (p Person) GetName1() string {
+	return p.Name
+}
+
+func NewP() Person {
+	return Person{
+		Name: "test",
+	}
 }

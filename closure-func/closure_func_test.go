@@ -1,4 +1,4 @@
-package closure_func
+package main
 
 import (
 	"testing"

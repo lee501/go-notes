@@ -28,7 +28,7 @@ type Person interface {
 
 type Student struct {}
 
-func (s *Student) Speak(think string) (talk string) {
+func (s Student) Speak(think string) (talk string) {
 	talk = think
 	return
 }
