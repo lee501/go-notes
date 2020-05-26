@@ -98,3 +98,12 @@ func test(p ...int) int {
 	}
 	return l
 }
+
+//装饰函数
+type Function func(int)int
+
+func Decorate(fu Function) Function {
+	return func(i int) int {
+		return fu(i)
+	}
+}
