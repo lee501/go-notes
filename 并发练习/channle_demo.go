@@ -6,43 +6,46 @@ import (
 )
 
 var wait sync.WaitGroup
-
+var w sync.WaitGroup
 func main() {
 	ch := make(chan int)
-	wait.Add(3)
+	sign := make(chan int, 1)
+	wait.Add(2)
 	go func(wait *sync.WaitGroup) {
-		for i := 0; i < 5; i++{
+		for i := 0; i < 10000; i++{
 			ch <- i
 		}
 		wait.Done()
 	}(&wait)
 
 	go func(wait *sync.WaitGroup) {
-		for i := 0; i < 5; i++{
+		for i := 0; i < 10000; i++{
 			ch <- i
 		}
 		wait.Done()
 	}(&wait)
 
+	go func() {
+		wait.Wait()
+		sign <- 1
+	}()
+	w.Add(1)
 	go func(wait *sync.WaitGroup) {
 		sum := 0
 		END:
-
 		for  {
 			select {
 			case m := <-ch:
-				fmt.Println(m)
 				sum += m
-			default:
-				fmt.Println("test")
+				fmt.Println(sum)
+			case <-sign:
+				w.Done()
 				break END
 			}
 		}
-		fmt.Println(sum)
-		wait.Done()
 		fmt.Println("循环结束")
-	}(&wait)
-	wait.Wait()
+	}(&w)
+	w.Wait()
 	fmt.Println("执行结束")
 }
 

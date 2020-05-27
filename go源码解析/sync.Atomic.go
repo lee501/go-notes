@@ -17,7 +17,7 @@ import (
 
 func main() {
 	test1()
-	test2()
+	//test2()
 }
 
 //count++ 并发不安全
