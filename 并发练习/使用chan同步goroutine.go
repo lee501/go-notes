@@ -1,13 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
+//func main() {
+//	done := make(chan bool)
+//	go func() {
+//		fmt.Println("执行子线程")
+//		done <- true
+//	}()
+//	<- done
+//	fmt.Println("执行结束")
+//}
 func main() {
-	done := make(chan bool)
+	var mutex sync.Mutex
+	i := 6
+	mutex.Lock()
 	go func() {
-		fmt.Println("执行子线程")
-		done <- true
+		fmt.Println(i)
+		mutex.Unlock()
 	}()
-	<- done
-	fmt.Println("执行结束")
+	mutex.Lock()
 }
