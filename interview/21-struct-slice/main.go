@@ -14,7 +14,7 @@ func main() {
 		s1[i] = &value
 	}
 	fmt.Println(s)
-	fmt.Println(s1) //[0xc000086030 0xc000086030 0xc000086030] c的地址
+	fmt.Println(s1[1]) //[0xc000086030 0xc000086030 0xc000086030] c的地址
 
 	 //map的无序性
 	var m = map[string]int{

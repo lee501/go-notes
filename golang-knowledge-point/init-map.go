@@ -1,6 +1,9 @@
 package main
 
-/*map的声明和初始化*/
+/*map的声明和初始化
+	map的key 可以是bool 数字 string 指针 channel struct array等可以比较类型
+       		 不能是slice map func
+*/
 
 type People struct {
 	Name string
