@@ -9,7 +9,8 @@ import (
 func main() {
 	//数组
 	var m = [...]int{1,2,3}
-	fmt.Println(reflect.TypeOf())
+	fmt.Println(m)
+	fmt.Println(reflect.TypeOf(m))
 	//变量 i、v 是具体元素的副本，在每次循环体中都会被重用， 而不是重新被创建
 	get(m)
 	for i, v := range m {
