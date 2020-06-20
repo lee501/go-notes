@@ -15,9 +15,11 @@ var (
 func main() {
 	inputReader = bufio.NewReader(os.Stdin)
 	fmt.Println("Please enter some input: ")
-	input, err = inputReader.ReadString('\n')
-	if err == nil {
-		fmt.Printf("the input content was: %s\n", input)
+	for {
+		input, err = inputReader.ReadString('\n')
+		if err == nil {
+			fmt.Printf("回音: %s\n", input)
+		}
 	}
 }
 
