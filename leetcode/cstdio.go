@@ -15,7 +15,7 @@ func main() {
 }
 
 func getStep(n, step int) (int, int) {
-	for ; n != 1;{
+	for n != 1{
 		if n % 2 == 0 {
 			n = n / 2
 		} else {
