@@ -1,11 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	arr := []int{3,2,5,1}
-	insertSort(arr)
-	fmt.Println(arr)
+	arr := []int{1,2,3,4,5,6}
+	//i := binarySearch(arr, 3)
+	fmt.Println(binarySearch(arr, 3))
 }
 
 func insertSort(array []int) {
@@ -20,4 +22,20 @@ func insertSort(array []int) {
 			pre--
 		}
 	}
+}
+
+func binarySearch(s []int, key int) int {
+	begin := 0
+	end := len(s) - 1
+	for {
+		mid := (end - begin) / 2
+		if s[mid] == key {
+			return mid
+		} else if s[mid] < key {
+			begin = mid + 1
+		} else {
+			end = mid - 1
+		}
+	}
+	return -1
 }
