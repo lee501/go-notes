@@ -10,22 +10,26 @@ import (
 )
 
 //将文件以string 对象读出
-func readFileByString(filename string) {
+func ReadFileByString(filename string) string {
 	file, err := os.Open(filename)
 	if err != nil {
 		println(err.Error())
-		return
+		return ""
 	}
 	defer file.Close()
 
 	reader := bufio.NewReader(file)
+	buf := make([]byte, 1024)
 	for {
-		readString, err := reader.ReadString('\n')
-		println(readString)
+		readString, err := reader.Read(buf)
 		if err == io.EOF {
-			return
+			break
+		}
+		if readString == 0 {
+			break
 		}
 	}
+	return string(buf)
 }
 
 //整个文件的内容读到一个字符串里

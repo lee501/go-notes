@@ -7,7 +7,7 @@ import (
 )
 
 //一次性加载到内存中适用于小文件
-func readAllIntoMemory(filename string) (content []byte, err error) {
+func ReadAllIntoMemory(filename string) (content []byte, err error) {
 	fp, err := os.Open(filename)
 	if err != nil {
 		return nil, err
