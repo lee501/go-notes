@@ -4,24 +4,27 @@ import (
 	"flag"
 	"fmt"
 	"go-notes/file-process"
-	"log"
 	"os"
 	"runtime/pprof"
+	"time"
 )
-var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to file")
 
 func main() {
+	var isCPUPprof bool
+	flag.BoolVar(&isCPUPprof, "cpu", false, "cpu pprof")
 	flag.Parse()
-	if *cpuprofile != "" {
-		// 根据命令行指定文件名创建 profile 文件
-		f, err := os.Create(*cpuprofile)
+	if isCPUPprof {
+		file, err := os.Create("./cpu.pprof")
 		if err != nil {
-			log.Fatal(err)
+			fmt.Printf("create cpu pprof failed, err:%v\n", err)
+			return
 		}
-		// 开启 CPU profiling
-		pprof.StartCPUProfile(f)
+		pprof.StartCPUProfile(file)
 		defer pprof.StopCPUProfile()
 	}
-	s := file_process.ReadFileByString("/Users/lee/Documents/study.rb")
+
+	s := file_process.ReadFileByString("/Users/richctrl/Downloads/pproftest.docx")
 	fmt.Println(s)
+	time.Sleep(10 *time.Second)
 }
+
