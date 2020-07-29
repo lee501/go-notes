@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 //主线程中，channel阻塞：产生死锁fatal error : all goroutines are asleep -deadlock!
@@ -14,10 +13,30 @@ func main()  {
 		}
 		close(ch)
 	}()
-	go func() {
+
 		for i := range ch{
 			fmt.Println(i)
 		}
-	}()
-	time.Sleep(time.Second)
+
+	//done := make(chan bool) // 无缓冲通道
+	//defer close(done)
+	//
+	//go func() {
+	//	time.Sleep(9 * time.Second)
+	//	fmt.Println("one done")
+	//	done <- true
+	//}()
+	//
+	//go func() {
+	//	time.Sleep(5 * time.Second)
+	//	fmt.Println("two done")
+	//	done <- true
+	//}()
+	//
+	//// wait until both are done
+	//for c := 0; c < 2; c++ {
+	//	<-done
+	//}
+	//fmt.Println("handle1 done")
 }
+

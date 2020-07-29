@@ -6,9 +6,9 @@ import (
 )
 
 type User struct {
-  Id   int
-  Name string
-  Age  int
+  Id   int     `json:"id"`
+  Name string `json:"name"`
+  Age  int    `json:"age"`
 }
 
 func (u User) RelectCallFunc() {
@@ -16,9 +16,14 @@ func (u User) RelectCallFunc() {
 }
 
 func main(){
-  user := User{1, "Allen.Wu", 25}
-
-  DoFieldAndMethod(user)
+  type S struct {
+    F string `species:"gopher" color:"blue"`
+  }
+   s := S{}
+    st := reflect.TypeOf(s)
+    field := st.Field(0)
+    fmt.Println(field.Tag.Get("color"), field.Tag.Get("species"))
+  //DoFieldAndMethod(user)
 }
 // 参数对象为intereface{}  
 func DoFieldAndMethod(input interface{}){

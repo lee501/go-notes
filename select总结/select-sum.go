@@ -11,7 +11,7 @@ func main() {
 	//	randomSelect()
 	//}
 
-	selectFor()
+	selectBlock()
 }
 
 //1 select的随机性
@@ -27,7 +27,7 @@ func randomSelect() {
 	}
 }
 
-//2select block情况， 主线程中，当channel阻塞的，没有default关键字的时候，会panic
+//2select block情况， 主线程中，当channel阻塞的，没有default关键字的时候，deadlock!
 func selectBlock() {
 	ch := make(chan int)
 

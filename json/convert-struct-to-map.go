@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"reflect"
 )
@@ -13,21 +12,22 @@ type UserInfo struct {
 
 func main() {
 	u := UserInfo{Name: "lee", Age: 35}
-	b, _ := json.Marshal(u)
-	fmt.Println(string(b))
-	var u1 UserInfo
-	json.Unmarshal(b, &u1)
+	//b, _ := json.Marshal(u)
+	//fmt.Println(string(b))
+	//var u1 UserInfo
+	//json.Unmarshal(b, &u1)
+	//
+	//var m map[string]interface{}
+	//json.Unmarshal(b, &m)
+	//fmt.Printf("%#v\n", m)
+	//var res interface{}
+	//json.Unmarshal(b, &res)
+	//fmt.Printf("%#v\n", res)
+	//for k, v := range m{
+	//	fmt.Printf("key: %#v value: %#v\n", k, v)
+	//}
 
-	var m map[string]interface{}
-	json.Unmarshal(b, &m)
-	fmt.Printf("%#v\n", m)
-	var res interface{}
-	json.Unmarshal(b, &res)
-	fmt.Printf("%#v\n", res)
-	for k, v := range m{
-		fmt.Printf("key: %#v value: %#v\n", k, v)
-	}
-
+	ToMap(u, "name")
 }
 
 func ToMap(in interface{}, tagName string) (map[string]interface{}, error){
@@ -37,15 +37,15 @@ func ToMap(in interface{}, tagName string) (map[string]interface{}, error){
 	if v.Kind() == reflect.Ptr {
 		v = v.Elem()
 	}
-
 	if v.Kind() != reflect.Struct {
 		return nil, fmt.Errorf("ToMap only accept struct or struct point; got %T", v)
 	}
 
 	t := v.Type()
-	m := reflect.TypeOf(in)
+	//m := reflect.TypeOf(in)
 	for i:=0; i< v.NumField(); i++ {
 		fi := t.Field(i)
+		fmt.Println(fi.Tag.Get("Name"))
 		if tagValue := fi.Tag.Get(tagName); tagValue != "" {
 			out[tagValue] = v.Field(i).Interface()
 		}
