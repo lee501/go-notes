@@ -5,22 +5,26 @@ import (
 )
 
 func main() {
-	arr := []int{1,2,3,4,5,6}
+	arr := []int{6,5,4,3,2,1}
 	//i := binarySearch(arr, 3)
-	fmt.Println(binarySearch(arr, 3))
+	insertSort(arr)
+	fmt.Println(arr)
+	//fmt.Println(binarySearch(arr, 3))
 }
 
 func insertSort(array []int) {
 	if len(array) < 2 {
 		return
 	}
-	for i:=1; i < len(array); i++ {
-		pre := i - 1
-		key := array[i]
-		for pre >= 0 && array[pre] > key {
-			array[pre+1], array[pre] = array[pre], array[pre+1]
-			pre--
+	var temp int
+	for i := 1; i < len(array); i++ {
+		temp = array[i]
+		for j := i; j > 0; j-- {
+			if array[j-1] > temp {
+				array[j], array[j-1] = array[j-1], array[j]
+			}
 		}
+
 	}
 }
 
