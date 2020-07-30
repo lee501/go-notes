@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"reflect"
 )
@@ -11,7 +12,13 @@ type UserInfo struct {
 }
 
 func main() {
+	var data []byte
 	u := UserInfo{Name: "lee", Age: 35}
+	data, _ = json.Marshal(u)
+	fmt.Printf("%#v\n", string(data))
+	var m map[string]interface{}
+	json.Unmarshal(data, &m)
+	fmt.Println(reflect.TypeOf(m["age"]))
 	//b, _ := json.Marshal(u)
 	//fmt.Println(string(b))
 	//var u1 UserInfo
@@ -27,7 +34,7 @@ func main() {
 	//	fmt.Printf("key: %#v value: %#v\n", k, v)
 	//}
 
-	ToMap(u, "name")
+	//ToMap(u, "name")
 }
 
 func ToMap(in interface{}, tagName string) (map[string]interface{}, error){

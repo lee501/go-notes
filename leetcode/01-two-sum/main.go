@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"regexp"
 )
 
 /*
@@ -24,12 +23,30 @@ func TweSum(nums []int, target int) []int {
 }
 
 func main()  {
-	s := "349"
-	//字节转int, -'0'操作
-	fmt.Println(string(s[0]))
-	fmt.Println(int(s[0]-'0'))
-	m := " "
-	fmt.Println(len(m))
-	re := regexp.MustCompile("")
-	fmt.Println(re.Match([]byte("")))
+	//s := "349"
+	////字节转int, -'0'操作
+	//fmt.Println(string(s[0]))
+	//fmt.Println(int(s[0]-'0'))
+	//m := " "
+	//fmt.Println(len(m))
+	//re := regexp.MustCompile("")
+	//fmt.Println(re.Match([]byte("")))
+	nums := []int{1, 4, 7, 5, 2, 3}
+	target := 10
+	fmt.Println(threeSum(nums, target))
+}
+
+func threeSum(nums []int, target int) [][3]int {
+	hash := make(map[int]int)
+	var res [][3]int
+	for i, v := range nums {
+		sum := target - v
+		for j := i+1; j < len(nums); j++ {
+			if k, ok := hash[sum - nums[j]]; ok {
+				res = append(res, [3]int{i, j, k})
+			}
+			hash[nums[j]] = j
+		}
+	}
+	return res
 }
