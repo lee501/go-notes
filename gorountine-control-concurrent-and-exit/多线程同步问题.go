@@ -16,12 +16,14 @@ func main() {
 		}(i)
 	}
 	//使用channel阻塞的方式来出来同步
+	//此处不能使用range 会引起主线程deadline
 	for i := 0; i< 100; i++ {
 		m := <-done
 		fmt.Println(m, "线程关闭")
 	}
  	fmt.Println("执行完毕")
 
+	//2. 使用waitGroup方式防同步协程
 	var wg sync.WaitGroup
 	for i:=0; i<100; i++ {
 		wg.Add(1)
