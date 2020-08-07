@@ -14,6 +14,9 @@ type Role struct {
 	Name string
 }
 func main() {
+	//初始化Role切片 避免返回null
+	str := ""
+	fmt.Println(str)
 	user := User{Name: "lee", Roles: []Role{{Name: "test"}, {Name: "test2"}}}
 	data, _ := json.Marshal(&user)
 	fmt.Println(string(data))
@@ -24,4 +27,12 @@ func main() {
 		fmt.Println(err)
 	}
 	fmt.Println(u)
+
+	l := []int{1,2,3,4,5}
+	for _, v := range l {
+		if v >3 {
+			continue
+		}
+		fmt.Println(v)
+	}
 }
