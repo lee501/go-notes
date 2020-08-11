@@ -1,4 +1,6 @@
 //string rune byte三者的关系
+//uint8       the set of all unsigned  8-bit integers (0 to 255)
+//byte        alias for uint8
 /*
 	1.byte: unit8,用于区分字节值和8位无符号整数值
 	2.rune: int32, 用于区分字符值和整数值

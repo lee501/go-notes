@@ -32,7 +32,7 @@ func HeapSort(array []int) {
 	//交换堆顶元素与末尾元素
 	for j:=len-1; j>0; j-- {
 		swap(array, 0, j)
-		
+
 		AdjustHeap(array, j, 0)
 	}
 }
