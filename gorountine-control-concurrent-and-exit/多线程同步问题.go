@@ -1,10 +1,13 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"sync"
+	"time"
 )
 
+//使用channel和WaitGroup同步
 func main() {
 	done:=make(chan int ,100)
 	defer close(done)
@@ -33,4 +36,39 @@ func main() {
 		}(i)
 	}
 	wg.Wait()
+}
+
+//使用context来控制
+func foo(ctx context.Context, name string) {
+	go bar(ctx, name)
+	for  {
+		select {
+		case <- ctx.Done():
+			fmt.Println(name, "foo exit")
+			return
+		case <- time.After(2 * time.Second):
+			fmt.Println("foo 超时")
+		}
+	}
+}
+
+func bar(ctx context.Context, name string) {
+	for {
+		select {
+		case <-ctx.Done():
+			fmt.Println(name, "B Exit")
+			return
+		case <-time.After(2 * time.Second):
+			fmt.Println(name, "B do something")
+		}
+	}
+}
+
+func Test() {
+	ctx, cancel := context.WithCancel(context.Background())
+	go foo(ctx, "foobar")
+	fmt.Println("client release connection, need to notify A, B exit")
+	time.Sleep(5 * time.Second)
+	cancel() //mock client exit, and pass the signal, ctx.Done() gets the signal  time.Sleep(3 * time.Second)
+	time.Sleep(3 * time.Second)
 }
