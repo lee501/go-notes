@@ -1,7 +1,7 @@
 package main
 
 import (
-	"encoding/json"
+	"context"
 	"fmt"
 )
 
@@ -28,11 +28,37 @@ type Info struct {
 	IP string `json:"ip"`
 }
 
+//func main() {
+//	str := "{\"ip\":\"8.8.8.8\",\"location\":{\"country\":\"US\",\"region\":\"California\",\"city\":\"Mountain View\",\"lat\":37.4223,\"lng\":-122.085,\"postalCode\":\"94043\",\"timezone\":\"-07:00\",\"geonameId\":5375480},\"domains\":[\"0--9.ru\",\"000.lyxhwy.xyz\",\"000180.top\",\"00049ok.com\",\"001998.com.he2.aqb.so\"],\"as\":{\"asn\":15169,\"name\":\"Google LLC\",\"route\":\"8.8.8.0\\/24\",\"domain\":\"https:\\/\\/about.google\\/intl\\/en\\/\",\"type\":\"Content\"},\"isp\":\"Google LLC\"}\n"
+//	var info Info
+//	if err := json.Unmarshal([]byte(str), &info); err !=nil {
+//		fmt.Println(err)
+//	}
+//	fmt.Println(info)
+//}
+
+func f(ctx context.Context) {
+	context.WithValue(ctx, "foo", 6)
+}
+
 func main() {
-	str := "{\"ip\":\"8.8.8.8\",\"location\":{\"country\":\"US\",\"region\":\"California\",\"city\":\"Mountain View\",\"lat\":37.4223,\"lng\":-122.085,\"postalCode\":\"94043\",\"timezone\":\"-07:00\",\"geonameId\":5375480},\"domains\":[\"0--9.ru\",\"000.lyxhwy.xyz\",\"000180.top\",\"00049ok.com\",\"001998.com.he2.aqb.so\"],\"as\":{\"asn\":15169,\"name\":\"Google LLC\",\"route\":\"8.8.8.0\\/24\",\"domain\":\"https:\\/\\/about.google\\/intl\\/en\\/\",\"type\":\"Content\"},\"isp\":\"Google LLC\"}\n"
-	var info Info
-	if err := json.Unmarshal([]byte(str), &info); err !=nil {
-		fmt.Println(err)
+	done:=make(chan int ,100)
+	defer close(done)
+	//开启线程
+	for i := 1; i <= cap(done); i++ {
+		go func(i int) {
+			fmt.Println("开启线程", i)
+			done <- i
+		}(i)
 	}
-	fmt.Println(info)
+	//使用channel阻塞的方式来出来同步
+	//此处不能使用range 会引起主线程deadline
+	//for i := 0; i< 100; i++ {
+	//	m := <-done
+	//	fmt.Println(m, "线程关闭")
+	//}
+	for v := range done {
+		fmt.Println(v, "线程关闭")
+	}
+	fmt.Println("执行完毕")
 }
