@@ -17,6 +17,7 @@ type funcDialOption struct {
 	f func(*dialOption)
 }
 
+
 func (fdo *funcDialOption) apply(do *dialOption) {
 	fdo.f(do)
 }
