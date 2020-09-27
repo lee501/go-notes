@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 //主线程中，channel阻塞：产生死锁fatal error : all goroutines are asleep -deadlock!
 func main()  {
@@ -14,10 +12,11 @@ func main()  {
 		close(ch)
 	}()
 
-		for i := range ch{
-			fmt.Println(i)
-		}
-
+	for i := range ch{
+		fmt.Println(i)
+	}
+	//close(ch)
+	//fmt.Println(<-ch)
 	//done := make(chan bool) // 无缓冲通道
 	//defer close(done)
 	//
