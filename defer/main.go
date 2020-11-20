@@ -34,13 +34,8 @@ func demo2() (i int){
 //defer 和panic： panic不是立即停止程序(os.Exit(0)),defer还是在panic前执行的.
 
 func main() {
-	defer func() {
-		fmt.Println("defer执行")
-	}()
-	fmt.Println("main函数")
-	panic("执行panic")
-	fmt.Println("panic后未执行")
-	//main函数
-	//defer执行
-	//panic: 执行panic
+	for {
+		fmt.Println(2)
+		defer fmt.Println(1)
+	}
 }
