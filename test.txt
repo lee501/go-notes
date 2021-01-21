@@ -1,0 +1,5 @@
+But what is the performance impact
+of using S3 across a network instead of using HDFS?
+This work done by Tatsuya Kawano (@tatsuya6502)
+aims to answer that question by examining the
+performance of different combinations of query type and storage type
