@@ -30,6 +30,6 @@ func SubString(s string) int {
 }
 
 func main() {
-	s := "pwwkew"
+	s := "pwwekew"
 	fmt.Println(SubString(s))
 }
