@@ -72,7 +72,7 @@ func quickSort(s []int, begin, end int) {
 }
 
 func main()  {
-	s := []int{5,4,6,3,7,8}
-	quickSort(s, 0, 5)
+	s := []int{4,1,6,3,5,7,2}
+	quickSort(s, 0, 6)
 	fmt.Println(s)
 }
