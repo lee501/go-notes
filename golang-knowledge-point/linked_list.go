@@ -3,8 +3,6 @@ package main
 
 import (
 	"fmt"
-	"net"
-	"net/http"
 )
 
 type Node struct {
@@ -42,7 +40,5 @@ func main() {
 		tail = node
 	}
 	showNode(tail)
-
-	http.Transport.Proxy()
 }
 
