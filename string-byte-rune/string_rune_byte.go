@@ -49,16 +49,17 @@ func main() {
 	fmt.Println(len([]rune(s)))
 
 	//通过遍历来查看string []byte []rune 值为代表该字节或字符的整数
-	for _, v := range []byte(s) {
-		//输出的是8位的字节值
-		fmt.Println(v)
-	}
-	for i, _ := range []rune(s) {
-		fmt.Println(string([]rune(s)[i]))
+	//for _, v := range []byte(s) {
+	//	//输出的是8位的字节值
+	//	fmt.Println(v)
+	//}
+	for _, v := range []rune(s) {
+		//fmt.Println(string([]rune(s)[i]))
+		fmt.Println(string(v))
 	}
 	for _, v := range s {
 		//输出效果跟[]rune的值一样
-		fmt.Println(v)
+		fmt.Println(string(v))
 	}
 	for i := 0; i < len(s); i++ {
 		//输出结果跟[]byte(s)
