@@ -1,4 +1,4 @@
-package main
+package issue
 
 import "fmt"
 
@@ -12,7 +12,7 @@ type P struct {
 	sex string
 }
 
-func main() {
+func issue() {
 	m := make(map[string]P)
 	//结构体不能直接赋值字段
 	//m["a"].name = "lee"
