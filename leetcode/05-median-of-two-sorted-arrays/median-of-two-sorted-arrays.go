@@ -25,18 +25,25 @@ func combine(left, right []int) []int {
 	res := make([]int, m + n)
 	//新数组长度为两个数组和， 交叉比较, 考虑边界问题
 	for k := 0; k < m + n; k ++ {
-		if i == m || (i < m && j < n && left[i] >= right[j]) {
+		if i < m && left[i] >= right[j] {
 			res[k] = right[j]
 			j++
-			continue
 		}
-		if j == n || (i < m && j < n && left[i] < right[j]) {
+		if j < n && left[i] < right[j]{
 			res[k] = left[i]
 			i++
 		}
-		fmt.Println(i, j)
-		fmt.Println(res)
+		if i == m {
+			res[k] = right[j]
+			j++
+		}
+		if j == n {
+			res[k] = right[i]
+			i++
+		}
+
 	}
+	fmt.Println(res)
 	return res
 }
 

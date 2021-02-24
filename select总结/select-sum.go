@@ -36,9 +36,9 @@ func selectBlock() {
 		fmt.Println("random 1")
 	case <-ch:
 		fmt.Println("random 2")
-	default:
-		//default防止panic
-		fmt.Println("exit")
+	//default:
+	//	//default防止panic
+	//	fmt.Println("exit")
 	}
 }
 

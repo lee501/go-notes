@@ -8,9 +8,21 @@ type Student struct {
 
 
 func main() {
-	m := map[string]*Student{"stu": &Student{Name: "lee"}}
-	m["stu"].Name = "anne"
-	fmt.Println(m["stu"].Name)
+	//m := map[string]*Student{"stu": &Student{Name: "lee"}}
+	//m["stu"].Name = "anne"
+	//fmt.Println(m["stu"].Name)
+	s := make([]int, 3, 4)
+	fmt.Printf("%p\n", s)
+	add(s)
+	fmt.Println(s)
+}
+
+func add(s []int)  {
+	s = append(s, 5)
+	s[1] = 1
+	fmt.Printf("%p\n", s)
+	s = append(s, 6)
+	s[1] = 1
 }
 
 //const (
