@@ -20,6 +20,11 @@ func main() {
 	}
 	//使用channel阻塞的方式来出来同步
 	//此处不能使用range 会引起主线程deadline
+	/*
+		for m := range done {
+			fmt.Println(m, "线程关闭")
+		}
+	*/
 	for i := 0; i< 100; i++ {
 		m := <-done
 		fmt.Println(m, "线程关闭")

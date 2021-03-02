@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	_ "net/http/pprof"
+	"time"
 )
 
 //import (
@@ -88,6 +88,12 @@ func createFBS(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/fb", createFBS)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	//http.HandleFunc("/fb", createFBS)
+	//log.Fatal(http.ListenAndServe(":8080", nil))
+	b := time.Now().Format(DayTimeLayout)
+	c := time.Now().Add(90 * time.Second).Format(DayTimeLayout)
+	fmt.Println()
+
 }
+
+const DayTimeLayout  = "2006-01-02 15:04:05"
