@@ -15,6 +15,8 @@ import (
 //	fmt.Println(*(*string)(unsafe.Pointer(&ss)))
 //}
 //
+
+
 //func change(s string){
 //	s = "456"
 //}
