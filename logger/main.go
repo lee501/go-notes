@@ -17,7 +17,7 @@ func main() {
 		LUTC                          // if Ldate or Ltime is set, use UTC rather than the local time zone
 		LstdFlags     = Ldate | Ltime // initial values for the standard logger
 	)
-	fmt.Println(Ldate, Ltime, Lmicroseconds, Llongfile, Lshortfile, LUTC, LstdFlags)
+	fmt.Println( Ldate, Ltime, Lmicroseconds, Llongfile, Lshortfile, LUTC, LstdFlags)
 	const (
 		a = 1
 		b
