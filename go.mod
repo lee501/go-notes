@@ -1,3 +1,13 @@
 module github.com/seveneleven/go-notes
 
 go 1.16
+
+require (
+	github.com/appleboy/gin-jwt/v2 v2.6.4
+	github.com/gin-gonic/gin v1.6.3
+	github.com/go-sql-driver/mysql v1.5.0
+	github.com/gorilla/websocket v1.4.2
+	github.com/patrickmn/go-cache v2.1.0+incompatible
+	go.uber.org/zap v1.16.0
+	golang.org/x/text v0.3.2
+)
