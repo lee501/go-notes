@@ -16,7 +16,6 @@ func (i Mint) PrintInt() {
 	fmt.Println(i)
 }
 
-
 /*
 	考点：接口的*T和T的方法集
 		*T类型的方法，只有*T可以接收

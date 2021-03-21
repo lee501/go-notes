@@ -15,7 +15,11 @@ func sum(i int) int {
 func main() {
    option := funcOption(sum)
    m := option(2)
-   fmt.Println(m) 
+   fmt.Println(m)
+   fd := SetInsecure()
+   di := new(dialOption)
+   fd.apply(di)
+   fmt.Println(di)
 }
 
 //定一个func
