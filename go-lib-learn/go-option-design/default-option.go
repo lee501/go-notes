@@ -43,6 +43,11 @@ func WithTimeout(d time.Duration) DialOption {
 	})
 }
 
+func main() {
+	d := WithInsecure()
+	d
+
+}
 /*
 	来体验一下这里的精妙设计：
 			1. 首先对于每一个字段，提供一个方法来设置其对应的值。由于每个方法返回的类型都是 DialOption ，

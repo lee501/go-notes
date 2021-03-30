@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package hello;
+
+service Hello {
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+    string Name = 1;
+}
+
+message UploadParams {
+    string setname = 1;
+    string name = 2;
+    int64 range_start = 3;
+    int64 range_end = 4;
+    bytes content = 5;
+}
+
+message UploadResult {
+    string data_file_path = 1;
+    string data_info_file_path =2;
+}
+
+message HelloReply {
+    string Message = 1;
+}
+
+option go_package = "./hello";

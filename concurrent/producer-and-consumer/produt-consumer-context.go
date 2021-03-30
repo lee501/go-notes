@@ -2,9 +2,6 @@ package main
 
 import "context"
 
-func main() {
-	
-}
 
 func Process(ctx context.Context) {
 	//控制product线程

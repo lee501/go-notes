@@ -32,24 +32,24 @@ func (c *Consumer) Execute() {
 	fmt.Printf("consumer %d run task %d\n", c.num, <-c.buffer)
 }
 
-func main() {
-	m = 3
-	n = 2
-	taskChannel = make(chan int, m)
-	var pause chan struct{}
-	//根据m生成producer
-	for i:=1; i<=m; i++ {
-		go producer(taskChannel, i)
-	}
-
-	//缓存容量
-	c := m/n
-	//生成n个消费者
-	for i:=1; i<=n; i++ {
-		go consumer(taskChannel, i, c)
-	}
-	pause <- struct{}{}
-}
+//func main() {
+//	m = 3
+//	n = 2
+//	taskChannel = make(chan int, m)
+//	var pause chan struct{}
+//	//根据m生成producer
+//	for i:=1; i<=m; i++ {
+//		go producer(taskChannel, i)
+//	}
+//
+//	//缓存容量
+//	c := m/n
+//	//生成n个消费者
+//	for i:=1; i<=n; i++ {
+//		go consumer(taskChannel, i, c)
+//	}
+//	pause <- struct{}{}
+//}
 
 func producer(taskChan chan int, id int) {
 	for {
