@@ -27,4 +27,4 @@ message HelloReply {
     string Message = 1;
 }
 
-option go_package = "./hello";
+option go_package = "./hello;hello";
