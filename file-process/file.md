@@ -19,3 +19,10 @@
         content []byte					//文件内容,类型[]byte
         tmpfile string					//临时文件
     }
+    
+    
+    
+```
+    使用os Openfile 创建一个文件并追加内容
+    参数os.O_CREATE|os.O_RDWR|os.O_APPEND, os.ModeAppend|os.ModePerm
+```

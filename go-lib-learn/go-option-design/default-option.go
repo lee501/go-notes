@@ -45,7 +45,7 @@ func WithTimeout(d time.Duration) DialOption {
 
 func main() {
 	d := WithInsecure()
-	d
+
 
 }
 /*
