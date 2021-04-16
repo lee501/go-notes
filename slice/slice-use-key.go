@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type Kind uint
-
+//slice 通过枚举和key， 进行设置
 const (
 	Invalid Kind = iota
 	Bool
@@ -34,35 +34,35 @@ const (
 	UnsafePointer
 )
 
-//var kindNames = []string{
-//	Invalid:       "invalid",
-//	Bool:          "bool",
-//	Int:           "int",
-//	Int8:          "int8",
-//	Int16:         "int16",
-//	Int32:         "int32",
-//	Int64:         "int64",
-//	Uint:          "uint",
-//	Uint8:         "uint8",
-//	Uint16:        "uint16",
-//	Uint32:        "uint32",
-//	Uint64:        "uint64",
-//	Uintptr:       "uintptr",
-//	Float32:       "float32",
-//	Float64:       "float64",
-//	Complex64:     "complex64",
-//	Complex128:    "complex128",
-//	Array:         "array",
-//	Chan:          "chan",
-//	Func:          "func",
-//	Interface:     "interface",
-//	Map:           "map",
-//	Ptr:           "ptr",
-//	Slice:         "slice",
-//	String:        "string",
-//	Struct:        "struct",
-//	UnsafePointer: "unsafe.Pointer",
-//}
+var kindNames = []string{
+	Invalid:       "invalid",
+	Bool:          "bool",
+	Int:           "int",
+	Int8:          "int8",
+	Int16:         "int16",
+	Int32:         "int32",
+	Int64:         "int64",
+	Uint:          "uint",
+	Uint8:         "uint8",
+	Uint16:        "uint16",
+	Uint32:        "uint32",
+	Uint64:        "uint64",
+	Uintptr:       "uintptr",
+	Float32:       "float32",
+	Float64:       "float64",
+	Complex64:     "complex64",
+	Complex128:    "complex128",
+	Array:         "array",
+	Chan:          "chan",
+	Func:          "func",
+	Interface:     "interface",
+	Map:           "map",
+	Ptr:           "ptr",
+	Slice:         "slice",
+	String:        "string",
+	Struct:        "struct",
+	UnsafePointer: "unsafe.Pointer",
+}
 
 
 var kindName = []string{1: "lee", 2: "anne"}
@@ -77,6 +77,7 @@ func main() {
 	fmt.Println(s)
 	fmt.Println(len(mslice))
 	fmt.Println(mslice[0], mslice[1])
+	fmt.Println(kindNames[0])
 }
 
 func change(s []int)  {

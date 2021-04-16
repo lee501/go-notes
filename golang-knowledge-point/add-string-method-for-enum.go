@@ -30,6 +30,10 @@ func (s State) String() string {
 
 func main() {
 	fmt.Println(Running)
+	r := test()
+	if r == KB {
+		fmt.Println("kb")
+	}
 }
 
 //kb mb gb定义
@@ -46,3 +50,6 @@ const (
 	ZB                                   // 1 << (10*7)
 	YB                                   // 1 << (10*8)
 )
+func test() ByteSize {
+	return KB
+}
