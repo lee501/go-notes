@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Interface interface {
 	Len() int
 	Less(i, j int) bool
@@ -61,4 +63,19 @@ func (b *base) Name() string {
 }
 type Base interface {
 	Name() string
+}
+
+func main() {
+	var dict map[string]map[string]int64
+	dict = make(map[string]map[string]int64)
+	addItem(dict)
+	fmt.Println(dict["table"])
+}
+
+func addItem(dc map[string]map[string]int64) {
+	if dc == nil {
+		fmt.Println("no gc")
+	}
+	fmt.Println("add item")
+	dc["table"] = map[string]int64{"a": 1}
 }
