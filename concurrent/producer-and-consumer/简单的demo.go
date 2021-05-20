@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+)
 
 func Producer(t int, out chan <- int) {
 	for i:=0; ; i++ {
@@ -13,3 +16,4 @@ func Consumer(in <-chan int) {
 		fmt.Println(v)
 	}
 }
+

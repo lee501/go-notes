@@ -1,4 +1,4 @@
-module github.com/seveneleven/go-notes
+module github.com/sevenelevenlee/go-notes
 
 go 1.16
 

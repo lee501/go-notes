@@ -65,12 +65,12 @@ type Base interface {
 	Name() string
 }
 
-func main() {
-	var dict map[string]map[string]int64
-	dict = make(map[string]map[string]int64)
-	addItem(dict)
-	fmt.Println(dict["table"])
-}
+//func main() {
+//	var dict map[string]map[string]int64
+//	dict = make(map[string]map[string]int64)
+//	addItem(dict)
+//	fmt.Println(dict["table"])
+//}
 
 func addItem(dc map[string]map[string]int64) {
 	if dc == nil {

@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 const STACK_INIT_SIZE = 100
 
 type Stack struct {
@@ -40,12 +38,12 @@ func (s *Stack) pop() {
 	pre.Next = nil
 	s.len -= 1
 }
-func main() {
-	s := InitStack()
-	s.push(1)
-	s.push(2)
-	fmt.Println(s.len)
-	s.pop()
-	s.pop()
-	fmt.Println(s.len)
-}
+//func main() {
+//	s := InitStack()
+//	s.push(1)
+//	s.push(2)
+//	fmt.Println(s.len)
+//	s.pop()
+//	s.pop()
+//	fmt.Println(s.len)
+//}
