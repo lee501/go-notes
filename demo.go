@@ -55,12 +55,12 @@ type Test struct {
 }
 
 type base struct {
-
 }
 
 func (b *base) Name() string {
 	return "base"
 }
+
 type Base interface {
 	Name() string
 }

@@ -27,7 +27,7 @@ var (
 	wsConnAll map[int64]*wsConnection
 	//upGrader
 	upGrader = websocket.Upgrader{
-		ReadBufferSize: 1024,
+		ReadBufferSize:  1024,
 		WriteBufferSize: 1024,
 		//check cors跨域请求, true允许所有的cors请求
 		CheckOrigin: func(r *http.Request) bool {
@@ -35,22 +35,24 @@ var (
 		},
 	}
 )
+
 //客户端读写消息
 type wsMessage struct {
 	//websocket textMessage类型
 	messageType int
-	data 		[]byte
+	data        []byte
 }
+
 //客户端连接
 type wsConnection struct {
-	wsSocket 	*websocket.Conn  //底层websocket
-	inChan 		chan *wsMessage	 //读队列
-	outChan 	chan *wsMessage  //写队列
+	wsSocket *websocket.Conn //底层websocket
+	inChan   chan *wsMessage //读队列
+	outChan  chan *wsMessage //写队列
 
-	mutex     	sync.Mutex 		 //避免重复关闭管道,加锁处理
-	isClosed  	bool
-	closeChan 	chan byte 		 //关闭通知
-	id        	int64
+	mutex     sync.Mutex //避免重复关闭管道,加锁处理
+	isClosed  bool
+	closeChan chan byte //关闭通知
+	id        int64
 }
 
 //处理客户端request,升级为websocket
@@ -64,12 +66,12 @@ func wsHandler(resp http.ResponseWriter, req *http.Request) {
 	maxConnId++
 	//todo 通过wsConnAll控制连接数
 	wsConn := &wsConnection{
-		wsSocket: wsSocket,
-		inChan: make(chan *wsMessage, 1000),
-		outChan: make(chan *wsMessage, 1000),
+		wsSocket:  wsSocket,
+		inChan:    make(chan *wsMessage, 1000),
+		outChan:   make(chan *wsMessage, 1000),
 		closeChan: make(chan byte),
-		isClosed: false,
-		id: maxConnId,
+		isClosed:  false,
+		id:        maxConnId,
 	}
 	wsConnAll[maxConnId] = wsConn
 	log.Println("当前连接数量", len(wsConnAll))
@@ -81,6 +83,7 @@ func wsHandler(resp http.ResponseWriter, req *http.Request) {
 	// 写协程
 	go wsConn.wsWriteLoop()
 }
+
 //处理队列消息,从inChan读出消息放入到outChan
 func (wsConn *wsConnection) processLoop() {
 	for {
@@ -97,12 +100,13 @@ func (wsConn *wsConnection) processLoop() {
 		}
 	}
 }
+
 //接受客户端的消息
 func (wsConn *wsConnection) wsReadLoop() {
 	//设置消息最大长度和deadline
 	wsConn.wsSocket.SetReadLimit(maxMessageSize)
 	wsConn.wsSocket.SetReadDeadline(time.Now().Add(pongWait))
-	for  {
+	for {
 		msgType, data, err := wsConn.wsSocket.ReadMessage()
 		if err != nil {
 			//websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure)
@@ -113,11 +117,11 @@ func (wsConn *wsConnection) wsReadLoop() {
 		//处理消息放入到inChan
 		msg := &wsMessage{
 			messageType: msgType,
-			data: data,
+			data:        data,
 		}
 		select {
 		case wsConn.inChan <- msg:
-		case <- wsConn.closeChan:
+		case <-wsConn.closeChan:
 			return
 		}
 	}
@@ -130,13 +134,13 @@ func (wsConn *wsConnection) wsWriteLoop() {
 	}()
 	for {
 		select {
-		case msg := <- wsConn.outChan:
+		case msg := <-wsConn.outChan:
 			if err := wsConn.wsSocket.WriteMessage(msg.messageType, msg.data); err != nil {
 				log.Println("发送消息到客户端failed", err.Error())
 				wsConn.close()
 				return
 			}
-		case <- wsConn.closeChan:
+		case <-wsConn.closeChan:
 			return
 		case <-ticker.C:
 			wsConn.wsSocket.SetWriteDeadline(time.Now().Add(writeWait))
@@ -144,24 +148,25 @@ func (wsConn *wsConnection) wsWriteLoop() {
 				return
 			}
 
-			
 		}
 	}
 }
+
 //从inChan读出消息
 func (wsConn *wsConnection) wsRead() (*wsMessage, error) {
 	select {
 	case msg := <-wsConn.inChan:
 		return msg, nil
-	case <- wsConn.closeChan:
+	case <-wsConn.closeChan:
 		return nil, errors.New("connect closed")
 	}
 }
+
 //写入outChan
 func (wsConn *wsConnection) wsWrite(msg *wsMessage) error {
 	select {
 	case wsConn.outChan <- msg:
-	case <- wsConn.closeChan:
+	case <-wsConn.closeChan:
 		return errors.New("connect had closed")
 	}
 	return nil
@@ -182,7 +187,7 @@ func (wsConn *wsConnection) close() {
 	}
 }
 
-func StartWebSocket(port string){
+func StartWebSocket(port string) {
 	wsConnAll = make(map[int64]*wsConnection)
 	http.HandleFunc("/ws", wsHandler)
 	http.ListenAndServe(port, nil)
