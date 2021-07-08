@@ -1,6 +1,9 @@
 package main
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 //grpc设置默认参数代码示例
 type dialOption struct {
@@ -16,7 +19,6 @@ type DialOption interface {
 type funcDialOption struct {
 	f func(*dialOption)
 }
-
 
 func (fdo *funcDialOption) apply(do *dialOption) {
 	fdo.f(do)
@@ -36,6 +38,7 @@ func WithInsecure() DialOption {
 		option.insecure = true
 	})
 }
+
 //设置超时时间
 func WithTimeout(d time.Duration) DialOption {
 	return newFunDialOption(func(option *dialOption) {
@@ -43,11 +46,17 @@ func WithTimeout(d time.Duration) DialOption {
 	})
 }
 
-func main() {
-	d := WithInsecure()
-
-
+func (d *dialOption) test(dos ...DialOption) {
+	for _, item := range dos {
+		item.apply(d)
+	}
 }
+func main() {
+	d := &dialOption{}
+	d.test(WithInsecure(), WithTimeout(10*time.Second))
+	fmt.Println(d)
+}
+
 /*
 	来体验一下这里的精妙设计：
 			1. 首先对于每一个字段，提供一个方法来设置其对应的值。由于每个方法返回的类型都是 DialOption ，

@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type Interface interface {
 	Len() int
@@ -78,4 +81,13 @@ func addItem(dc map[string]map[string]int64) {
 	}
 	fmt.Println("add item")
 	dc["table"] = map[string]int64{"a": 1}
+}
+
+func main() {
+	str := "12"
+	for _, item := range strings.Split(str, ",") {
+		fmt.Println(item)
+	}
+	fmt.Println(strings.Split(str, ",")[0])
+	fmt.Println(32 << 23)
 }

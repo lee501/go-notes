@@ -46,6 +46,7 @@ func Ping(ip string) bool {
 	buffer.Reset()
 	binary.Write(&buffer, binary.BigEndian, icmp)
 	//发送请求
+	start := time.Now()
 	n, err := conn.Write(buffer.Bytes())
 	if err != nil {
 		return false
@@ -54,6 +55,7 @@ func Ping(ip string) bool {
 	buf := make([]byte, 1024)
 	//读取结果
 	n, err = conn.Read(buf)
+	fmt.Println("消耗时间：", time.Now().Sub(start))
 	if err != nil {
 		return false
 	}

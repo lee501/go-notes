@@ -1,13 +1,14 @@
 package main
 
 import (
-	"go-notes/concurrent/pubsub"
 	"fmt"
+	"github.com/sevenelevenlee/go-notes/concurrent/pubsub"
 	"strings"
 	"time"
 )
+
 func main() {
-	p := pubsub.NewPublisher(10, 100 * time.Millisecond)
+	p := pubsub.NewPublisher(100*time.Millisecond, 10)
 	defer p.Close()
 
 	all := p.Subscribe()

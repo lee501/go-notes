@@ -19,7 +19,7 @@ func upload(w http.ResponseWriter, request *http.Request) {
 	n := strings.LastIndex(fileHeader.Filename, ".")
 	suffix := fileHeader.Filename[n:]
 	buffer, _ := ioutil.ReadAll(file)
-	ioutil.WriteFile("/Users/lee/Workspace/" + filename + suffix, buffer, 0777)
+	ioutil.WriteFile("/Users/lee/Workspace/"+filename+suffix, buffer, 0777)
 	t, _ := template.ParseFiles("view/success.html")
 	t.Execute(w, filename)
 }
@@ -30,7 +30,7 @@ func main() {
 	http.HandleFunc("/upload", upload)
 	fmt.Println("服务启动")
 	err := server.ListenAndServe()
-	if err != nil{
+	if err != nil {
 		fmt.Println(err)
 	}
 }

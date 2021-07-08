@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/seveneleven/go-notes/grpc-example/hello"
+	"github.com/sevenelevenlee/go-notes/grpc-example/hello"
 	"google.golang.org/grpc"
 	"log"
 	"net"
@@ -14,12 +14,11 @@ const (
 )
 
 type Server struct {
-
 }
 
-func (s *Server)SayHello(ctx context.Context,in *hello.HelloRequest)(*hello.HelloReply,error){
+func (s *Server) SayHello(ctx context.Context, in *hello.HelloRequest) (*hello.HelloReply, error) {
 	return &hello.HelloReply{
-		Message:"hello," + in.Name,
+		Message: "hello," + in.Name,
 	}, nil
 }
 func main() {
