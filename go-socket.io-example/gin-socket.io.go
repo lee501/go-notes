@@ -5,7 +5,6 @@ import (
 	socketio "github.com/googollee/go-socket.io"
 	"log"
 	"net/http"
-	"os/signal"
 )
 
 func CorsMiddleware(allowUrl string) gin.HandlerFunc {
