@@ -1,15 +1,19 @@
 package main
 
+import "fmt"
+
 var res [][]int
+
 func main() {
 	res = [][]int{}
 	head := &TreeNode{}
 	levelTree(head, 0)
+	fmt.Println(res)
 }
 
 type TreeNode struct {
-	Val   int
-	Left  *TreeNode
+	Val    int
+	Left   *TreeNode
 	Rright *TreeNode
 }
 
@@ -20,7 +24,7 @@ type TreeNode struct {
     /  \
    15   7
 */
-func levelTree(head * TreeNode, level int)  {
+func levelTree(head *TreeNode, level int) {
 	if head != nil {
 		//当前层初始化
 		if len(res) == level {

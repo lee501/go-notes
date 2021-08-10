@@ -22,6 +22,7 @@ func param(w http.ResponseWriter, r *http.Request) {
 	for _, v := range header["Accept-Encoding"] {
 		fmt.Println(v)
 	}
+	fmt.Println("----", r.FormValue("test"))
 	//获取请求参数, 需要先解析
 	r.ParseForm()
 	fmt.Println(r.Form)
