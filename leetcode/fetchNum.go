@@ -3,11 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	m := make(map[string]int)
-	m["a"] = 1
-	a := m["a"]
-	fmt.Println(a)
-	nums := []int{1,1,2,3,4,2,3,4,5}
+	nums := []int{1, 1, 2, 3, 4, 2, 3, 4, 5}
 	fmt.Println(fetchNum(nums))
 }
 

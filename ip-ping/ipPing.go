@@ -88,6 +88,6 @@ func CheckSum(data []byte) uint16 {
 }
 
 func main() {
-	ip := "180.76.76.76"
+	ip := "182.61.200.7"
 	fmt.Println(Ping(ip))
 }
