@@ -1,7 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"net"
+	"os"
 	"strings"
 )
 
@@ -90,4 +93,49 @@ func main() {
 	}
 	fmt.Println(strings.Split(str, ",")[0])
 	fmt.Println(32 << 23)
+	s_token := fmt.Sprintf("POST / HTTP/1.0\n\rzs-token: %v", "2rVu6yP6WGZWwF2G1_eLV_ZlIcXtGeNlyx0DNthIXPs")
+	fmt.Println(len(s_token))
+	s := make([]int, 3, 4)
+	a := append(s, 1)
+	b := append(s, 2)
+	fmt.Println(s, a, b)
+
+	ns, err := net.LookupHost("www.baidu.com")
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Err: s%", err.Error())
+	}
+
+	for _, n := range ns {
+		fmt.Fprint(os.Stdout, "--s%", n, "\n")
+	}
+
+	data := `{
+		"name": "baidu",
+		"url": "http://www.baidu.com",
+		"logo": "",
+		"related_url": ["www.google.com", "www.sina.com"],
+		"user_info": [
+			{
+				"user_id": 100,
+				"user_name": "demo"
+			}
+		],
+		"group_info": null
+	}`
+	host := new(Host)
+	json.Unmarshal([]byte(data), host)
+	fmt.Println(host)
+}
+
+type Host struct {
+	Name       string     `json:"name"`
+	Url        string     `json:"url"`
+	Logo       string     `json:"logo"`
+	RelatedUrl []string   `json:"related_url"`
+	UserInfo   []UserInfo `json:"user_info"`
+}
+
+type UserInfo struct {
+	UserId   int64  `json:"user_id"`
+	UserName string `json:"user_name"`
 }

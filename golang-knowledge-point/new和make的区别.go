@@ -12,23 +12,32 @@ make(T): 只用于内建的引用类型slice、map、channal
 */
 
 // 代码示例
-package main 
+package main
 
 import "fmt"
 
 func main() {
-  // p == nil; with len and cap 0
-  p := new([]int)
-  fmt.Println(p)
+	// p == nil; with len and cap 0
+	p := new([]int)
+	fmt.Println(p)
 
-  //  v is initialed with len 10, cap 50
-  v := make([]int, 10, 20)
-  fmt.Println(v)
+	//  v is initialed with len 10, cap 50
+	v := make([]int, 10, 20)
+	fmt.Println(v)
 
-  /*********Output****************
-        &[]
-        [0 0 0 0 0 0 0 0 0 0]
-  *********************************/
-  (*p)[0] = 1  //会报错panic: runtime error: index out of range, because p is a nil pointer, with len and cap 0
-  v[1] = 18
+	/*********Output****************
+	      &[]
+	      [0 0 0 0 0 0 0 0 0 0]
+	*********************************/
+	//(*p)[0] = 1 //会报错panic: runtime error: index out of range, because p is a nil pointer, with len and cap 0
+	v[1] = 18
+
+	i := new(string)
+	*i = "123"
+	fmt.Println(*i)
+
+	var m *int
+	n := 1
+	m = &n
+	fmt.Println(*m)
 }
