@@ -5,7 +5,7 @@ package leetcode
 */
 
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 
@@ -24,11 +24,20 @@ func rotateRight(head *ListNode, k int) *ListNode {
 	//连成环
 	tail.Next = head
 
-	for i := 0; i < length - k%length; i++ {
+	for i := 0; i < length-k%length; i++ {
 		tail = tail.Next
 		head = head.Next
 	}
 	//打断环
 	tail.Next = nil
 	return head
+}
+
+func reverseList(head *ListNode) *ListNode {
+	cur := head
+	var pre *ListNode = nil
+	for cur != nil {
+		pre, cur, cur.Next = cur, cur.Next, pre
+	}
+	return pre
 }
