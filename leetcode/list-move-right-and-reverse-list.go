@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 /*
 	旋转链表， 将每个节点向右移k位置

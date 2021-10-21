@@ -12,12 +12,12 @@
 * linux提供7种命名空间
 ```text
     CLONE_NEWCGROUP
-    _NEWIPC
-    _NEWNET
-    _NEWPID
-    _NEWNS
-    _NEWUSER
-    _NEWUTS
+    CLONE_NEWIPC
+    CLONE_NEWNET
+    CLONE_NEWPID
+    CLONE_NEWNS
+    CLONE_NEWUSER
+    CLONE_NEWUTS
 ```
 * 网络
 ```text

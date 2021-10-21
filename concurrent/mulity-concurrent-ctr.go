@@ -17,7 +17,7 @@ func main() {
 		}()
 	}
 
-	// 等待N个后台线程完成, 此处不能使用range来处理
+	// 等待N个后台线程完成, 此处不能使用range来处理, fatal error: all goroutines are asleep - deadlock!
 	for i := 0; i < cap(done); i++ {
 		<-done
 	}
