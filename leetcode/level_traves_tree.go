@@ -12,9 +12,9 @@ func main() {
 }
 
 type TreeNode struct {
-	Val    int
-	Left   *TreeNode
-	Rright *TreeNode
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
 }
 
 /*
@@ -32,6 +32,6 @@ func levelTree(head *TreeNode, level int) {
 		}
 		res[level] = append(res[level], head.Val)
 		levelTree(head.Left, level+1)
-		levelTree(head.Rright, level+1)
+		levelTree(head.Right, level+1)
 	}
 }
