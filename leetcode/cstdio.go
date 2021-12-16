@@ -9,17 +9,18 @@ func main() {
 	//fmt.Scan(&n)
 	//n, step = getStep(n, step)
 	//fmt.Println(n, step)
-	var a,b int
-	fmt.Scanf("%d%d", &a, &b)
+	var a, b int
+	fmt.Scanf("%d-%d", &a, &b)
 	fmt.Println(a, b)
+	fmt.Println(getStep(a, b))
 }
 
 func getStep(n, step int) (int, int) {
-	for n != 1{
-		if n % 2 == 0 {
+	for n != 1 {
+		if n%2 == 0 {
 			n = n / 2
 		} else {
-			n = (3 * n + 1) / 2
+			n = (3*n + 1) / 2
 		}
 		step++
 	}

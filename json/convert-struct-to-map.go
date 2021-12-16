@@ -8,16 +8,19 @@ import (
 
 type UserInfo struct {
 	Name string `json:"name"`
-	Age  int	`json:"age"`
+	Age  int    `json:"age"`
 }
 
 func main() {
-	var data []byte
-	u := UserInfo{Name: "lee", Age: 35}
-	data, _ = json.Marshal(u)
-	fmt.Printf("%#v\n", string(data))
+	//var data []bytes
+	u := UserInfo{}
+	//data, _ = json.Marshal(u)
+	//fmt.Printf("%#v\n", string(data))
+
+	d := []byte(`{"name":"lee","age":35}`)
 	var m map[string]interface{}
-	json.Unmarshal(data, &m)
+	json.Unmarshal(d, &u)
+	fmt.Println(u)
 	fmt.Println(reflect.TypeOf(m["age"]))
 	//b, _ := json.Marshal(u)
 	//fmt.Println(string(b))
@@ -37,7 +40,7 @@ func main() {
 	//ToMap(u, "name")
 }
 
-func ToMap(in interface{}, tagName string) (map[string]interface{}, error){
+func ToMap(in interface{}, tagName string) (map[string]interface{}, error) {
 	out := make(map[string]interface{})
 
 	v := reflect.ValueOf(in)
@@ -50,7 +53,7 @@ func ToMap(in interface{}, tagName string) (map[string]interface{}, error){
 
 	t := v.Type()
 	//m := reflect.TypeOf(in)
-	for i:=0; i< v.NumField(); i++ {
+	for i := 0; i < v.NumField(); i++ {
 		fi := t.Field(i)
 		fmt.Println(fi.Tag.Get("Name"))
 		if tagValue := fi.Tag.Get(tagName); tagValue != "" {
