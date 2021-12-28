@@ -23,4 +23,9 @@ func main() {
 	passPortCardRe := regexp.MustCompile(`1[45][0-9]{7}|([P|p|S|s]\d{7})|([S|s|G|g]\d{8})|([Gg|Tt|Ss|Ll|Qq|Dd|Aa|Ff]\d{8})|([H|h|M|m]\d{8，10})`)
 	passPortCard := "G12345678"
 	fmt.Println(passPortCardRe.FindString(passPortCard))
+
+	a := []int{1,2,3,4}
+	b := a
+	fmt.Println(a, b)
+
 }
