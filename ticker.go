@@ -20,7 +20,7 @@ func main()  {
 	}
 	ticker.Stop()
 	fmt.Println("ticker finish")
-	
+
 	timer := time.NewTimer(2 * time.Second)
 	defer timer.Stop()
 
