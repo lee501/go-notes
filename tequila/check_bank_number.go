@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"regexp"
 	"strconv"
 	"strings"
 )
@@ -54,4 +55,12 @@ func main() {
 	s := "1234567812345678"
 	fmt.Println(validateLuhn(s))
 	fmt.Println(luhn(s))
+
+	id := "139549203907235328"
+	reg := "[1-9]{2}\\d{4}(19\\d{2}|20[0-2][0-9])((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]"
+	re := regexp.MustCompile(reg)
+	r := re.FindStringSubmatch(id)
+	if len(r) > 0 {
+		fmt.Println(len(r), r[0])
+	}
 }
