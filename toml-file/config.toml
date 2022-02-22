@@ -1,0 +1,37 @@
+version = "v2"
+#control-vector = [0, 1, 1,  0, 0, 0, 1, 1, 1, 1, 1,   1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   1, 1, 1, 1, 1, 1, 1, 1, 0, 1,   1, 1, 1, 1, 1, 0, 0, 1, 1, 1,   1, 0, 0]
+control-vector = [1, 1, 1,  1, 1, 1, 1, 1, 1, 1, 1,   1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   1, 1, 1, 1, 1, 1, 1, 1, 1, 1,   1, 1, 1]
+
+#go validators
+[[go-validator]]
+    validator_name = "MD5 Validator for S4E Attrs"
+    state = 1
+    source_name = "x-s3-s4e"
+    source_subname = "md5-all"
+    data_source_name = "x-s3-s4e"
+    data_source_subnames = ["ua", "platform", "language", "screen-resolution", "timezone", "referrer", "canvas-fp", "audio-fp", "webrtc"]
+    [[go-validator.validation_methods]]
+    method = "CONCAT"
+    [[go-validator.validation_methods]]
+    # matching JS function: func71
+    method = "MD5"
+    saltSuffix = "c"
+
+[[go-validator]]
+    validator_name = "MD5 Validator for UPC"
+    state = 1
+    source_name = "x-s3-s4e"
+    source_subname = "md5-3"
+    data_source_name = "x-s3-s4e"
+    data_source_subnames = ["ua", "platform", "canvas-fp"]
+    [[go-validator.validation_methods]]
+        # matching JS functions: func33, func37, func41
+        method = "MD5"
+        saltPrefix = "1"
+        saltSuffix = "0"
+    [[go-validator.validation_methods]]
+        method = "CONCAT"
+    [[go-validator.validation_methods]]
+        # matching JS function: func46, func50
+        method = "MD5"
+
