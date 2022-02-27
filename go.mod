@@ -3,6 +3,7 @@ module github.com/sevenelevenlee/go-notes
 go 1.16
 
 require (
+	github.com/VictoriaMetrics/fastcache v1.9.0 // indirect
 	github.com/appleboy/gin-jwt/v2 v2.6.4
 	github.com/basgys/goxml2json v1.1.0
 	github.com/bitly/go-simplejson v0.5.0 // indirect
