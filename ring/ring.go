@@ -15,12 +15,12 @@ func testRing() {
 	r.Prev().Value = 3
 	r.Prev().Value = 4
 
-    //遍历循环链表
-    r.Do(func (i interface{}){
-    	fmt.Println(i)
+	//遍历循环链表
+	r.Do(func(i interface{}) {
+		fmt.Println(i)
 	})
 	//移动
-	r0 := r.Move(1).Value
+	_ = r.Move(1).Value
 
 	//添加
 	r1 := ring.New(1)
