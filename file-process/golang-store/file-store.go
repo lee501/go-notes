@@ -29,7 +29,7 @@ func PlainStore() {
 }
 
 //csv文件是一种以逗号分割单元数据的文件, 需要通过os创建一个文件句柄，然后调用相关的csv函数读写数据：
-type Post struct {
+type Posts struct {
 	Id      int
 	Content string
 	Author  string
@@ -42,11 +42,11 @@ func CsvStore() {
 	}
 	defer csvFile.Close()
 
-	allPosts := []Post{
-		Post{Id: 1, Content: "Hello World!", Author: "Sau Sheong"},
-		Post{Id: 2, Content: "Bonjour Monde!", Author: "Pierre"},
-		Post{Id: 3, Content: "Hola Mundo!", Author: "Pedro"},
-		Post{Id: 4, Content: "Greetings Earthlings!", Author: "Sau Sheong"},
+	allPosts := []Posts{
+		Posts{Id: 1, Content: "Hello World!", Author: "Sau Sheong"},
+		Posts{Id: 2, Content: "Bonjour Monde!", Author: "Pierre"},
+		Posts{Id: 3, Content: "Hola Mundo!", Author: "Pedro"},
+		Posts{Id: 4, Content: "Greetings Earthlings!", Author: "Sau Sheong"},
 	}
 
 	writer := csv.NewWriter(csvFile)
@@ -77,7 +77,7 @@ func CsvStore() {
 	var posts []Post
 	for _, item := range record {
 		id, _ := strconv.ParseInt(item[0], 0, 0)
-		post := Post{Id: int(id), Content:item[1], Author: item[2]}
+		post := Post{Id: int(id), Content: item[1], Author: item[2]}
 		posts = append(posts, post)
 	}
 	fmt.Println(posts[0].Id)
@@ -92,19 +92,19 @@ func GobStore(data interface{}, filename string) {
 	encoder := gob.NewEncoder(buffer)
 	//然后对数据进行二进制编码
 	err := encoder.Encode(data)
-	if err != nil{
+	if err != nil {
 		panic(err)
 	}
 	err = ioutil.WriteFile(filename, buffer.Bytes(), 0600)
-	if err != nil{
+	if err != nil {
 		panic(err)
 	}
 }
 
-func load(data interface{}, filename string){
+func load(data interface{}, filename string) {
 	//先读取文件的内容
 	raw, err := ioutil.ReadFile(filename)
-	if err != nil{
+	if err != nil {
 		panic(err)
 	}
 	//然后把这个二进制内容转换成一个buffer对象
@@ -112,7 +112,7 @@ func load(data interface{}, filename string){
 	//NewDecoder. 最后再解码
 	dec := gob.NewDecoder(buffer)
 	err = dec.Decode(data)
-	if err != nil{
+	if err != nil {
 		panic(err)
 	}
 }

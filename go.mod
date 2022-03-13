@@ -12,6 +12,7 @@ require (
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/googollee/go-socket.io v1.6.0
 	github.com/gorilla/websocket v1.4.2
+	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/petar-dambovaliev/aho-corasick v0.0.0-20211021192214-5ab2d9280aa9
 	github.com/robfig/cron/v3 v3.0.0

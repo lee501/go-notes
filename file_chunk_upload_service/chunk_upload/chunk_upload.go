@@ -29,16 +29,16 @@ func ChunkFile(w http.ResponseWriter, r *http.Request) {
 }
 
 func mergeChunk(r *http.Request) (int, error) {
-	size, _ := strconv.Atoi(r.FormValue("fileSize"))
-	total, _ := strconv.Atoi(r.FormValue("chunkSum"))
+	_, _ = strconv.Atoi(r.FormValue("fileSize"))
+	_, _ = strconv.Atoi(r.FormValue("chunkSum"))
 	//上传文件到缓存路径下
-	chunkUpload(r)
+	return chunkUpload(r)
 }
 
 func chunkUpload(r *http.Request) (int, error) {
 	//获取分片号和文件part
 	chunkIndex := r.FormValue("chunkindex")
-	file, fileHeader, err := r.FormFile("file")
+	_, fileHeader, err := r.FormFile("file")
 	if err != nil {
 		return 0, errors.New("fetch form file failed")
 	}
@@ -50,7 +50,8 @@ func chunkUpload(r *http.Request) (int, error) {
 		return 0, err
 	}
 	//获取当前文件大小
-	os.Stat(filePath)
+	f, err := os.Stat(filePath)
+	return int(f.Size()), err
 }
 
 //创建文件

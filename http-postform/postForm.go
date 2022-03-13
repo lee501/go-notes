@@ -10,14 +10,14 @@ func PostWithForm() {
 	payload := make(url.Values)
 	payload.Add("name", "lee")
 	payload.Add("password", "")
-	req, err := http.NewRequest(
-			http.MethodPost,
-			"",
-			strings.NewReader(payload.Encode()),
-		)
+	req, _ := http.NewRequest(
+		http.MethodPost,
+		"",
+		strings.NewReader(payload.Encode()),
+	)
 	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 
-	r, err := http.DefaultClient.Do(req)
+	_, _ = http.DefaultClient.Do(req)
 }
 
 //use http postform
@@ -25,5 +25,5 @@ func postForm() {
 	payload := make(url.Values)
 	payload.Add("name", "poloxue")
 	payload.Add("password", "123456")
-	r, err := http.PostForm("http://httpbin.org/post", payload)
+	_, _ = http.PostForm("http://httpbin.org/post", payload)
 }
