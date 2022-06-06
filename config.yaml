@@ -1,0 +1,6 @@
+database:
+  host: 127.0.0.1
+  user: root
+  dbname: test
+  pwd: 123456
+  id: 1
