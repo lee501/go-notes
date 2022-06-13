@@ -25,6 +25,15 @@ func main() {
 //代码运行之后可以看到系统自动增加了很多/debug/pprof的API
 ```
 
+/*
+   * 客户服务器上采集性能分析
+      curl -sK -v http://localhost:8070/debug/pprof/profile?seconds=600 > profile.out
+   * 拷贝到本地
+      scp root@49.232.10.214:profile11.out /Users/lee
+   * 打开web查看
+      go tool pprof -http=:8080 profile11.out
+
+*/
 * 使用go tool pprof采集数据, 终端窗口输入以下命令
 ```shell
 go tool pprof --seconds 20 http://localhost:3000/debug/pprof/goroutine
