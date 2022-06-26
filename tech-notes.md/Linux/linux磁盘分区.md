@@ -18,7 +18,19 @@
   * MBR：内含开机管理程序；
   * 开机管理程序（boot loader）：load核心文件来执行的软件；
   * 核心文件：开始操作系统的功能...
-    
+
+#### 使用parted分区
+```shell
+parted /dev/vda 进入交互模式
+
+mklabel msdos #创建MBR分区
+mkpart primary 1M 2G #创建/boot
+mkpart primary 2G 52G #创建 /
+mkpart extended 52G 100% #扩展分区
+mkpart logical 52G 100% # 创建逻辑分区
+
+print 显示分区结果
+```
 
 #### 硬盘挂载
 * 查看是否有可挂在硬盘

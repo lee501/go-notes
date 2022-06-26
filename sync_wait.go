@@ -14,6 +14,7 @@ func in() (res []int) {
 	var wg sync.WaitGroup
 	res = make([]int, 0)
 	resChan := make(chan int, 1000)
+	//done := make(chan struct{})
 	//defer close(resChan)
 	run := func(resChan chan<- int, i int) {
 		resChan <- i
@@ -28,13 +29,16 @@ func in() (res []int) {
 	wgConsume.Add(1)
 	go func() {
 		defer wgConsume.Done()
+		//defer func() {
+		//	close(resChan)
+		//	close(done)
+		//}()
 		//for {
 		//	select {
-		//	case r, ok := <-resChan:
-		//		if !ok {
-		//			return
-		//		}
+		//	case r := <-resChan:
 		//		res = append(res, r)
+		//	case <-done:
+		//		return
 		//	}
 		//}
 		for r := range resChan {
@@ -45,6 +49,7 @@ func in() (res []int) {
 	wg.Wait()
 	close(resChan)
 	wgConsume.Wait()
+	//done <- struct{}{}
 	fmt.Println("all resChane consume finished")
 	return res
 }
