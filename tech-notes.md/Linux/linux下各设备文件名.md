@@ -17,3 +17,7 @@
 ```text
     /usr
 ```
+
+3. linux用户和用户组所在目录
+  * /etc/group 用户组
+  * /etc/passwd 用户所在目录

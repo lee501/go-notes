@@ -20,4 +20,9 @@ func main() {
 	str2 := "AD80::ABAA:0000:00C2:0002"
 	fmt.Println(reg.FindString(str))
 	fmt.Println(reg.FindString(str2))
+
+	r := `\w+(name\.pdf)$`
+	regg := regexp.MustCompile(r)
+	str1 := "urlpatgname.pdf"
+	fmt.Println(regg.FindStringSubmatch(str1))
 }
