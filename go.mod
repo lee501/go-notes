@@ -20,6 +20,7 @@ require (
 	github.com/robfig/cron/v3 v3.0.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/viper v1.10.1
+	github.com/tidwall/gjson v1.14.1 // indirect
 	go.etcd.io/etcd/client/v3 v3.5.2
 	go.uber.org/zap v1.21.0
 	golang.org/x/text v0.3.7
