@@ -21,6 +21,7 @@ require (
 	github.com/spf13/viper v1.10.1
 	github.com/tidwall/gjson v1.14.1 // indirect
 	github.com/valyala/fastjson v1.6.3
+	github.com/xuri/excelize/v2 v2.6.0 // indirect
 	go.etcd.io/etcd/client/v3 v3.5.2
 	go.uber.org/zap v1.21.0
 	golang.org/x/text v0.3.7
