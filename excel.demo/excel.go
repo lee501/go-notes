@@ -7,15 +7,14 @@ import (
 )
 
 func main() {
-	values := map[string]interface{}{
-		"C2": "北京", "D2": 8, "E2": 10, "F2": 20}
-	f, _ := excelize.OpenFile("/Users/lee/Downloads/report_template.xlsx")
+	f, _ := excelize.OpenFile("/Users/lee/Downloads/report.xlsx")
 	defer func() {
 		f.Close()
 	}()
-	for k, v := range values {
-		err := f.SetCellValue("index", k, v)
-		fmt.Println(err, k)
+	cells := []string{"C2", "D2", "E2", "F2", "G2", "H2", "I2", "J2"}
+	values := []interface{}{"北京", 40, 20, 10, 5, 20, 4, 8}
+	for i, cell := range cells {
+		err := f.SetCellValue("index", cell, values[i])
 		if err != nil {
 			fmt.Println(err)
 			return
