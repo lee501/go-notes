@@ -2,9 +2,11 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"strconv"
+	"strings"
 	"sync"
 	"time"
 
@@ -42,9 +44,22 @@ func Handler(c *gin.Context) {
 	//data := w.body.Bytes()
 	w.body.Reset()
 
-	w.body.Write([]byte("hello"))
+	resp := &jsonpResponse{
+		Meta: map[string]interface{}{},
+		Data: "hello",
+	}
+
+	for k, v := range w.Header() {
+		resp.Meta[strings.ToLower(k)] = v[0]
+	}
+
+	body, _ := json.Marshal(resp)
+
+	w.body.Write(body)
+	for k, v := range resp.Meta {
+		w.Header().Set(k, v.(string))
+	}
 	w.Header().Set("Content-Length", strconv.Itoa(w.body.Len()))
-	w.Flush()
 	//c.DataFromReader(200, 5, "text/plain; charset=utf-8", io.NopCloser(bytes.NewBuffer([]byte("hello"))), map[string]string{})
 	c.Header("X-Response-Time", strconv.Itoa(duration))
 }
@@ -54,6 +69,11 @@ func Handler1(c *gin.Context) {
 	c.Writer = w
 	defer w.Done(c)
 	c.Next()
+}
+
+type jsonpResponse struct {
+	Meta map[string]interface{}
+	Data interface{}
 }
 
 type ResponseWriter struct {
