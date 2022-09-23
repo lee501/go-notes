@@ -2,10 +2,17 @@ package main
 
 import (
 	"fmt"
+	"io/fs"
+	"os"
 
 	"github.com/xuri/excelize/v2"
 )
 
+var export_path = "/Users/lee/workspace/excel/temp/"
+
+func init() {
+	_ = os.Mkdir(export_path, fs.ModePerm)
+}
 func main() {
 	f, _ := excelize.OpenFile("/Users/lee/Downloads/report.xlsx")
 	defer func() {
@@ -47,7 +54,7 @@ func main() {
 	//	return
 	//}
 	//// Save spreadsheet by the given path.
-	if err := f.SaveAs("demo.xlsx"); err != nil {
+	if err := f.SaveAs("/Users/lee/workspace/excel/demo.xlsx"); err != nil {
 		fmt.Println(err)
 	}
 }

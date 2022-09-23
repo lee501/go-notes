@@ -2,8 +2,8 @@ package main
 
 import "net/http"
 
-type FHandler struct {}
-type SHandler struct {}
+type FHandler struct{}
+type SHandler struct{}
 
 func (f *FHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("第一个handler"))
