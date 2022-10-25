@@ -5,7 +5,7 @@ import (
 	"io"
 	"net"
 
-	"github.com/sevenelevenlee/go-notes/tcp粘包处理/proto"
+	"github.com/sevenelevenlee/go-notes/tcp_package/proto"
 
 	log "github.com/sirupsen/logrus"
 )

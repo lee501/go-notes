@@ -6,7 +6,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/sevenelevenlee/go-notes/tcp粘包处理/proto"
+	"github.com/sevenelevenlee/go-notes/tcp_package/proto"
 )
 
 func main() {

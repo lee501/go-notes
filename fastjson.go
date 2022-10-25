@@ -18,4 +18,10 @@ func main() {
 		}
 		fmt.Println(v)
 	}
+
+	str1 := `{"Mobile":"13021015699"}`
+	param = []string{"Mobile"}
+	var p fastjson.Parser
+	v, _ := p.Parse(str1)
+	fmt.Printf("mobile=%s\n", v.GetStringBytes(param...))
 }
