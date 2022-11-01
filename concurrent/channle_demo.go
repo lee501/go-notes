@@ -1,25 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"sync"
-)
-
+/*
 var wait sync.WaitGroup
 var w sync.WaitGroup
+
 func main() {
 	ch := make(chan int)
 	sign := make(chan int, 1)
 	wait.Add(2)
 	go func(wait *sync.WaitGroup) {
-		for i := 0; i < 10000; i++{
+		for i := 0; i < 10000; i++ {
 			ch <- i
 		}
 		wait.Done()
 	}(&wait)
 
 	go func(wait *sync.WaitGroup) {
-		for i := 0; i < 10000; i++{
+		for i := 0; i < 10000; i++ {
 			ch <- i
 		}
 		wait.Done()
@@ -32,8 +29,8 @@ func main() {
 	w.Add(1)
 	go func(wait *sync.WaitGroup) {
 		sum := 0
-		END:
-		for  {
+	END:
+		for {
 			select {
 			case m := <-ch:
 				sum += m
@@ -48,4 +45,4 @@ func main() {
 	w.Wait()
 	fmt.Println("执行结束")
 }
-
+*/

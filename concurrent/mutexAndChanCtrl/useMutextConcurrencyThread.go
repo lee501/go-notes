@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func main() {
+func mutex() {
 	var mu sync.Mutex
 	msg := ""
 	mu.Lock()

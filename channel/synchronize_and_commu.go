@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*
 	已关闭的chan只能读不能写
 	声明语法
@@ -19,6 +17,7 @@ import "fmt"
 */
 
 //主线程和子线程的同步； 子线程至今通信
+/*
 func main() {
 	//声明chan用于子线程通信
 	ch := make(chan string)
@@ -44,3 +43,4 @@ func main() {
 	result = <- chi
 	fmt.Println(result)
 }
+*/

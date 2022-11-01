@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"sync"
 	"sync/atomic"
 )
 
 var sum int64
+
 func worker_atomic(wg *sync.WaitGroup) {
 	defer func() {
 		wg.Done()
@@ -16,6 +16,8 @@ func worker_atomic(wg *sync.WaitGroup) {
 		atomic.AddInt64(&sum, i)
 	}
 }
+
+/*
 func main() {
 	wg := sync.WaitGroup{}
 	wg.Add(2)
@@ -24,3 +26,4 @@ func main() {
 	wg.Wait()
 	fmt.Println("执行结束", sum)
 }
+*/

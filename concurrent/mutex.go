@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"sync"
 )
 
-var total struct{
+var total struct {
 	sync.Mutex
 	value int
 }
@@ -14,12 +13,15 @@ func worker(wt *sync.WaitGroup) {
 	defer func() {
 		wt.Done()
 	}()
-	for i:= 0; i <= 100; i++{
+	for i := 0; i <= 100; i++ {
 		total.Lock()
 		total.value += i
 		total.Unlock()
 	}
 }
+
+/*
+
 func main() {
 	var wg sync.WaitGroup
 	wg.Add(2)
@@ -28,3 +30,4 @@ func main() {
 	wg.Wait()
 	fmt.Printf("执行结束，value为%v\n", total.value)
 }
+*/

@@ -1,12 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"runtime"
-	"strconv"
-	"sync"
-)
-
+/*
 var wg sync.WaitGroup
 
 func main() {
@@ -30,3 +24,4 @@ func main() {
 	wg.Wait()
 	fmt.Println("done")
 }
+*/

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"sync"
 )
 
@@ -30,8 +29,8 @@ func (set *threadSafeSet) Iter() chan interface{} {
 	return ch
 }
 
-func main() {
-	th := threadSafeSet{s: []interface{}{1,2,3}}
-	v := <-th.Iter()
-	fmt.Println(v)
-}
+//func main() {
+//	th := threadSafeSet{s: []interface{}{1,2,3}}
+//	v := <-th.Iter()
+//	fmt.Println(v)
+//}

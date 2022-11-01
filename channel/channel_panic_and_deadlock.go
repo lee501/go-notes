@@ -2,7 +2,7 @@ package main
 
 //1. fatal error: all goroutines are asleep - deadlock!
 
-func main() {
+func cacheChannel() {
 	//无缓存通道读
 	ch := make(chan int)
 	<-ch
@@ -12,7 +12,7 @@ func main() {
 	//通道的缓存无数据，但执行读通道。
 	//通道的缓存已经占满，向通道写数据，但无协程读。
 	chm := make(chan int, 5)
-	<- chm
+	<-chm
 }
 
 //2. panic

@@ -4,7 +4,7 @@ import "fmt"
 
 //for range的特别之处:会一直阻塞当前协程，如果在其他协程中调用了close(ch),那么就会跳出for range循环
 //demo
-func main() {
+func forRange() {
 	ch := make(chan string)
 	ch2 := make(chan int)
 
@@ -23,6 +23,6 @@ func main() {
 		}
 		fmt.Println("check 阻塞")
 	}()
-	<- ch2
+	<-ch2
 	fmt.Println("执行结束")
 }

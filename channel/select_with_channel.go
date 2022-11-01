@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 //for循环中使用select： 使用break标签退出循环
-func main() {
+func forSelect() {
 	ch := make(chan int)
 
 	for i := 0; i < 10; i++ {
@@ -11,10 +11,10 @@ func main() {
 			ch <- j
 		}(i)
 	}
-	EXIT:
+EXIT:
 	for {
 		select {
-		case c := <- ch:
+		case c := <-ch:
 			fmt.Println(c)
 		default:
 			break EXIT

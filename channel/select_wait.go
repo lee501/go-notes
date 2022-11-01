@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func main() {
+func selectWait() {
 	start := time.Now()
 	wait := make(chan int, 1)
 	go func() {
