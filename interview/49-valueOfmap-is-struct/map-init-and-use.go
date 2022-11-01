@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func mapInitUseDemo() {
 	// 先声明map
 	var m1 map[string]string
 	// 再使用make函数创建一个非nil的map，nil map不能赋值

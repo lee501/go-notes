@@ -6,7 +6,7 @@ import (
 	"reflect"
 )
 
-func main() {
+func FetchParamWithstandardLib() {
 	server := http.Server{Addr: "localhost:8899"}
 	http.HandleFunc("/param", param)
 	server.ListenAndServe()

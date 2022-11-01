@@ -24,10 +24,3 @@ func funcParam(w http.ResponseWriter, request *http.Request) {
 	time := "2020-05-10 10:50:00"
 	t.Execute(w, time)
 }
-
-func main() {
-	server := http.Server{Addr: ":8080"}
-	http.HandleFunc("/", funcParam)
-	fmt.Println("服务启动")
-	server.ListenAndServe()
-}

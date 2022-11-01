@@ -18,6 +18,7 @@ func showNode(node *Node) {
 	}
 }
 
+/*
 func main() {
 	head := new(Node)
 	head.data = 1
@@ -41,4 +42,4 @@ func main() {
 	}
 	showNode(tail)
 }
-
+*/

@@ -5,14 +5,14 @@ import (
 	"fmt"
 )
 
-func main() {
+func testWorkContext() {
 	ch := make(chan int)
 	ctx := context.Background()
 	ctxWithCancel, cancel := context.WithCancel(ctx)
 	defer func() {
 		fmt.Println("Main defer: cancel context")
 		cancel()
-		<- ch
+		<-ch
 	}()
 	go workerContext(ctxWithCancel, ch)
 }

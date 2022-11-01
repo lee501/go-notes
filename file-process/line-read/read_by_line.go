@@ -29,7 +29,6 @@ func readByLine(filepath string) {
 }
 
 func readLineByScanner(filepath string) {
-	start := time.Now()
 	fileHandle, err := os.Open(filepath)
 	if err != nil {
 		log.Println(err)

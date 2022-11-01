@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"reflect"
 )
@@ -11,6 +10,7 @@ type UserInfo struct {
 	Age  int    `json:"age"`
 }
 
+/*
 func main() {
 	//var data []bytes
 	u := UserInfo{}
@@ -39,6 +39,7 @@ func main() {
 
 	//ToMap(u, "name")
 }
+*/
 
 func ToMap(in interface{}, tagName string) (map[string]interface{}, error) {
 	out := make(map[string]interface{})

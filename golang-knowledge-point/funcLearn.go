@@ -20,7 +20,7 @@ func simple() {
 	fmt.Println(number, str)
 	//声明一个函数类型的变量
 	myFunc := add
-	fmt.Println(myFunc(1,2 ))
+	fmt.Println(myFunc(1, 2))
 }
 
 /*
@@ -28,6 +28,7 @@ func simple() {
 	函数被当作值赋值给这种变量时（函数的签名（参数和返回值）必须相同）
 */
 type ProcessBaseName func(string) string
+
 //base函数 移除字符串的路径部分和.后缀 只取文件名
 func basename(str string) string {
 	lash := strings.LastIndex(str, "/")
@@ -37,18 +38,22 @@ func basename(str string) string {
 	}
 	return str
 }
+
 //使用函数变量作为参数
-func GetBaseName(str string, BaseNameFunc func(string)string) string {
+func GetBaseName(str string, BaseNameFunc func(string) string) string {
 	return BaseNameFunc(str)
 }
+
 //使用type自定义类型
 func GetBaseNameType(str string, BaseNameFunc ProcessBaseName) string {
 	return BaseNameFunc(str)
 }
 
+/*
 func main() {
 	str := "root/websocker/test.go"
 	//函数签名是指 函数的参数和返回值
 	GetBaseName(str, basename)
 	GetBaseNameType(str, basename)
 }
+*/

@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func main() {
+func waitAndContext() {
 	wg := sync.WaitGroup{}
 	root := context.Background()
 	//ctx1, cancel := context.WithDeadline(root, time.Now().Add(6 * time.Second))
@@ -18,14 +18,14 @@ func main() {
 	time.Sleep(10 * time.Second)
 	fmt.Println("通知监控停止")
 	cancel()
-wg.Wait()
+	wg.Wait()
 }
 
 func watch(wg *sync.WaitGroup, ctx context.Context) {
-	OUT:
+OUT:
 	for {
 		select {
-		case <- ctx.Done():
+		case <-ctx.Done():
 			fmt.Println(ctx.Value("key2"), "监控退出了。")
 			break OUT
 		default:

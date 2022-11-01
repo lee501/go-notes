@@ -1,7 +1,6 @@
-package main
+#### context theory
 
-import "time"
-
+```go
 //Context接口， context中的方法是协程安全的，在父routine中创建context,可以传递给任意数量的routine，让他们同时访问
 type Context interface {
 	//返回一个超时时间，routine获得超时时间后，可以对某些io操作设定超时时间

@@ -13,7 +13,7 @@ func (s *SHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("第二个handler"))
 }
 
-func main() {
+func handler() {
 	f := FHandler{}
 	s := SHandler{}
 

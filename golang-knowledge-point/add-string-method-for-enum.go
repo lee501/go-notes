@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 type State int
 
 const (
@@ -28,15 +26,6 @@ func (s State) String() string {
 
 }
 
-func main() {
-	fmt.Println(Running)
-	r := test()
-	if r == KB {
-		fmt.Println(r)
-	}
-	fmt.Println(r)
-}
-
 //kb mb gb定义
 type ByteSize float64
 
@@ -55,3 +44,15 @@ const (
 func test() ByteSize {
 	return MB
 }
+
+/*
+func main() {
+	fmt.Println(Running)
+	r := test()
+	if r == KB {
+		fmt.Println(r)
+	}
+	fmt.Println(r)
+}
+
+*/

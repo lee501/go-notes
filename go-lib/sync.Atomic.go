@@ -15,11 +15,6 @@ import (
 	"time"
 )
 
-func main() {
-	test1()
-	//test2()
-}
-
 //count++ 并发不安全
 func test1() {
 	var wg sync.WaitGroup
@@ -51,5 +46,5 @@ func test2() {
 	}
 	wg.Wait()
 
-	fmt.Printf("test2 花费时间：%d, count的值为：%d \n",time.Now().Sub(t),count)
+	fmt.Printf("test2 花费时间：%d, count的值为：%d \n", time.Now().Sub(t), count)
 }

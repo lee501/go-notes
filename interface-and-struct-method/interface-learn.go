@@ -15,7 +15,6 @@ type Animals interface {
 }
 
 type Catty struct {
-
 }
 
 func (*Catty) Meow() {
@@ -23,44 +22,15 @@ func (*Catty) Meow() {
 }
 
 func GetAnimal() Animals {
-	var catty  *Catty
+	var catty *Catty
 	catty = &Catty{}
 	return catty
 }
 
-func main() {
+func demointerface() {
 	var cat = GetAnimal()
 	m := reflect.TypeOf(cat)
 	fmt.Println(m)
 	kind := m.Kind()
 	fmt.Println(kind)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

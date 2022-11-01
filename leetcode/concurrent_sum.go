@@ -1,15 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"sync"
 )
-
-func main() {
-	data := []int{1,2,3,4,5,6,7,7,8,8,8,7,9,10}
-	s := sum(data)
-	fmt.Println(s)
-}
 
 func sum(data []int) int {
 	s := 0
@@ -34,3 +27,11 @@ func sum(data []int) int {
 
 	return s
 }
+
+/*
+func main() {
+	data := []int{1,2,3,4,5,6,7,7,8,8,8,7,9,10}
+	s := sum(data)
+	fmt.Println(s)
+}
+*/

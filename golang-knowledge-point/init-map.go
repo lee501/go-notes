@@ -9,7 +9,7 @@ type People struct {
 	Name string
 }
 
-func main() {
+func mapDemo() {
 	//1声明， 需要分配空间
 	var peopleDB map[string]People
 	peopleDB = make(map[string]People)

@@ -6,7 +6,6 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-	"path/filepath"
 )
 
 //将文件以string 对象读出
@@ -34,7 +33,7 @@ func ReadFileByString(filename string) string {
 
 //整个文件的内容读到一个字符串里
 func readFileIntoString(inputfile, outfile string) {
-	input:= inputfile
+	input := inputfile
 	out := outfile
 	buf, err := ioutil.ReadFile(input)
 	if err != nil {
@@ -75,9 +74,4 @@ func readFileWithCol(filename string) {
 		col2 = append(col2, v2)
 		col3 = append(col3, v3)
 	}
-}
-
-//获取文件名字
-func getFileName(path string) string{
-	return filepath.Base(path)
 }

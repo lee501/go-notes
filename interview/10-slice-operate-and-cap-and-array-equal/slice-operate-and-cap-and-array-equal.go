@@ -10,7 +10,7 @@ import "fmt"
 */
 
 func sliceIssue() {
-	a := [5]int{1,2,3,4,5}
+	a := [5]int{1, 2, 3, 4, 5}
 	t := a[3:4:5]
 	fmt.Println(t[0], len(t), cap(t))
 }
@@ -19,9 +19,9 @@ func sliceIssue() {
 	考点：数组判断相等问题
 		数组为值类型可以比较，同时数组的长度也是数组类型的组成部分，只有长度相等才可以比较
 */
-func arrayIssue()  {
-	a := [2]int{5,6}
-	b := [2]int{5,6}
+func arrayIssue() {
+	a := [2]int{5, 6}
+	b := [2]int{5, 6}
 	if a == b {
 		fmt.Println("equal")
 		return
@@ -60,4 +60,13 @@ func main() {
 	arrayIssue()
 
 	interfaceIssue()
+	/*
+		切片操作符 [low,high]
+			规则0 <= low <= high <= cap(原切片)
+	*/
+	s := make([]int, 3, 9)
+	fmt.Println(len(s), cap(s))
+
+	s1 := s[4:8]
+	fmt.Println(len(s1), cap(s1))
 }

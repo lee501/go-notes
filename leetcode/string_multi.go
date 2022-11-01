@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func StrMulti(str1, str2 string) string {
 	str1 = Reverse(str1)
 	str2 = Reverse(str2)
@@ -42,9 +40,11 @@ func Reverse(s string) string {
 	return string(r)
 }
 
+/*
 func main() {
 	str1 := "1234567899"
 	str2 := "9987654321"
 	s := StrMulti(str1,str2)
 	fmt.Println(s)
 }
+*/

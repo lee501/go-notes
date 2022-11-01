@@ -13,7 +13,7 @@ type Circle struct {
 }
 
 func (c *Circle) Area() float64 {
-	return 3.14 * c.Radius *c.Radius
+	return 3.14 * c.Radius * c.Radius
 }
 
 type Square struct {
@@ -22,18 +22,6 @@ type Square struct {
 
 func (s Square) Area() float64 {
 	return s.length * s.length
-}
-
-func main() {
-	s1 := &Square{3.3}
-	whichType(s1)
-
-	s2 := Square{ 3.3 }
-	whichType(s2)
-
-	c1 := new(Circle)
-	c1.Radius = 2.3
-	whichType(c1)
 }
 
 func whichType(n Shaper) {
@@ -51,3 +39,17 @@ func whichType(n Shaper) {
 		fmt.Printf("Unexpected type %T", v)
 	}
 }
+
+/*
+func main() {
+	s1 := &Square{3.3}
+	whichType(s1)
+
+	s2 := Square{ 3.3 }
+	whichType(s2)
+
+	c1 := new(Circle)
+	c1.Radius = 2.3
+	whichType(c1)
+}
+*/

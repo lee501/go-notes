@@ -1,20 +1,21 @@
 package main
 
 import (
+	"time"
+
 	jwt "github.com/appleboy/gin-jwt/v2"
 	"github.com/gin-gonic/gin"
-	"time"
 )
 
 //gin-jwt结构体
 type GinJWTMiddleware struct {
-	SingingAlgorithm string //算法
-	Key 			[]byte	//密钥
-	Timeout 		time.Duration   //有效期
-	MaxRefresh		time.Duration	//刷新token有效期
-	Authenticator   func(userId string, password string, c *gin.Context)   //认证回调函数
-	Authorizator    func(userID string, c *gin.Context) bool	//认证后处理
-	Unauthorized 	func(*gin.Context, int, string)   //认证失败函数
+	SingingAlgorithm string                                               //算法
+	Key              []byte                                               //密钥
+	Timeout          time.Duration                                        //有效期
+	MaxRefresh       time.Duration                                        //刷新token有效期
+	Authenticator    func(userId string, password string, c *gin.Context) //认证回调函数
+	Authorizator     func(userID string, c *gin.Context) bool             //认证后处理
+	Unauthorized     func(*gin.Context, int, string)                      //认证失败函数
 }
 
 /*
@@ -24,13 +25,13 @@ type GinJWTMiddleware struct {
 
 //Authenticator
 
-
 type AuthBody struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
 }
 
 var authMiddleware *jwt.GinJWTMiddleware
+
 func init() {
 	// the jwt middleware
 	authMiddleware = &jwt.GinJWTMiddleware{
@@ -54,9 +55,6 @@ func jwtAuthFunc(c *gin.Context) (interface{}, error) {
 	return "用户", nil
 }
 
-
-
-
 //Unauthorized
 
 func jwtUnAuthFunc(c *gin.Context, code int, message string) {
@@ -67,7 +65,7 @@ func jwtUnAuthFunc(c *gin.Context, code int, message string) {
 }
 
 //在路由中使用中间件
-func main() {
+func usedemo() {
 	route := gin.Default()
 	//登录使用LoginHandler
 	route.POST("/login", authMiddleware.LoginHandler)

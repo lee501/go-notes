@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+/*
 func main() {
 	ctxa, cancel := context.WithCancel(context.Background())
 	go work(ctxa, "work1")
@@ -19,6 +20,7 @@ func main() {
 	cancel()
 	time.Sleep(time.Second)
 }
+*/
 
 func work(ctx context.Context, name string) {
 	for {
@@ -46,4 +48,3 @@ func workWithValue(ctx context.Context, name string) {
 		}
 	}
 }
-

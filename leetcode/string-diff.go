@@ -1,17 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
-func main() {
-	s := "abcdeab"
-	fmt.Println(strings.Count(s, "a"))
-	fmt.Println(isUniqueString(s))
-}
-
-func isUniqueString(s string) bool{
+func isUniqueString(s string) bool {
 	if strings.Count(s, "") > 256 {
 		return false
 	}
@@ -25,3 +18,11 @@ func isUniqueString(s string) bool{
 	}
 	return true
 }
+
+/*
+func main() {
+	s := "abcdeab"
+	fmt.Println(strings.Count(s, "a"))
+	fmt.Println(isUniqueString(s))
+}
+*/

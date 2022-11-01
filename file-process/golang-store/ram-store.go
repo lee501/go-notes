@@ -10,7 +10,7 @@ type Post struct {
 }
 
 var (
-	PostById map[int]*Post
+	PostById      map[int]*Post
 	PostsByAuthor map[string][]*Post
 )
 
@@ -18,7 +18,7 @@ func store(post Post) {
 	PostById[post.Id] = &post
 	PostsByAuthor[post.Author] = append(PostsByAuthor[post.Author], &post)
 }
-func main() {
+func demo() {
 	PostById = make(map[int]*Post)
 	PostsByAuthor = make(map[string][]*Post)
 

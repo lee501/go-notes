@@ -9,8 +9,9 @@ import (
 
 type P struct {
 	Name string
-	Age int
+	Age  int
 }
+
 func table(wr http.ResponseWriter, re *http.Request) {
 	t, _ := template.ParseFiles("view/table.html")
 	t.Execute(wr, nil)
@@ -25,7 +26,7 @@ func getUsers(wr http.ResponseWriter, re *http.Request) {
 	fmt.Fprintln(wr, string(b))
 }
 
-func main() {
+func server() {
 	server := http.Server{Addr: ":8899"}
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/table", table)

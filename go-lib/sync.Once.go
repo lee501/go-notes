@@ -1,6 +1,5 @@
 package main
 
-
 /*
 	sync.Once是sync包的一个结构体
 		type Once struct {
@@ -30,7 +29,7 @@ import (
 	"time"
 )
 
-func main() {
+func demo() {
 	var once sync.Once
 
 	for i := 0; i <= 10; i++ {

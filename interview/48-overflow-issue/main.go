@@ -7,9 +7,11 @@ import "fmt"
 */
 
 func main() {
-	var x int8 = 128 // constant 128 overflows int8
-	y := x/-1
-	fmt.Println(y)
+	/*
+		var x int8 = 128 // constant 128 overflows int8
+		y := x/-1
+		fmt.Println(y)
+	*/
 }
 
 /*

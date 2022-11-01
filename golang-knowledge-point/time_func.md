@@ -1,5 +1,6 @@
-//time库的用法
-package main
+### time lib
+
+```go
 
 import (
 	"fmt"

@@ -34,6 +34,7 @@ func main() {
 		m   map[string]string
 	}{age: 12, m: map[string]string{"a": "1"}}
 
+	fmt.Println(n1, n2)
 	//n1 和 n2无法比较，不能通过编译
 	//if n1 == n2 {
 	//

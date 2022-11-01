@@ -16,9 +16,10 @@ type Dog struct {
 }
 
 type Catt struct {
-	Basics Animal
+	Basics       Animal
 	MeowStrength int
 }
+
 //添加Animal的方法
 func (animal *Animal) PerformNoise(strength int, sound string) {
 	if animal.mean == true {
@@ -29,8 +30,9 @@ func (animal *Animal) PerformNoise(strength int, sound string) {
 	}
 	println("")
 }
+
 //实现接口继承、多肽
-func (dog *Dog) MakeNoise()  {
+func (dog *Dog) MakeNoise() {
 	dog.PerformNoise(dog.BarkStrength, "BARK")
 }
 
@@ -43,7 +45,7 @@ func MakeSomeNoise(animalsounder AnimalSounder) {
 	animalsounder.MakeNoise()
 }
 
-func main() {
+func demo() {
 	//匿名组合的赋值
 	dog := &Dog{Animal{Name: "saw", mean: false}, 2}
 	cat := &Catt{Basics: Animal{Name: "kitty", mean: true}, MeowStrength: 2}

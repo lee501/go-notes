@@ -1,15 +1,12 @@
 package main
 
 import (
-	chunk "github.com/sevenelevenlee/go-notes/file_chunk_upload_service/chunk_upload"
 	"log"
 	"net/http"
 	"os"
+
+	chunk "github.com/sevenelevenlee/go-notes/file_chunk_upload_service/chunk_upload"
 )
-
-func main() {
-
-}
 
 func FileServer() {
 	http.HandleFunc("/chunkUpload", chunk.ChunkFile)

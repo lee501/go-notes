@@ -7,7 +7,7 @@ import (
 )
 
 //交替打印算法
-func main() {
+func alternatePrint() {
 	letter, number := make(chan bool), make(chan bool)
 	wait := sync.WaitGroup{}
 	go func() {
@@ -32,14 +32,14 @@ func main() {
 		i := 0
 		for {
 			select {
-			case <- letter:
-				if i >= strings.Count(str, "") - 1 {
+			case <-letter:
+				if i >= strings.Count(str, "")-1 {
 					wait.Done()
 					return
 				}
-				fmt.Println(str[i:i+1])
+				fmt.Println(str[i : i+1])
 				i++
-				fmt.Println(str[i:i+1])
+				fmt.Println(str[i : i+1])
 				i++
 				number <- true
 				break

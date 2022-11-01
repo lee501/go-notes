@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func contextWithTime() {
 	ctx, cancel := context.WithTimeout(context.Background(), 1*time.Second)
 	defer cancel()
 

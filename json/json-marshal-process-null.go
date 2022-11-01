@@ -6,14 +6,15 @@ import (
 )
 
 type User struct {
-	Name string `json:"name"`
+	Name  string `json:"name"`
 	Roles []Role `json:"roles"`
 }
 
 type Role struct {
 	Name string
 }
-func main() {
+
+func avoidNull() {
 	//初始化Role切片 避免返回null
 	str := ""
 	fmt.Println(str)
@@ -28,9 +29,9 @@ func main() {
 	}
 	fmt.Println(u)
 
-	l := []int{1,2,3,4,5}
+	l := []int{1, 2, 3, 4, 5}
 	for _, v := range l {
-		if v >3 {
+		if v > 3 {
 			continue
 		}
 		fmt.Println(v)

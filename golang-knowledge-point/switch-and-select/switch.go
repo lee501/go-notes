@@ -13,6 +13,7 @@ func convert(i interface{}) {
 	}
 }
 
+/*
 func main() {
 	var i interface{}
 	i = 100
@@ -22,3 +23,4 @@ func main() {
 	i = []int{1,2,3,4}
 	convert(i)
 }
+*/

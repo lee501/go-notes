@@ -1,16 +1,4 @@
-package main
-
-import (
-	"fmt"
-)
-
-func main() {
-	arr := []int{6, 5, 4, 3, 2, 1}
-	//i := binarySearch(arr, 3)
-	insertSort(arr)
-	fmt.Println(arr)
-	//fmt.Println(binarySearch(arr, 3))
-}
+package sort_algorithm
 
 func insertSort(array []int) {
 	if len(array) < 2 {
@@ -42,3 +30,13 @@ func binarySearch(s []int, key int) int {
 	}
 	return -1
 }
+
+/*
+func main() {
+	arr := []int{6, 5, 4, 3, 2, 1}
+	//i := binarySearch(arr, 3)
+	insertSort(arr)
+	fmt.Println(arr)
+	//fmt.Println(binarySearch(arr, 3))
+}
+*/

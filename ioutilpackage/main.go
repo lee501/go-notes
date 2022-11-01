@@ -37,7 +37,7 @@ func main() {
 	ioutil.WriteFile("filename", []byte("111111"), 0666)
 	//读取文件夹信息 ioutil.ReadDir()
 	fileinfo, err := ioutil.ReadDir("/User")
-	for _, file = range fileinfo {
+	for _, file := range fileinfo {
 		file.Name()
 	}
 }

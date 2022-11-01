@@ -29,7 +29,7 @@ func (self Value2) printf() {
 	fmt.Println(self.num)
 }
 
-func main() {
+func intefaceMethodSet() {
 	//声明接口变量
 	var val Valueer
 	//Value1赋值给val只能是指针型（*T）
@@ -42,4 +42,3 @@ func main() {
 	//调用方法
 	val.printf()
 }
-
