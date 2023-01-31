@@ -8,7 +8,8 @@ import (
 type panicContext struct {
 	context string
 }
-func main() {
+
+func ProtectPanic() {
 	fmt.Println("开始测试")
 	ProtectRun(func() {
 		fmt.Println("手动panic前")

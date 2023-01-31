@@ -12,11 +12,11 @@ import (
 var (
 	//票数
 	numt = 100
-	w sync.WaitGroup
-	m sync.Mutex   //互斥锁
+	w    sync.WaitGroup
+	m    sync.Mutex //互斥锁
 )
 
-func main() {
+func runTick() {
 	//设置随机种子，避免每次随机数是一养的
 	rand.Seed(time.Now().UnixNano())
 	w.Add(4)

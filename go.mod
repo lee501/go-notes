@@ -11,9 +11,11 @@ require (
 	github.com/cloudflare/ahocorasick v0.0.0-20210425175752-730270c3e184
 	github.com/gin-gonic/gin v1.7.3
 	github.com/go-sql-driver/mysql v1.5.0
+	github.com/goccy/go-json v0.9.4
 	github.com/googollee/go-socket.io v1.6.0
 	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/websocket v1.4.2
+	github.com/guanguans/id-validator v1.2.8
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/petar-dambovaliev/aho-corasick v0.0.0-20211021192214-5ab2d9280aa9
 	github.com/robfig/cron/v3 v3.0.0
@@ -22,7 +24,8 @@ require (
 	github.com/tidwall/gjson v1.14.1 // indirect
 	github.com/valyala/fastjson v1.6.3
 	github.com/vearne/gin-timeout v0.1.1
-	github.com/xuri/excelize/v2 v2.6.0 // indirect
+	github.com/xuri/excelize/v2 v2.6.0
+	go.etcd.io/etcd/api/v3 v3.5.2
 	go.etcd.io/etcd/client/v3 v3.5.2
 	go.uber.org/zap v1.21.0
 	golang.org/x/text v0.3.7
