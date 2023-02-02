@@ -24,7 +24,7 @@ import (
 		fd *netFD
 	}
 */
-func main() {
+func tcpServe() {
 	//创建TCPAddr，指定tcp协议，和服务端端口
 	addr, _ := net.ResolveTCPAddr("tcp4", "localhost:8989")
 	//监听TCPAddr设置的地址

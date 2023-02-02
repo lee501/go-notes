@@ -15,14 +15,13 @@ type Operation struct {
 }
 
 type Addition struct {
-
 }
 
 func (a *Addition) Apply(i, j int) int {
 	return i + j
 }
 
-func main() {
+func test() {
 	var operator Operator = &Addition{}
 	op := Operation{operator}
 	fmt.Println(op.Apply(1, 1))
@@ -39,7 +38,7 @@ func NewPools(size int) *Pool {
 	defer func() {
 		close(pool)
 	}()
-	for i:=0; i<size; i++ {
+	for i := 0; i < size; i++ {
 		pool <- new(Object)
 	}
 	return &pool
@@ -47,8 +46,9 @@ func NewPools(size int) *Pool {
 
 //单类模式
 type singleton map[string]string
+
 var (
-	once sync.Once
+	once     sync.Once
 	instance singleton
 )
 
@@ -78,7 +78,7 @@ type Demo struct {
 	Des string
 }
 
-func (d *Demo) Clone() *Demo  {
+func (d *Demo) Clone() *Demo {
 	r := *d
 	return &r
 }
@@ -88,4 +88,3 @@ func NewDemo(des string) *Demo {
 		Des: "demo",
 	}
 }
-

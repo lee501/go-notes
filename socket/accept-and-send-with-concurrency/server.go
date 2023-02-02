@@ -5,7 +5,7 @@ import (
 	"net"
 )
 
-func main() {
+func serve() {
 	//创建tcp address, 指定tcp4协议和8899端口
 	address, _ := net.ResolveTCPAddr("tcp4", "localhost:8899")
 	//监听地址

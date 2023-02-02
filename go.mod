@@ -15,11 +15,12 @@ require (
 	github.com/googollee/go-socket.io v1.6.0
 	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/websocket v1.4.2
-	github.com/guanguans/id-validator v1.2.8
+	github.com/kardianos/service v1.2.2
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/petar-dambovaliev/aho-corasick v0.0.0-20211021192214-5ab2d9280aa9
 	github.com/robfig/cron/v3 v3.0.0
 	github.com/sirupsen/logrus v1.8.1
+	github.com/spf13/cast v1.5.0 // indirect
 	github.com/spf13/viper v1.10.1
 	github.com/tidwall/gjson v1.14.1 // indirect
 	github.com/valyala/fastjson v1.6.3

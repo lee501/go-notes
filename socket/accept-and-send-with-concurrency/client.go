@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func client() {
 	//创建tcp address
 	addr, _ := net.ResolveTCPAddr("tcp4", "localhost:8899")
 	for i := 0; i < 5; i++ {

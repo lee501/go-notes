@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func tcpClient() {
 	//创建tcpaddr, 服务端ip和端口
 	addr, _ := net.ResolveTCPAddr("tcp4", "localhost:8989")
 	//申请链接服务器，协议，本地地址，远程地址

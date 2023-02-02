@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 type Kind uint
+
 //slice 通过枚举和key， 进行设置
 const (
 	Invalid Kind = iota
@@ -64,15 +65,14 @@ var kindNames = []string{
 	UnsafePointer: "unsafe.Pointer",
 }
 
-
 var kindName = []string{1: "lee", 2: "anne"}
 
 //适用key: value来初始化slice和array
 var mslice = []string{2: "a", 3: "b"}
 var marray = [5]string{1: "a", 4: "d"}
 
-func main() {
-	s := []int{1,2,3,4}
+func demo() {
+	s := []int{1, 2, 3, 4}
 	change(s)
 	fmt.Println(s)
 	fmt.Println(len(mslice))
@@ -80,6 +80,6 @@ func main() {
 	fmt.Println(kindNames[0])
 }
 
-func change(s []int)  {
+func change(s []int) {
 	s[0] = 0
 }
