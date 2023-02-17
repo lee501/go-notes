@@ -5,6 +5,10 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"strings"
 )
 
 type User struct {
@@ -30,8 +34,13 @@ func welcome(w http.ResponseWriter, r *http.Request) {
 func main() {
 	//usage go run main.go -path="/Users/lee/workspace/gp-notes/go-web/static-app/static"
 	var path string
-	flag.StringVar(&path, "path", "/static/", "static path")
+	flag.StringVar(&path, "path", "static/", "static path")
 	flag.Parse()
+
+	file, _ := exec.LookPath(os.Args[0])
+	pat, _ := filepath.Abs(file)
+	ind := strings.LastIndex(pat, string(os.PathSeparator))
+	fmt.Println(pat[:ind])
 	server := http.Server{Addr: ":8899"}
 	/*
 		访问url以/static/开头,就会把访问信息映射到指定的目录中
