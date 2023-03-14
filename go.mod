@@ -4,6 +4,7 @@ go 1.18
 
 require (
 	github.com/VictoriaMetrics/fastcache v1.9.0
+	github.com/antchfx/xmlquery v1.3.15
 	github.com/appleboy/gin-jwt/v2 v2.6.4
 	github.com/basgys/goxml2json v1.1.0
 	github.com/bytedance/sonic v1.3.4
@@ -26,14 +27,12 @@ require (
 	go.etcd.io/etcd/api/v3 v3.5.2
 	go.etcd.io/etcd/client/v3 v3.5.2
 	go.uber.org/zap v1.21.0
-	golang.org/x/text v0.6.0
+	golang.org/x/text v0.7.0
 	google.golang.org/grpc v1.43.0
 	google.golang.org/protobuf v1.27.1
 )
 
 require (
-	baliance.com/gooxml v1.0.1 // indirect
-	github.com/antchfx/xmlquery v1.3.15 // indirect
 	github.com/antchfx/xpath v1.2.3 // indirect
 	github.com/bitly/go-simplejson v0.5.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
@@ -80,8 +79,8 @@ require (
 	go.uber.org/multierr v1.6.0 // indirect
 	golang.org/x/arch v0.0.0-20210923205945-b76863e36670 // indirect
 	golang.org/x/crypto v0.0.0-20220408190544-5352b0902921 // indirect
-	golang.org/x/net v0.5.0 // indirect
-	golang.org/x/sys v0.4.0 // indirect
+	golang.org/x/net v0.7.0 // indirect
+	golang.org/x/sys v0.5.0 // indirect
 	google.golang.org/genproto v0.0.0-20211208223120-3a66f561d7aa // indirect
 	gopkg.in/ini.v1 v1.66.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
