@@ -1,4 +1,4 @@
-package file_process
+package golang文件处理
 
 import (
 	"bufio"
@@ -10,7 +10,7 @@ var filepath = "../test.info"
 
 type Info struct {
 	Name string `json:"name"`
-	Age  int	`json:"age"`
+	Age  int    `json:"age"`
 	Sex  string `json:"sex"`
 }
 

@@ -1,10 +1,11 @@
-package file_process
+package golang文件处理
 
 import (
 	"bufio"
 	"fmt"
 	"os"
 )
+
 //写入文件
 func writeIntoFile(filename string) {
 	outfile, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE, 0666)

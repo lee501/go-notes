@@ -1,11 +1,11 @@
-package file_process
+package golang文件处理
 
 import (
 	"fmt"
 	"io/ioutil"
 )
 
-func ListFiles(path string, level int)  {
+func ListFiles(path string, level int) {
 	fileInfo, err := ioutil.ReadDir(path)
 	if err != nil {
 		panic(err)
@@ -16,7 +16,7 @@ func ListFiles(path string, level int)  {
 				fmt.Printf("|\t")
 			}
 			fmt.Println(info.Name())
-			ListFiles(path + "/" + info.Name(),level+1)
+			ListFiles(path+"/"+info.Name(), level+1)
 		} else {
 			for curHier := level; curHier > 0; curHier-- {
 				fmt.Printf("|\t")

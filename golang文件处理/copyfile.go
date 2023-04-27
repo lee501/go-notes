@@ -1,4 +1,4 @@
-package file_process
+package golang文件处理
 
 import (
 	"io"
@@ -20,4 +20,3 @@ func CopyFile(toFile, fromFile string) (n int64, err error) {
 
 	return io.Copy(tofile, fromfile)
 }
-

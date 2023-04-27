@@ -21,7 +21,7 @@ func CpuUse(w http.ResponseWriter, r *http.Request) {
 	// CPU使用率
 	percent, _ := cpu.Percent(time.Second, false)
 	usage.Status = 1
-	usage.Usage = percent
+	usage.Usage = percent[0]
 	res, _ := json.Marshal(usage)
 	w.Header().Set("content-type", "application/json")
 	w.Write(res)
@@ -42,7 +42,7 @@ func cronTask() {
 			t.Reset(5 * time.Minute)
 			tmp := average
 			percent, _ := cpu.Percent(time.Second, false)
-			average = (percent + tmp) / 2
+			average = (percent[0] + tmp) / 2
 		}
 	}
 }

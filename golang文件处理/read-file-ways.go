@@ -1,4 +1,4 @@
-package file_process
+package golang文件处理
 
 import (
 	"bufio"
@@ -20,7 +20,7 @@ func ReadAllIntoMemory(filename string) (content []byte, err error) {
 	}
 	//分配一个文件大小的空间
 	buffer := make([]byte, fileInfo.Size())
-	_, err = fp.Read(buffer)  // 文件内容读取到buffer中
+	_, err = fp.Read(buffer) // 文件内容读取到buffer中
 	if err != nil {
 		return nil, err
 	}
@@ -65,7 +65,7 @@ func readBYLine(filename string) (lines [][]byte, err error) {
 
 	for {
 		line, _, err := bufReader.ReadLine()
-		if err!= nil {
+		if err != nil {
 			if err == io.EOF {
 				err = nil
 				break
@@ -76,33 +76,3 @@ func readBYLine(filename string) (lines [][]byte, err error) {
 	}
 	return
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,4 @@
-package file_process
+package golang文件处理
 
 import (
 	"bufio"
