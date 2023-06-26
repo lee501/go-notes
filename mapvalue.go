@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"net/url"
+	"path"
 	"regexp"
 )
 
@@ -25,4 +27,16 @@ func main() {
 	regg := regexp.MustCompile(r)
 	str1 := "urlpatgname.pdf"
 	fmt.Println(regg.FindStringSubmatch(str1))
+
+	urlString := "https://www.example.com/path/to/file.txt"
+	u, err := url.Parse(urlString)
+	if err != nil {
+		fmt.Printf("Error: %s\n", err)
+		return
+	}
+
+	filename := path.Base(u.Path)
+	fmt.Printf("Filename: %s\n", filename)
+
+	fmt.Println(fmt.Sprintf("%s\n 告警名称: %s\n 告警信息: %s", "api:", "test", "test2"))
 }
