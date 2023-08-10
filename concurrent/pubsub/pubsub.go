@@ -75,9 +75,7 @@ func (p *Publisher) Close() {
 }
 
 // 发送主题，可以容忍一定的超时
-func (p *Publisher) sendTopic(
-	sub subscriber, topic topicFunc, v interface{}, wg *sync.WaitGroup,
-) {
+func (p *Publisher) sendTopic(sub subscriber, topic topicFunc, v interface{}, wg *sync.WaitGroup) {
 	defer wg.Done()
 	if topic != nil && !topic(v) {
 		return

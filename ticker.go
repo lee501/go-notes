@@ -6,13 +6,13 @@ import (
 )
 
 type TidConfig struct {
-	Version           string `json:"Version"`
-	JsVersion         int		`json:"JsVersion"`
+	Version           string            `json:"Version"`
+	JsVersion         int               `json:"JsVersion"`
 	ChunkMode         string            `json:"ChunkMode"`
-	ControlFlagStruct map[string]string	`json:"ControlFlag"`
+	ControlFlagStruct map[string]string `json:"ControlFlag"`
 }
 
-func main()  {
+func main() {
 	ticker := time.NewTicker(3 * time.Second)
 	i := 0
 	for {
@@ -31,10 +31,10 @@ func main()  {
 	timer := time.NewTimer(2 * time.Second)
 	defer timer.Stop()
 
-	//if !timer.Stop() {
-	//	<- timer.C
-	//}
-	//timer.Reset(2 * time.Second)
+	if !timer.Stop() {
+		<-timer.C
+	}
+	timer.Reset(2 * time.Second)
 	for {
 		i += 3
 		select {
