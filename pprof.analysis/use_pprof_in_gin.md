@@ -28,6 +28,7 @@ func main() {
 /*
    * 客户服务器上采集性能分析
       curl -sK -v http://localhost:8070/debug/pprof/profile?seconds=600 > profile.out
+        curl -sK -v http://localhost:8070/debug/pprof/heap?seconds=30 > heap.out
    * 拷贝到本地
       scp root@49.232.10.214:profile11.out /Users/lee
    * 打开web查看
