@@ -1,0 +1,298 @@
+{
+  "api-security": [
+    {
+      "path": "/overall",
+      "label": "综合态势"
+    },
+    {
+      "path": "/property",
+      "label": "数据资产",
+      "children": [
+        {
+          "path": "/property/applications",
+          "label": "应用列表"
+        },
+        {
+          "path": "/property/apis",
+          "label": "API列表"
+        },
+        {
+          "path": "/property/servers",
+          "label": "服务器列表"
+        },
+        {
+          "path": "/property/group",
+          "label": "功能分组"
+        }
+      ]
+    },
+    {
+      "path": "/security",
+      "label": "安全风险",
+      "children": [
+        {
+          "path": "/security/risks",
+          "label": "风险运营"
+        },
+        {
+          "path": "/security/vulnerability",
+          "label": "API弱点"
+        }
+      ]
+    },
+    {
+      "path": "/audit",
+      "label": "审计溯源",
+      "children": [
+        {
+          "path": "/audit/content",
+          "label": "主体审计"
+        },
+        {
+          "path": "/audit/tracing",
+          "label": "风险溯源"
+        },
+        {
+          "path": "/audit/offline",
+          "label": "离线溯源"
+        }
+      ]
+    },
+    {
+      "path": "/data-leak",
+      "label": "敏感数据",
+      "children": [
+        {
+          "path": "/data-leak/overall",
+          "label": "敏感数据统计"
+        },
+        {
+          "path": "/data-leak/classify",
+          "label": "敏感数据规范"
+        },
+        {
+          "path": "/data-leak/cross",
+          "label": "数据出境审计"
+        },
+        {
+          "path": "/data-leak/list",
+          "label": "敏感数据溯源"
+        },
+        {
+          "path": "/data-leak/config",
+          "label": "敏感数据配置"
+        },
+        {
+          "path": "/data-leak/calibration",
+          "label": "敏感数据校准"
+        },
+        {
+          "path": "/data-leak/sherpa",
+          "label": "AI校准"
+        },
+        {
+          "path": "/data-leak/mask/record",
+          "label": "敏感数据脱敏"
+        },
+        {
+          "path": "/data-leak/file",
+          "label": "敏感文件管理"
+        }
+      ]
+    },
+    {
+      "path": "/file",
+      "label": "文件管控",
+      "children": [
+        {
+          "path": "/file/list",
+          "label": "文件列表"
+        },
+        {
+          "path": "/file/download",
+          "label": "下载记录"
+        },
+        {
+          "path": "/file/mask",
+          "label": "文件脱敏"
+        },
+        {
+          "path": "/file/watermark",
+          "label": "文件水印"
+        },
+        {
+          "path": "/file/sign",
+          "label": "文件签名"
+        },
+        {
+          "path": "/file/employees",
+          "label": "员工信息"
+        }
+      ]
+    },
+    {
+      "path": "/firewall",
+      "label": "API规范审计",
+      "children": [
+        {
+          "path": "/firewall/config",
+          "label": "API规范管理"
+        },
+        {
+          "path": "/firewall/warning",
+          "label": "API违规审计"
+        }
+      ]
+    },
+    {
+      "path": "/policy",
+      "label": "策略管理",
+      "children": [
+        {
+          "path": "/policy/rules",
+          "label": "检测规则配置"
+        },
+        {
+          "path": "/policy/actions",
+          "label": "访问控制",
+          "children": [
+            {
+              "path": "/policy/actions/site",
+              "label": "应用配置"
+            },
+            {
+              "path": "/policy/actions/biz",
+              "label": "业务配置"
+            },
+            {
+              "path": "/policy/actions/risk",
+              "label": "策略配置"
+            }
+          ]
+        },
+        {
+          "path": "/policy/user-token",
+          "label": "鉴权参数配置"
+        },
+        {
+          "path": "/policy/allow-deny",
+          "label": "黑白名单库"
+        }
+      ]
+    },
+    {
+      "path": "/system",
+      "label": "系统管理",
+      "children": [
+        {
+          "path": "/system/menu",
+          "label": "菜单配置"
+        },
+        {
+          "path": "/system/monitor",
+          "label": "系统监控",
+          "children": [
+            {
+              "path": "/system/monitor/gateway",
+              "label": "网关服务状态"
+            },
+            {
+              "path": "/system/monitor/data-service",
+              "label": "数据服务状态"
+            },
+            {
+              "path": "/system/monitor/container",
+              "label": "容器服务状态"
+            }
+          ]
+        },
+        {
+          "path": "/system/biz",
+          "label": "业务配置"
+        },
+        {
+          "path": "/system/filter",
+          "label": "流量过滤"
+        },
+        {
+          "path": "/system/user",
+          "label": "用户管理"
+        },
+        {
+          "path": "/system/config",
+          "label": "系统配置"
+        },
+        {
+          "path": "/system/task",
+          "label": "任务管理"
+        }
+      ]
+    },
+    {
+      "path": "/advanced",
+      "label": "高级运营",
+      "children": [
+        {
+          "path": "/advanced/running",
+          "label": "运行概览"
+        },
+        {
+          "path": "/advanced/flow",
+          "label": "数据流向"
+        },
+        {
+          "path": "/advanced/risk",
+          "label": "风险概览"
+        },
+        {
+          "path": "/advanced/discovery",
+          "label": "风险分析"
+        },
+        {
+          "path": "/advanced/alert",
+          "label": "告警管理",
+          "children": [
+            {
+              "path": "/advanced/alert/list",
+              "label": "告警列表"
+            },
+            {
+              "path": "/advanced/alert/rules",
+              "label": "告警规则"
+            },
+            {
+              "path": "/advanced/alert/rules-editor",
+              "label": "编辑/新增告警规则"
+            },
+            {
+              "path": "/advanced/alert/notification",
+              "label": "通知方式"
+            }
+          ]
+        },
+        {
+          "path": "/advanced/reports",
+          "label": "运营报表",
+          "children": [
+            {
+              "path": "/advanced/reports/list",
+              "label": "报表列表"
+            },
+            {
+              "path": "/advanced/reports/task",
+              "label": "报表任务"
+            }
+          ]
+        },
+        {
+          "path": "/advanced/analysis",
+          "label": "数据分析"
+        }
+      ]
+    },
+    {
+      "path": "/logs",
+      "label": "审计日志"
+    }
+  ]
+}
