@@ -1,13 +1,22 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"sync"
 )
 
 func main() {
-	r := in()
-	fmt.Println(len(r))
+	val := `{"name": "admin"}`
+	type Role struct {
+		Name string
+		IsOn bool
+	}
+	var role Role
+	json.Unmarshal([]byte(val), &role)
+	fmt.Println(role)
+	//r := in()
+	//fmt.Println(len(r))
 }
 
 func in() (res []int) {

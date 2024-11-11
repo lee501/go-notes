@@ -11,7 +11,7 @@ func outer(x int) func(int) int {
 	//return func(y int) int {
 	//	return x + y
 	//}
-	var a =  func(y int) int {
+	var a = func(y int) int {
 		return x + y
 	}
 	return a
@@ -44,7 +44,7 @@ func ProcessFunc() []func() {
 func ProcessFunc1() []func() {
 	var s []func()
 	for i := 0; i < 3; i++ {
-		x := i  // 通过赋值变量, 每次传入闭包函数的地址是不同的
+		x := i // 通过赋值变量, 每次传入闭包函数的地址是不同的
 		fmt.Printf("%p\n", &x)
 		s = append(s, func() {
 			fmt.Println(x)
@@ -67,8 +67,8 @@ func DeferPrint() {
 }
 
 func main() {
-	a := func(m int) func(int)int{
-		return func(n int) int{
+	a := func(m int) func(int) int {
+		return func(n int) int {
 			return m + n
 		}
 	}
@@ -76,11 +76,11 @@ func main() {
 	result := a5(6)
 	fmt.Println(result)
 
-	m := [...]int{1,2,3}
+	m := [...]int{1, 2, 3}
 	n := m[:]
 	test(n...)
 
-	t := []int{1,2,3,4,5}
+	t := []int{1, 2, 3, 4, 5}
 	fmt.Println(t[:2])
 	fmt.Println(t[3:])
 
@@ -91,6 +91,7 @@ func main() {
 }
 
 type M int
+
 func test(p ...int) int {
 	l := 0
 	for _, v := range p {
@@ -100,7 +101,7 @@ func test(p ...int) int {
 }
 
 //装饰函数
-type Function func(int)int
+type Function func(int) int
 
 func Decorate(fu Function) Function {
 	return func(i int) int {
