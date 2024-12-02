@@ -42,6 +42,6 @@ func main() {
 	//fmt.Println(config.Get("database.host"))
 	//fmt.Println(config.Get("database.user"))
 	//fmt.Println(config.Get("database.dbname"))
-	//fmt.Println(config.Get("database.pwd"))
+	//fmt.Println(config.Get("database.pwd")
 
 }

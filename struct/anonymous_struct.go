@@ -13,12 +13,13 @@ type Person1 struct {
 	sex  byte
 	age  int
 }
+
 //学生
 type Student2 struct {
 	Person1 // 匿名字段，那么默认Student就包含了Person的所有字段
-	id     int
-	addr   string
-	name string // 同名字段
+	id      int
+	addr    string
+	name    string // 同名字段
 }
 
 //非结构体匿名字段
@@ -35,27 +36,28 @@ type Student3 struct {
 	*Person1
 	id int
 }
+
 func main() {
 	//初始化
-	s1 := Student2{Person1{"mike", 'm', 18}, 1, "sz", "ss"} //顺序初始化，注意Person的初始化方法
+	_ = Student2{Person1{"mike", 'm', 18}, 1, "sz", "ss"} //顺序初始化，注意Person的初始化方法
 
-	s2 := Student2{Person1: Person1{name: "lee"}, id: 1}  //部分成员初识化
+	_ = Student2{Person1: Person1{name: "lee"}, id: 1} //部分成员初识化
 
 	//成员操作
 	var s3 Student2
-	s3.name = "lee" //同名字段默认给外层成员赋值
+	s3.name = "lee"          //同名字段默认给外层成员赋值
 	s3.Person1.name = "anne" //同名字段给内层成员赋值
-	s3.sex = 0 //等同于s3.Person.sex
+	s3.sex = 0               //等同于s3.Person.sex
 	//Person为结构体，是一个匿名字段
 	s3.Person1 = Person1{"lee", 1, 22}
 
 	//非结构体匿名字段的赋值
-	t := Teacher{int: 1, mystr: "hello"}
+	_ = Teacher{int: 1, mystr: "hello"}
 
 	//	结构体指针的初始化
-	s4 := Student3{&Person1{"mike", 1, 18}, 1}
+	_ = Student3{&Person1{"mike", 1, 18}, 1}
 	// 声明变量方式
 	var s5 Student3
 	s5.Person1 = new(Person1) //new 一个空间
-	s5.Person1.name = "lee" //等同于s5.name
+	s5.Person1.name = "lee"   //等同于s5.name
 }
