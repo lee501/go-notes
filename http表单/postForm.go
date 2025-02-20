@@ -1,4 +1,4 @@
-package http_postform
+package form
 
 import (
 	"net/http"
