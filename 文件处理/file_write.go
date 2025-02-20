@@ -1,4 +1,4 @@
-package go_file_process
+package file
 
 import (
 	"bufio"
