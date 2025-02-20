@@ -42,7 +42,7 @@ func main() {
 				wg.Done()
 				os.Exit(0)
 			}
-			conn.Write([]byte(fmt.Sprintf("%s-%s-%s-%s", user.Username, user.OtherUsername, user.Msg, user.ServerMsg)))
+			_, _ = conn.Write([]byte(fmt.Sprintf("%s-%s-%s-%s", user.Username, user.OtherUsername, user.Msg, user.ServerMsg)))
 		}
 	}()
 	//接收消息
