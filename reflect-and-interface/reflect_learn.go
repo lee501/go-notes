@@ -10,7 +10,7 @@ type T struct {
 	B string
 }
 
-func main()  {
+func demoReflectLearn() {
 	t := &T{201, "mh103"}
 	s := reflect.ValueOf(t)
 	s = s.Elem()

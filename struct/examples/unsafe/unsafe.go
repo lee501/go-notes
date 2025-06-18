@@ -1,24 +1,54 @@
-package Struct
+package examples
 
 import (
 	"fmt"
 	"unsafe"
 )
 
-//
-//func main() {
-//	s := "123"
-//	b := ([]byte)(s)
-//	change(s)
-//	fmt.Println(b)
-//	ss := "hello"
-//	fmt.Println(*(*string)(unsafe.Pointer(&ss)))
-//}
-//
+// UnsafeExample demonstrates unsafe pointer operations with structs
+func UnsafeExample() {
+	fmt.Println("\n=== Unsafe Pointer Demo ===")
+	fmt.Println("WARNING: This example uses unsafe package. Use with caution!")
 
-//func change(s string){
-//	s = "456"
-//}
+	// Example 1: Basic unsafe pointer usage
+	var x int = 42
+	ptr := unsafe.Pointer(&x)
+	fmt.Printf("Value at %p: %d\n", ptr, *(*int)(ptr))
+
+	// Example 2: Struct field access using unsafe
+	type Person struct {
+		Name string
+		Age  int
+	}
+
+	p := Person{"Alice", 30}
+	pPtr := unsafe.Pointer(&p)
+
+	// Get the address of the Age field (offset of 16 bytes on 64-bit systems)
+	// Note: This is architecture dependent and not recommended for production code
+	agePtr := (*int)(unsafe.Pointer(uintptr(pPtr) + unsafe.Offsetof(p.Age)))
+	*agePtr = 31 // Unsafely modify the Age field
+
+	fmt.Printf("Modified person: %+v\n", p)
+
+	// Example 3: Converting between types
+	type FakePerson struct {
+		Name [5]byte // Matches the size of string header (on 64-bit systems)
+		Age  int
+	}
+
+	// This is extremely unsafe - only for demonstration
+	fake := (*FakePerson)(unsafe.Pointer(&p))
+	fmt.Printf("Fake person: %+v\n", fake)
+
+	// Example 4: Size and alignment
+	fmt.Printf("\nType Sizes (bytes):\n")
+	fmt.Printf("int: %d\n", unsafe.Sizeof(int(0)))
+	fmt.Printf("string: %d\n", unsafe.Sizeof(string("")))
+	fmt.Printf("Person struct: %d\n", unsafe.Sizeof(Person{}))
+	fmt.Printf("Alignment of Person: %d\n", unsafe.Alignof(Person{}))
+}
+
 /*
 	首先，要理解go的string类型是什么
 
@@ -48,44 +78,3 @@ import (
 
 	对于fun3, 因为c本来就是一个新创建的string变量，也就是一个独立的StringHeader，没有复用变量a的内存，所以是正常的赋值和输出
 */
-func demoUnsafePointer() {
-	//num := 5
-	//numPointer := &num
-	//
-	//flnum := (*string)(unsafe.Pointer(numPointer))
-	//fmt.Println(*flnum)
-	fun1()
-	fun2()
-	fun3()
-	//var m *(*string)
-	//fmt.Printf("%p", m)
-	//fmt.Printf("%p", *m)
-	//var s *string
-	//s =
-	//fmt.Printf("%#v", s)
-	a := 1
-	b := a
-	var c *int
-	c = &a
-	fmt.Printf("%#v, %#v, %#v", a, b, *c)
-}
-
-func fun1() {
-	a := 2
-	c := (*string)(unsafe.Pointer(&a))
-	*c = "2222"
-	fmt.Println(*c)
-}
-
-func fun2() {
-	a := "654"
-	c := (*string)(unsafe.Pointer(&a))
-	*c = "44"
-	fmt.Println(*c)
-}
-func fun3() {
-	a := 3
-	c := *(*string)(unsafe.Pointer(&a))
-	c = "445"
-	fmt.Println(c)
-}

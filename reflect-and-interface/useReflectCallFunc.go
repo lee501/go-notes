@@ -5,11 +5,11 @@ import (
 	"reflect"
 )
 
-func Add(a,b int) int {
+func Add(a, b int) int {
 	return a + b
 }
 
-func main() {
+func demoUseReflectCallFunc() {
 	v := reflect.ValueOf(Add)
 	fmt.Println(v.Kind())
 	if v.Kind() != reflect.Func {

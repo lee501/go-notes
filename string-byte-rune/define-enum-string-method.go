@@ -20,7 +20,7 @@ func (b BizType) String() string {
 	return [...]string{"search flight", "calendar flight", "booking flight"}[b]
 }
 
-func main() {
+func demoMain() {
 	var search BizType = SearchFlight
 	fmt.Println(search)
 }

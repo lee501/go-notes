@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	socket "github.com/googollee/go-socket.io"
 	"reflect"
+
+	socket "github.com/googollee/go-socket.io"
 )
 
-func main() {
+func demoReflectFunc() {
 	c := event
 	fv := reflect.ValueOf(c)
 	ft := fv.Type()

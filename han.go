@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func main() {
@@ -39,8 +40,13 @@ func main() {
 	//if *l == "" {
 	//	fmt.Println("l is blank")
 	//}
-	arr := [][]int{{1, 2}, {3, 4}, {5, 6}, {20, 15}}
-	fmt.Println(processGroup(arr))
+	//arr := [][]int{{1, 2}, {3, 4}, {5, 6}, {20, 15}}
+	//fmt.Println(processGroup(arr))
+
+	if true != false {
+		fmt.Println(1)
+	}
+	fmt.Println(strconv.FormatBool(true))
 }
 
 func processGroup(indexes [][]int) [][]int {

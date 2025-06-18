@@ -22,7 +22,7 @@ package main
 
 import "fmt"
 
-//通过rune修改字符串
+// 通过rune修改字符串
 func StrChangeByRune(str *string, i int, ch rune) {
 	temp := []rune(*str)
 	//更改下标i的元素
@@ -30,7 +30,8 @@ func StrChangeByRune(str *string, i int, ch rune) {
 	//转换成字符串
 	*str = string(temp)
 }
-//通过byte修改字符串
+
+// 通过byte修改字符串
 func StrChangeByByte(str *string, i int, ch byte) {
 	//转换为字节
 	temp := []byte(*str)
@@ -39,7 +40,7 @@ func StrChangeByByte(str *string, i int, ch byte) {
 	//转换成字符串
 	*str = string(temp)
 }
-func main() {
+func demo() {
 	s := "GO编程"
 	//字符串的长度为字节的长度，因为string的底层是[]byte, len(s)值为8，一个中文占了三个字节
 	fmt.Println(len(s))
