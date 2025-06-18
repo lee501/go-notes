@@ -6,7 +6,7 @@ import (
 	"github.com/cloudflare/ahocorasick"
 )
 
-func main() {
+func ahoCorasickDemo() {
 	dictionary := []string{"hello", "world", "世界", "google", "golang", "c++", "love"}
 	ac := ahocorasick.NewStringMatcher(dictionary)
 

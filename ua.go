@@ -106,7 +106,7 @@ type BookingParam struct {
 	Sign              string `json:"sign"`
 }
 
-func main() {
+func uaDemo() {
 	l := "Mozilla/4.0 (compatible; tyty 7.0; Windows NT 5.1)"
 	fmt.Println(GetFp(l))
 

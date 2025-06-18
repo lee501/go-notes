@@ -6,7 +6,7 @@ import (
 	"sync"
 )
 
-func main() {
+func syncWaitDemo() {
 	val := `{"name": "admin"}`
 	type Role struct {
 		Name string

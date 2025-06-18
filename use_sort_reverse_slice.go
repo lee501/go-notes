@@ -86,7 +86,7 @@ func addItem(dc map[string]map[string]int64) {
 	dc["table"] = map[string]int64{"a": 1}
 }
 
-func main() {
+func useSortReverseSliceDemo() {
 	str := "12"
 	for _, item := range strings.Split(str, ",") {
 		fmt.Println(item)

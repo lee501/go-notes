@@ -15,7 +15,7 @@ type defaultFactory struct {
 	backend Backend
 }
 
-func main() {
+func backendDemo() {
 
 	str := `{
 	"Body": "{\"code\": 200, \"orderId\": 1, \"orderStatus\": 0, \"orderTotalAmount\": 256.0, \"productId\": \"27e44731-0e1b-4244-9933-003bae53eff0\", \"productCount\": 4, \"buyerName\": \"\\u5f90\\u6ce2\", \"buyerPhone\": \"18612345678\", \"receiverName\": \"\\u6768\\u82f1\", \"receiverPhone\": \"15887654321\", \"receiverAddress\": \"\\u6e56\\u5317\\u7701\\u6b66\\u6c49\\u5e02\\u5357\\u957f\\u9ec4\\u8857q\\u5ea7 357996\"}",

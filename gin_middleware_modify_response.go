@@ -16,7 +16,7 @@ func Ping(c *gin.Context) {
 	c.String(200, "pong")
 }
 
-func main() {
+func ginMiddlewareModifyResponseDemo() {
 	router := gin.New()
 
 	router.Use(Handler)

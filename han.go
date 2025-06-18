@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func hanDemo() {
 	//addrRe := regexp.MustCompile(`\p{Han}+省|\p{Han}+市|\p{Han}+州|\p{Han}+区|\p{Han}+县`)
 	//str := `河北省廊坊市三河市`
 	//re := addrRe.FindAllString(str, 5)
