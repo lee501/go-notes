@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/url"
+	"strings"
 )
 
 func GetFp(line string) string {
@@ -127,4 +128,11 @@ func uaDemo() {
 		fmt.Println("正常", err1)
 	}
 	fmt.Println(res)
+}
+
+func main() {
+	str := "{\"measures\":[\"AccessView.count\",\"AccessView.minCountArray\"],\"timeDimensions\":[{\"dimension\":\"AccessView.ts\",\"dateRange\":\"today\"}],\"filters\":[{\"dimension\":\"AccessView.channel\",\"operator\":\"equals\",\"values\":[\"yuan_test\"]}],\"dimensions\":[],\"segments\":[\"AccessView.org\",\"AccessView.black\"],\"timezone\":\"Asia/Shanghai\"}"
+	if strings.Contains(str, "AccessView.channel") {
+		fmt.Println("AccessView.channel")
+	}
 }
