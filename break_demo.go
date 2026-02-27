@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func main() {
+func breakDemo() {
 
 	ticker := time.NewTicker(time.Second * 2)
 	timer := time.NewTimer(time.Second * 9)

@@ -7,7 +7,7 @@ import (
 	"github.com/VictoriaMetrics/fastcache"
 )
 
-func main() {
+func captchaDemo() {
 	path := "./captcha.html"
 	bs, err := ioutil.ReadFile(path)
 	if err != nil {

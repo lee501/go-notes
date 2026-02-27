@@ -1,4 +1,4 @@
-package main
+package Struct
 
 import (
 	"encoding/json"
@@ -7,17 +7,17 @@ import (
 
 type Person struct {
 	FirstName string
-	LastName string
-	Name func(first, last string) string
+	LastName  string
+	Name      func(first, last string) string
 }
 
-func Name(first, last string) string{
+func Name(first, last string) string {
 	return first + last
 }
-func main() {
+func demoStructDetails() {
 	person := &Person{
 		FirstName: "lee",
-		LastName: "andy",
+		LastName:  "andy",
 		//结构体中包括匿名方法字段的初始化
 		//Name: func(first, last string) string {
 		//	contactName := []string{first, last}
@@ -38,10 +38,10 @@ m := struct {
 	在访问的时候编译器会自动把 stu2.name 转为 (*stu2).name。
 */
 
-//工厂模式自定义构造函数
+// 工厂模式自定义构造函数
 type Student struct {
-	name string
-	age int
+	name  string
+	age   int
 	Class string
 }
 
@@ -49,18 +49,19 @@ func NewStu(name, class string, age int) *Student {
 	return &Student{name, age, class}
 }
 
-//tag
-//tag可以为结构体的成员添加说明或者标签便于使用,这些说明可以通过反射获取到
+// tag
+// tag可以为结构体的成员添加说明或者标签便于使用,这些说明可以通过反射获取到
 type Student1 struct {
 	Name string `json: "name"`
-	Age int `json: "age"`
+	Age  int    `json: "age"`
 }
-//json序列化
-func ToJson() (string, error){
+
+// json序列化
+func ToJson() (string, error) {
 	stu := Student1{Name: "lee", Age: 22}
 	data, err := json.Marshal(stu)
-	if err != nil{
-		fmt.Println("json encode failed err:",err)
+	if err != nil {
+		fmt.Println("json encode failed err:", err)
 		return "", err
 	}
 	return string(data), nil

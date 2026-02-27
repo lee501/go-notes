@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/url"
+	"strings"
 )
 
 func GetFp(line string) string {
@@ -106,7 +107,7 @@ type BookingParam struct {
 	Sign              string `json:"sign"`
 }
 
-func main() {
+func uaDemo() {
 	l := "Mozilla/4.0 (compatible; tyty 7.0; Windows NT 5.1)"
 	fmt.Println(GetFp(l))
 
@@ -127,4 +128,11 @@ func main() {
 		fmt.Println("正常", err1)
 	}
 	fmt.Println(res)
+}
+
+func main() {
+	str := "{\"measures\":[\"AccessView.count\",\"AccessView.minCountArray\"],\"timeDimensions\":[{\"dimension\":\"AccessView.ts\",\"dateRange\":\"today\"}],\"filters\":[{\"dimension\":\"AccessView.channel\",\"operator\":\"equals\",\"values\":[\"yuan_test\"]}],\"dimensions\":[],\"segments\":[\"AccessView.org\",\"AccessView.black\"],\"timezone\":\"Asia/Shanghai\"}"
+	if strings.Contains(str, "AccessView.channel") {
+		fmt.Println("AccessView.channel")
+	}
 }

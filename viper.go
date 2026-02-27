@@ -19,7 +19,7 @@ type Database struct {
 	On     int    `mapstructure:"id"`
 }
 
-func main() {
+func viperDemo() {
 	//获取项目的执行路径
 	path, err := os.Getwd()
 	if err != nil {

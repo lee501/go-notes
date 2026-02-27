@@ -15,7 +15,7 @@ type TaskConfig struct {
 	End    time.Time `json:"end"`
 }
 
-func main() {
+func sonicDemo() {
 	m := struct {
 		Name string
 		Sex  string

@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
-func main() {
+func hanDemo() {
 	//addrRe := regexp.MustCompile(`\p{Han}+省|\p{Han}+市|\p{Han}+州|\p{Han}+区|\p{Han}+县`)
 	//str := `河北省廊坊市三河市`
 	//re := addrRe.FindAllString(str, 5)
@@ -39,8 +40,13 @@ func main() {
 	//if *l == "" {
 	//	fmt.Println("l is blank")
 	//}
-	arr := [][]int{{1, 2}, {3, 4}, {5, 6}, {20, 15}}
-	fmt.Println(processGroup(arr))
+	//arr := [][]int{{1, 2}, {3, 4}, {5, 6}, {20, 15}}
+	//fmt.Println(processGroup(arr))
+
+	if true != false {
+		fmt.Println(1)
+	}
+	fmt.Println(strconv.FormatBool(true))
 }
 
 func processGroup(indexes [][]int) [][]int {

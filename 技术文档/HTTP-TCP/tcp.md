@@ -16,7 +16,7 @@ TCP三次握手
 TCP四次挥手
 -
 
-   ![](../public/tcp-four.png)
+![](../public/tcp-four.png)
    1. 客户端先发送FIN，进入FIN_WAIT1状态
    2. 服务端收到FIN, 发送ACK，进入CLOSE_WAIT状态，客户端收到ACK， 进入FIN_WAIT2状态
    3. 服务端发送FIN，进入LAST_ACK状态

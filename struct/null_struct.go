@@ -1,4 +1,4 @@
-package main
+package Struct
 
 import (
 	"fmt"
@@ -11,11 +11,12 @@ import (
 type m chan struct{}
 
 var wg sync.WaitGroup
-func main() {
+
+func demoNullStruct() {
 	n := make(m, 1)
-	n <- struct {}{}
+	n <- struct{}{}
 	select {
-	case <- n:
+	case <-n:
 		fmt.Println("空值")
 	}
 
@@ -24,6 +25,6 @@ func main() {
 		test <- 1
 	}()
 
-	<- test
+	<-test
 	fmt.Println("关闭")
 }

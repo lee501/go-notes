@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //func main() {
 //	arr := []int{5, 4, 7, 8, 2, 4, 3, 6, 7, 2}
@@ -63,7 +65,7 @@ func quickSort(s []int, begin, end int) {
 			j--
 		}
 	}
-	if begin <j {
+	if begin < j {
 		quickSort(s, begin, j)
 	}
 	if end > i {
@@ -71,8 +73,34 @@ func quickSort(s []int, begin, end int) {
 	}
 }
 
-func main()  {
-	s := []int{4,1,6,3,5,7,2}
-	quickSort(s, 0, 6)
+func main() {
+	s := []int{4, 1, 6, 3, 5, 7, 2}
+	quickSortV3(s)
 	fmt.Println(s)
+}
+
+func quickSortV3(arr []int) {
+	if len(arr) <= 1 {
+		return
+	}
+
+	//选择中间元素作为基准值
+	pivotIndex := len(arr) / 2
+	pivotVal := arr[pivotIndex]
+	//交换基准到最后位置
+	arr[pivotIndex], arr[len(arr)-1] = arr[len(arr)-1], arr[pivotIndex]
+
+	storeIndex := 0 //指向第一个大于基准的位置
+	for i := 0; i < len(arr)-1; i++ {
+		if arr[i] < pivotVal {
+			if i != storeIndex {
+				arr[i], arr[storeIndex] = arr[storeIndex], arr[i]
+			}
+			storeIndex++
+		}
+	}
+	//放回正确的位置
+	arr[storeIndex], arr[len(arr)-1] = arr[len(arr)-1], arr[storeIndex]
+	quickSortV3(arr[:storeIndex])
+	quickSortV3(arr[storeIndex+1:])
 }

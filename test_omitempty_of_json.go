@@ -22,7 +22,7 @@ type TestingRes struct {
 	IsOK     bool `json:"-"`
 }
 
-func main() {
+func testEmitemptyOfJson() {
 	mess := Message{
 		FinalTestingRes: FinalTestingRes{
 			[]TestingRes{},
