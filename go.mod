@@ -24,7 +24,6 @@ require (
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/petar-dambovaliev/aho-corasick v0.0.0-20211021192214-5ab2d9280aa9
 	github.com/robfig/cron/v3 v3.0.0
-	github.com/scritchley/orc v0.0.0-20210513144143-06dddf1ad665
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/viper v1.10.1
 	github.com/valyala/fastjson v1.6.3
@@ -33,7 +32,6 @@ require (
 	go.etcd.io/etcd/api/v3 v3.5.2
 	go.etcd.io/etcd/client/v3 v3.5.2
 	go.uber.org/zap v1.21.0
-	golang.org/x/exp v0.0.0-20241108190413-2d47ceb2692f
 	golang.org/x/text v0.25.0
 	google.golang.org/grpc v1.56.3
 	google.golang.org/protobuf v1.33.0
@@ -59,14 +57,11 @@ require (
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/gomodule/redigo v1.8.4 // indirect
-	github.com/google/gopacket v1.1.19 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
-	github.com/lee501/doc v0.0.0-20250529051208-923e95a97a30 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/magiconair/properties v1.8.5 // indirect
-	github.com/mattetti/filebuffer v1.0.1 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mitchellh/mapstructure v1.4.3 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
