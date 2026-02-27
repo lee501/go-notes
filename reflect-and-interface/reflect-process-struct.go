@@ -20,20 +20,18 @@ import (
 		NumField() int
 	}
 
-
 	type Value struct {
 		// contains filtered or unexported fields
 	}
-	func (v Value) Field(i int) Value
-	func (v Value) FieldByIndex(index []int) Value
-	func (v Value) FieldByName(name string) Value
-	func (v Value) FieldByNameFunc(match func(string) bool) Value
-	func (v Value) Method(i int) Value
-	func (v Value) MethodByName(name string) Value
-	func (v Value) NumField() int
-	func (v Value) NumMethod() int
 
-
+func (v Value) Field(i int) Value
+func (v Value) FieldByIndex(index []int) Value
+func (v Value) FieldByName(name string) Value
+func (v Value) FieldByNameFunc(match func(string) bool) Value
+func (v Value) Method(i int) Value
+func (v Value) MethodByName(name string) Value
+func (v Value) NumField() int
+func (v Value) NumMethod() int
 */
 type User struct {
 	Id   int
@@ -45,7 +43,7 @@ func (u User) ReflectCallFunc() {
 	fmt.Println("Allen.Wu ReflectCallFunc")
 }
 
-func main() {
+func demoReflectProcessStruct() {
 
 	user := User{1, "Allen.Wu", 25}
 
@@ -80,8 +78,8 @@ func DoFiledAndMethod(input interface{}) {
 	}
 }
 
-//通过reflect.Value设置实际变量的值
-//reflect.Value是通过reflect.ValueOf(X)获得的，只有当X是指针的时候，才可以通过reflec.Value修改实际变量X的值，
+// 通过reflect.Value设置实际变量的值
+// reflect.Value是通过reflect.ValueOf(X)获得的，只有当X是指针的时候，才可以通过reflec.Value修改实际变量X的值，
 // 即：要修改反射类型的对象就一定要保证其值是“addressable”的
 func changeValue() {
 	var num float64 = 1.2345

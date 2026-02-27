@@ -1,4 +1,4 @@
-package main
+package Struct
 
 import (
 	"fmt"
@@ -7,11 +7,12 @@ import (
 
 type SplitFunc func(data string) (result []string)
 
-type Mystruct struct{
-	split SplitFunc
+type Mystruct struct {
+	split    SplitFunc
 	Iscalled bool
 }
-func main()  {
+
+func demoStructWithMethod() {
 	//s := "浙江省杭州市"
 	//storune := []rune(s)
 	//fmt.Println(string(storune[:2]))
@@ -27,12 +28,12 @@ func main()  {
 
 func NewMystruct(called bool) Mystruct {
 	return Mystruct{
-		split: SplitString,
+		split:    SplitString,
 		Iscalled: called,
 	}
 }
 
-func SplitString(data string) (result []string){
+func SplitString(data string) (result []string) {
 	return strings.Split(data, ",")
 }
 
@@ -60,7 +61,7 @@ func NewSuffer(a bool) *Suffer {
 	}
 }
 
-func test(s string) ([]string) {
+func test(s string) []string {
 	var str []string
 	fmt.Println(s)
 	return append(str, s)

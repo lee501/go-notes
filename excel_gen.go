@@ -9,7 +9,7 @@ import (
 	"github.com/xuri/excelize/v2"
 )
 
-func main() {
+func excelGen() {
 	str := `[
     {
       "Key": "身份证",

@@ -5,6 +5,9 @@ import (
 	"fmt"
 )
 
+func demoContextUse() {
+	testWorkContext()
+}
 func testWorkContext() {
 	ch := make(chan int)
 	ctx := context.Background()

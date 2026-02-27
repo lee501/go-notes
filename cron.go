@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/robfig/cron/v3"
 	"log"
+
+	"github.com/robfig/cron/v3"
 )
 
-func main() {
+func cronDemo() {
 	i := 0
 	c := cron.New()
 	//每分钟
@@ -15,5 +16,5 @@ func main() {
 		log.Println("cron running:", i)
 	})
 	c.Start()
-	select{}
+	select {}
 }

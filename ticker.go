@@ -34,7 +34,7 @@ func retainNodes(nodes []*Node, pathsToRetain []string) []*Node {
 	return retained
 }
 
-func main() {
+func tickerDemo() {
 	// 创建一个示例树
 	root := &Node{
 		Path: "/root",
