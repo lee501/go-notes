@@ -6,15 +6,16 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"io"
 	"log"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/gin-gonic/gin"
 )
 
-/// 解析多个文件上传中，每个具体的文件的信息
+// / 解析多个文件上传中，每个具体的文件的信息
 type FileHeader struct {
 	ContentDisposition string
 	Name               string
@@ -23,9 +24,9 @@ type FileHeader struct {
 	ContentLength      int64
 }
 
-/// 解析描述文件信息的头部
-/// @return FileHeader 文件名等信息的结构体
-/// @return bool 解析成功还是失败
+// / 解析描述文件信息的头部
+// / @return FileHeader 文件名等信息的结构体
+// / @return bool 解析成功还是失败
 func ParseFileHeader(h []byte) (FileHeader, bool) {
 	arr := bytes.Split(h, []byte("\r\n"))
 	var out_header FileHeader
@@ -72,10 +73,10 @@ func ParseFileHeader(h []byte) (FileHeader, bool) {
 	return out_header, true
 }
 
-/// 从流中一直读到文件的末位
-/// @return []byte 没有写到文件且又属于下一个文件的数据
-/// @return bool 是否已经读到流的末位了
-/// @return error 是否发生错误
+// / 从流中一直读到文件的末位
+// / @return []byte 没有写到文件且又属于下一个文件的数据
+// / @return bool 是否已经读到流的末位了
+// / @return error 是否发生错误
 func ReadToBoundary(boundary []byte, stream io.ReadCloser, target io.WriteCloser) ([]byte, bool, error) {
 	read_data := make([]byte, 1024*8)
 	read_data_len := 0
@@ -111,14 +112,14 @@ func ReadToBoundary(boundary []byte, stream io.ReadCloser, target io.WriteCloser
 	return nil, reach_end, nil
 }
 
-/// 解析表单的头部
-/// @param read_data 已经从流中读到的数据
-/// @param read_total 已经从流中读到的数据长度
-/// @param boundary 表单的分割字符串
-/// @param stream 输入流
-/// @return FileHeader 文件名等信息头
-///			[]byte 已经从流中读到的部分
-///			error 是否发生错误
+// / 解析表单的头部
+// / @param read_data 已经从流中读到的数据
+// / @param read_total 已经从流中读到的数据长度
+// / @param boundary 表单的分割字符串
+// / @param stream 输入流
+// / @return FileHeader 文件名等信息头
+// /			[]byte 已经从流中读到的部分
+// /			error 是否发生错误
 func ParseFromHead(read_data []byte, read_total int, boundary []byte, stream io.ReadCloser) (FileHeader, []byte, error) {
 	buf := make([]byte, 1024*4)
 	found_boundary := false
@@ -160,7 +161,7 @@ func ParseFromHead(read_data []byte, read_total int, boundary []byte, stream io.
 	return file_header, nil, fmt.Errorf("reach to sream EOF")
 }
 
-func main() {
+func bigFileDemo() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 	r := gin.Default()
 	r.StaticFile("/upload.html", "./upload.html")

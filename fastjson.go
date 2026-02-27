@@ -7,7 +7,7 @@ import (
 	"github.com/valyala/fastjson"
 )
 
-func main() {
+func fastjsonDemo() {
 	str := []string{"openid123"}
 	param := []string{"openid", "0"}
 	b, err := json.Marshal(str)

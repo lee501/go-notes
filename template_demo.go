@@ -13,7 +13,7 @@ type Info struct {
 	TraceID  string
 }
 
-func main() {
+func templateDemo() {
 	body := `{{ if eq .RiskName "IP提现频繁" "设备提现频繁" "会员提现频繁" "H5-开启调试工具"}}
               {"code":418,"data":{"value":""},"message": "5分钟内提现用户数已达上线，请稍后再试!, IP：{{ .ClientIP }}，时间：{{ .Time }}，访问ID：{{ .TraceID }}"}
             {{ else if eq .RiskName "会员提现金额"}}

@@ -10,7 +10,7 @@ import (
 	"sync"
 )
 
-func main() {
+func demoLookupIP() {
 	hosts := []string{"www.baidu.com", "www.sina.com"}
 	chans := make(chan string, len(hosts))
 	var wait sync.WaitGroup

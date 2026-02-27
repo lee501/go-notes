@@ -14,7 +14,8 @@ var builder = ahocorasick.NewAhoCorasickBuilder(ahocorasick.Opts{
 
 var dict = []string{"air", "flight", "login", "signin", "signup", "register", "password", "sms", "captcha", "upload", "download", "query", "list", "search", "pay", "checkout", "book", "order", "reserve", "calendar", "coupon"}
 
-func main() {
+// ExampleAhoCorasick 演示Aho-Corasick算法的示例函数
+func ExampleAhoCorasick() {
 	var res []interface{}
 	res = append(res, builder.Build(dict))
 	acid := 0
@@ -24,5 +25,5 @@ func main() {
 	for _, match := range matches {
 		ret = append(ret, match.Pattern())
 	}
-	fmt.Println(ret)
+	fmt.Println("AhoCorasick 匹配结果:", ret)
 }
