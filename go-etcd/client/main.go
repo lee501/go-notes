@@ -4,9 +4,9 @@ import (
 	"context"
 	"log"
 
-	"github.com/sevenelevenlee/go-notes/go-etcd/client/transport"
+	"github.com/bytexlee/go-notes/go-etcd/client/transport"
 
-	"github.com/sevenelevenlee/go-notes/go-etcd/client/utils"
+	"github.com/bytexlee/go-notes/go-etcd/client/utils"
 )
 
 func main() {

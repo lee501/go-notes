@@ -1,7 +1,7 @@
 /*
 本例子实现了gin框架下的多个大文件流式上传，避免了文件内容存在内存而无法支持大文件的情况
 */
-package main
+package bigfile
 
 import (
 	"bytes"

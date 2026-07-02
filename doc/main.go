@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/lee501/doc"
+	"github.com/bytexlee/doc"
 )
 
 func main() {

@@ -3,7 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/url"
+	"strconv"
 	"strings"
 )
 
@@ -131,8 +133,119 @@ func uaDemo() {
 }
 
 func main() {
-	str := "{\"measures\":[\"AccessView.count\",\"AccessView.minCountArray\"],\"timeDimensions\":[{\"dimension\":\"AccessView.ts\",\"dateRange\":\"today\"}],\"filters\":[{\"dimension\":\"AccessView.channel\",\"operator\":\"equals\",\"values\":[\"yuan_test\"]}],\"dimensions\":[],\"segments\":[\"AccessView.org\",\"AccessView.black\"],\"timezone\":\"Asia/Shanghai\"}"
-	if strings.Contains(str, "AccessView.channel") {
-		fmt.Println("AccessView.channel")
+	data := `{
+  "meta":
+  [
+    {
+      "name": "name",
+      "type": "String"
+    },
+    {
+      "name": "path",
+      "type": "String"
+    },
+    {
+      "name": "free_space",
+      "type": "UInt64"
+    },
+    {
+      "name": "total_space",
+      "type": "UInt64"
+    },
+    {
+      "name": "unreserved_space",
+      "type": "UInt64"
+    },
+    {
+      "name": "keep_free_space",
+      "type": "UInt64"
+    },
+    {
+      "name": "type",
+      "type": "String"
+    },
+    {
+      "name": "object_storage_type",
+      "type": "String"
+    },
+    {
+      "name": "metadata_type",
+      "type": "String"
+    },
+    {
+      "name": "is_encrypted",
+      "type": "UInt8"
+    },
+    {
+      "name": "is_read_only",
+      "type": "UInt8"
+    },
+    {
+      "name": "is_write_once",
+      "type": "UInt8"
+    },
+    {
+      "name": "is_remote",
+      "type": "UInt8"
+    },
+    {
+      "name": "is_broken",
+      "type": "UInt8"
+    },
+    {
+      "name": "cache_path",
+      "type": "String"
+    }
+  ],
+
+  "data":
+  [
+    {
+      "name": "default",
+      "path": "\/var\/lib\/clickhouse\/",
+      "free_space": 39842373632,
+      "total_space": "135864516608",
+      "unreserved_space": "39842373632",
+      "keep_free_space": "5368709120",
+      "type": "Local",
+      "object_storage_type": "None",
+      "metadata_type": "None",
+      "is_encrypted": 0,
+      "is_read_only": 0,
+      "is_write_once": 0,
+      "is_remote": 0,
+      "is_broken": 0,
+      "cache_path": ""
+    }
+  ],
+
+  "rows": 1,
+
+  "statistics":
+  {
+    "elapsed": 0.009476792,
+    "rows_read": 1,
+    "bytes_read": 131
+  }
+}`
+	var result DiskInfo
+	if err := json.NewDecoder(strings.NewReader(data)).Decode(&result); err != nil {
+		log.Fatal(err)
+	}
+
+	for _, v := range result.Data {
+		r, _ := strconv.ParseUint(v.Free_space.String(), 10, 64)
+		fmt.Println(r)
+	}
+}
+
+type DiskInfo struct {
+	Data []struct {
+		Name            string      `json:"name"`
+		Path            string      `json:"path"`
+		Free_space      json.Number `json:"free_space"`
+		Total_space     json.Number `json:"total_space"`
+		Keep_free_space json.Number `json:"keep_free_space"`
+		Type            string      `json:"type"`
 	}
 }

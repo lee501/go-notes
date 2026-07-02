@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	chunk "github.com/sevenelevenlee/go-notes/file_chunk_upload_service/chunk_upload"
+	chunk "github.com/bytexlee/go-notes/file_chunk_upload_service/chunk_upload"
 )
 
 func FileServer() {

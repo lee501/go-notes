@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"strings"
 )
 
 func json2stringDemo() {
@@ -77,4 +78,13 @@ func json2string(root interface{}, args ...string) string {
 func flattenTo(dst []byte, parent string) []byte {
 	dst = append(dst, '{')
 	return dst
+}
+
+func main() {
+	m := map[string]any{
+		"a": 1,
+		"b": "2",
+	}
+	val := strings.ReplaceAll(fmt.Sprint(m), ":", "(") + ")"
+	fmt.Println(val)
 }

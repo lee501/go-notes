@@ -5,7 +5,7 @@ import (
 	"io"
 	"net"
 
-	"github.com/sevenelevenlee/go-notes/tcp_package/proto"
+	"tcp-sticky-packet/proto"
 
 	log "github.com/sirupsen/logrus"
 )

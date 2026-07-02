@@ -1,3 +1,3 @@
-module github.com/lee501/go-notes/struct
+module github.com/bytexlee/go-notes
 
 go 1.24.2

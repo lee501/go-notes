@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"syscall"
 
+	"github.com/bytexlee/go-notes/go-etcd/server/utils"
 	"github.com/gorilla/mux"
-	"github.com/sevenelevenlee/go-notes/go-etcd/server/utils"
 )
 
 func main() {

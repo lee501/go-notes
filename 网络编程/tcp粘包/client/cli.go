@@ -6,7 +6,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/sevenelevenlee/go-notes/tcp_package/proto"
+	"tcp-sticky-packet/proto"
 )
 
 func main() {
